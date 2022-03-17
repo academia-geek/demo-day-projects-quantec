@@ -1,4 +1,27 @@
-*,
 html {
   background-color: #1c1c1e;
+}
+.back {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: -10px;
+}
+
+.debts > img {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  margin-left: 5%;
+  width: 326px;
+}
+.debts > button {
+  margin-left: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+}
+.debts > h2 {
+  margin-top: 10%;
+}
+.register > .H2 {
+  margin-top: 20%;
 }

@@ -1,8 +1,14 @@
 import React from 'react'
+import { BlackCards, H3 } from './Welcome'
 
 const Login = () => {
     return (
-        <div>Login</div>
+        <BlackCards>
+            <H3>Bienvenido de nuevo</H3>
+            <input type="email" />
+            <input type="password" />
+
+        </BlackCards>
     )
 }
 

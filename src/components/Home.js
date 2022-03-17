@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from "styled-components"
 import Footer from './Footer'
 import NavBar from './NavBar'
@@ -18,9 +19,9 @@ const Home = () => {
                 <H3>Con la opción de “objetivos”, alcanza cada una de las cosas que te propones; ya que solo debes tener tu objetivo claro y la app se encargará de recomendarte cuanto debes ahorrar para que alcances tus metas.</H3>
             </div>
             <center>
-                <CustomButton>
+                <Link to={"/welcome"}><CustomButton>
                     <H2>Abrir mi cuenta</H2>
-                </CustomButton>
+                </CustomButton></Link>
             </center>
 
             <div>
@@ -68,7 +69,7 @@ line-height:34.13px;
 letter-spacing:-0.3px;
 text-align: left
 `
-const H2 = styled.h2`
+export const H2 = styled.h2`
 color:white;
 font-weight:700;
 font-size:16px;
@@ -87,7 +88,9 @@ text-align: justify;
 `
 const Img = styled.img`
 margin-bottom:15px`
-const CustomButton = styled.button`
+
+
+export const CustomButton = styled.button`
 width:330px;
 height:44px;
 background-color:#3C1280;
