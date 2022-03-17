@@ -1,0 +1,19 @@
+*,
+body {
+  font-family: "Montserrat";
+}
+h1,
+h3 {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.offcanvas-body {
+  flex-grow: 1;
+  padding: 1rem 1rem;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 50%;
+}
