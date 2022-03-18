@@ -8,15 +8,13 @@ html {
 }
 
 .debts > img {
-  margin-top: 10%;
-  margin-bottom: 10%;
   margin-left: 5%;
   width: 326px;
 }
 .debts > button {
   margin-left: 20px;
   position: absolute;
-  bottom: 0;
+  bottom: 10%;
   left: 0px;
 }
 .debts > h2 {
@@ -24,4 +22,8 @@ html {
 }
 .register > .H2 {
   margin-top: 20%;
+}
+
+.registerAccount > h2 {
+  margin-top: 10%;
 }

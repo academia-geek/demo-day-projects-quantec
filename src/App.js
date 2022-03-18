@@ -12,6 +12,11 @@ import SaveMoney from './components/SaveMoney';
 import Register from './components/Register';
 import Login from './components/Login';
 import RegisterAccount from './components/RegisterAccount';
+import Password from './components/Password';
+import Terms from './components/Terms';
+import WelcomeAccount from './components/WelcomeAccount';
+import AccDesc from './components/AccDesc';
+import AddNewAcc from './components/AddNewAcc';
 function App() {
   return (
     <Document className="App">
@@ -27,8 +32,11 @@ function App() {
           <Route path="/register" element={<Register />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/registerAcc" element={<RegisterAccount />}></Route>
-
-
+          <Route path="/password" element={<Password />}></Route>
+          <Route path="/terms" element={<Terms />}></Route>
+          <Route path="/welcomeacc" element={<WelcomeAccount />}></Route>
+          <Route path="/accdesc" element={<AccDesc />}></Route>
+          <Route path="/addnewacc" element={<AddNewAcc />}></Route>
         </Routes>
       </Router>
 

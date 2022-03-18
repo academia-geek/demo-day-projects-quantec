@@ -36,7 +36,8 @@ font-size: 24px;
 line-height: 29px;
 
 letter-spacing: -0.3px;
-color:white`
+color:white;
+margin-top:10%`
 
 
 export const H3 = styled.h3`font-family: 'Montserrat';
@@ -50,10 +51,11 @@ letter-spacing: -0.3px;
 color: #FFFFFF;`
 
 export const CustomButtonCards = styled.button`
+
 width: 327px;
 height: 44px;
-left: 24px;
-top: 543px;
+
+
 
 background: #3C1280;
 border-radius: 30px;

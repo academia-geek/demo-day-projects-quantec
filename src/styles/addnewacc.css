@@ -1,0 +1,8 @@
+.button {
+  margin-top: 10%;
+}
+.checked {
+  position: absolute;
+  top: -15%;
+  left: 40%;
+}

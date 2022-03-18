@@ -39,13 +39,14 @@ const Register = () => {
                 <CustomLink to={"/login"} >Inicia sesion</CustomLink>
 
             </Options>
+
         </BlackCards>
     )
 }
 const RegisterWithContainer = styled.div`
-margin-top:40%
+margin-top:10%
 `
-const RegisterWith = styled.button`
+export const RegisterWith = styled.button`
 border:none;
 display: flex;
 flex-direction: row;
@@ -56,28 +57,32 @@ width: 327px;
 height: 44px;
 background: #FFFFFF;
 border-radius: 30px;
-margin-bottom:30px;
+margin-bottom:15%;
 `
-const LoginH2 = styled.h2`
+export const LoginH2 = styled.h2`
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 700;
 font-size: 16px;
 line-height: 24px;
 color:#464544;`
-const HR = styled.hr`
+export const HR = styled.hr`
  height: 0px;
     border: none;
     border-top: 1px solid white;
     opacity:1;
+    margin:0;
+    margin-bottom:10px;
     
 `
-const Options = styled.div`
+export const Options = styled.div`
 display: flex;
+justify-content: center;
 
 `
-const H3Ask = styled.h3`
-margin-top:20px;
+export const H3Ask = styled.h3`
+margin:0px;
+margin-right:0;
 font-style: normal;
 font-weight: 500;
 font-size: 16px;
