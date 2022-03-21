@@ -4,7 +4,6 @@ import styled from "styled-components"
 import { RegisterForm } from './RegisterAccount'
 import "../styles/addnewacc.css"
 import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
 const AddNewAcc = () => {
 
 
@@ -28,7 +27,11 @@ const AddNewAcc = () => {
                 <input type="value" placeholder='Escribe el monto' />
             </RegisterForm>
             <center>
-                <CustomButtonCards className="button" onClick={() => { Swal.fire('<img class="checked" src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647621171/proyecto-final/Group_349_v0ofdt.svg" alt=""/><h3>Operación exitosa<h3><h4>se ha añadido una nueva cuenta a tu portafolio<h4>') }}>
+                <CustomButtonCards className="button" onClick={() => {
+                    Swal.fire({ html: '<img class="checked" src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647621171/proyecto-final/Group_349_v0ofdt.svg" alt=""/><h3>Operación exitosa<h3><h4>se ha añadido una nueva cuenta a tu portafolio<h4>', showConfirmButton: false, timer: 800, }).then(function () {
+                        window.location = "/loggedhome";
+                    });
+                }}>
                     Guardar
                 </CustomButtonCards>
 

@@ -100,6 +100,6 @@ align-items: center;
 margin-top:24px;
 `
 const ImgReg = styled.img`
-
+margin-bottom:30px;
 width:325px`
 export default Home

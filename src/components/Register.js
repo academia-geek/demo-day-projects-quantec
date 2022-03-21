@@ -65,7 +65,8 @@ font-style: normal;
 font-weight: 700;
 font-size: 16px;
 line-height: 24px;
-color:#464544;`
+color:#464544;
+margin-bottom:0`
 export const HR = styled.hr`
  height: 0px;
     border: none;

@@ -17,9 +17,15 @@ import Terms from './components/Terms';
 import WelcomeAccount from './components/WelcomeAccount';
 import AccDesc from './components/AccDesc';
 import AddNewAcc from './components/AddNewAcc';
+import LoggedHome from './components/LoggedHome';
+import LoggedProfile from './components/LoggedProfile';
+import LoggedAims from './components/LoggedAims';
+import LoggedAccounts from './components/LoggedAccounts';
+import Logged from './components/Logged';
 function App() {
   return (
     <Document className="App">
+
       <Router>
 
         <Routes>
@@ -37,6 +43,11 @@ function App() {
           <Route path="/welcomeacc" element={<WelcomeAccount />}></Route>
           <Route path="/accdesc" element={<AccDesc />}></Route>
           <Route path="/addnewacc" element={<AddNewAcc />}></Route>
+          <Route path="/loggedhome" element={<LoggedHome />}></Route>
+          <Route path="/loggedprofile" element={<LoggedProfile />}></Route>
+          <Route path="/loggedaims" element={<LoggedAims />}></Route>
+          <Route path="/loggedacc" element={<LoggedAccounts />}></Route>
+          <Route path="/logged" element={<Logged />}></Route>
         </Routes>
       </Router>
 
