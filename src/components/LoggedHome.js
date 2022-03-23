@@ -1,6 +1,10 @@
 import React from 'react'
 import { Container, ContainerP, H5, Img, P } from '../styled/LoggedHome'
 import SaldoCuentas from './SaldoCuentas'
+<<<<<<< HEAD
+=======
+
+>>>>>>> ba57a0b1547f3986e1601f0c8624ed3577530489
 const LoggedHome = () => {
     return (
         <Container>
