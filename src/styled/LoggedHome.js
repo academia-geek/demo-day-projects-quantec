@@ -3,27 +3,49 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     /* padding: 30px; */
-    background: rgba(26, 33, 131, 100);
 `
 export const ContainerP = styled.div`
-    padding: 30px;
     border: 1px solid #F6F5F7;
     border-radius: 30px 30px 0 0;
     background-color: #F6F5F7;
-    padding-bottom: 60%;    
-`
+       height:510px;
+       z-index: 1;
+       position: relative;
+       bottom:28px;
+       
+       `
 export const H5 = styled.h5`
-    color: #757575;
-    font-weight: bold;
+    
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 22px;
+letter-spacing: -0.3px;
+
+color: #757575;
+    margin:37px 25px 60px 31px
+
 `
 export const P = styled.p`
-    color: #757575;
-    font-size: 15px;
+    color:hsla(0, 0%, 37%, 1);
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 24px;
+margin-left:24px;
+margin-right:24px;
+
+
+/* or 171% */
+letter-spacing: -0.3px;
 `
 export const Img = styled.img`
-    margin: 10% 25% 10% 20%;
+    margin-top:0px;
+    margin-bottom:26px;
 `
-export const CustomButton  = styled.button`
+export const CustomButton = styled.button`
 width:300px;
 height:44px;
 background-color:#3C1280;

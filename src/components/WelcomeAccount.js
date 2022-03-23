@@ -16,9 +16,11 @@ const WelcomeAccount = () => {
             </H3>
 
             <center><Img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647612598/proyecto-final/undraw_celebration_re_kc9k_1_1_obgmpo.svg" alt="" />
-                <Link to={"/accdesc"}><CustomButtonCards>
-                    Excelente, vamos
-                </CustomButtonCards></Link>
+                <Link to={"/accdesc"}>
+                    <CustomButtonCards>
+                        Excelente, vamos
+                    </CustomButtonCards>
+                </Link>
                 <br />
                 <CustomLink to={"/"}>No gracias</CustomLink></center>
 

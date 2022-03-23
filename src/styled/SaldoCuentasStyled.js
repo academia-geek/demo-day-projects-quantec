@@ -1,20 +1,32 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    background: rgba(26, 33, 131, 100);
-    background: linear-gradient(0deg, rgba(26, 33, 131, 100) 2%, rgba(43, 202, 236, 100) 85%);
-    padding: 20px;
+    
+    background: linear-gradient(180deg, #31D2FA 0%, #3860B2 40.1%, #3C1280 100%);
+    padding-bottom:56px;
+    height:196;
+    z-index:-1;
+    
 `
 export const H3 = styled.h3`
-   font-size: 22px;
-   font-weight : 700, bold;
-   margin: 10% 0 0 10%;
-   color: #FFFFFF;
+   font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 29px;
+letter-spacing: -0.3px;
+   margin:0;
+   padding:0;
+   color:white;
+   padding:30px 0px 0px 24px
 `
 export const P = styled.p`
-    margin: 1% 0 0 10%;
+    
     font-size: 12px;
     color: #FFFFFF;
-    padding-bottom: 30px;
+    
+    
     font-weight: 500, Medium;
+    margin:0;
+    margin:11px 0px 0px 24px;
 `

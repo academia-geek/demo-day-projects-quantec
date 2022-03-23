@@ -3,46 +3,59 @@ import { Link } from 'react-router-dom'
 import styled from "styled-components"
 import Footer from './Footer'
 import NavBar from './NavBar'
+import "../styles/home.css"
+import { H3Ask, Options, RegisterWith } from './Register'
+import { CustomLink } from './Welcome'
 const Home = () => {
     return (
-        <div>
-            <NavBar />
-            <Line1>
-                <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647471481/proyecto-final/Group_1_r5nm9t.svg" alt="" />
-                <H3>ALCANZA TUS OBJETIVOS</H3>
-            </Line1>
-            <center>
-                <Img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647471368/proyecto-final/Group_2147_ukltzb.svg" alt="" />
-            </center>
-            <div>
-                <H1>Ponle un objetivo a tu día día</H1>
-                <H3>Con la opción de “objetivos”, alcanza cada una de las cosas que te propones; ya que solo debes tener tu objetivo claro y la app se encargará de recomendarte cuanto debes ahorrar para que alcances tus metas.</H3>
-            </div>
-            <center>
-                <Link to={"/welcome"}><CustomButton>
-                    <H2>Abrir mi cuenta</H2>
-                </CustomButton></Link>
-            </center>
-
-            <div>
+        <div className="box">
+            <div className="content">
+                <NavBar />
                 <Line1>
                     <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647471481/proyecto-final/Group_1_r5nm9t.svg" alt="" />
-                    <H3>SEGURIDAD ABSOLUTA</H3>
+                    <H3>CON NOSOTROS PUEDES</H3>
                 </Line1>
                 <center>
-                    <Img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647478186/proyecto-final/Group_2148_wm57ov.svg" alt="" />
+                    <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647532695/proyecto-final/undraw_vault_re_s4my_1_vkhyit.svg" alt="" />
+                </center>
+                <Line1>
+                    Comenzar a ahorrar
+                </Line1>
+
+                <H3>Con disciplina, dedicación, atención adecuada a tu presupuesto y el uso de Quantect, ¡pronto podrás ahorrar mucho más dinero de lo que alguna vez imaginaste!</H3>
+                <center>
+                    <Link to={"/register"}>
+                        <CustomButton>
+                            <H2>Registrate ahora</H2>
+                        </CustomButton>
+
+
+                    </Link>
+                    <Link to={"/login"} style={{ color: "#3C1280" }}>Iniciar sesión</Link>
+                </center>
+
+                <Line1>
+                    <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647471481/proyecto-final/Group_1_r5nm9t.svg" alt="" />
+                    <H3>ALCANZA TUS OBJETIVOS</H3>
+                </Line1>
+                <center>
+                    <Img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647471368/proyecto-final/Group_2147_ukltzb.svg" alt="" />
                 </center>
                 <div>
-                    <H1>No es solo una cuenta como las demas, sino también una cuenta segura para tus objetivos</H1>
-                    <H3>La cuenta Quantec está diseñada para que tu sea el único que puede usarla. La tecnología le permite que se abran cuantos objetivos quieras, sin permitirte retirar tus ahorros hasta que logres alcanzarlos.
-                        Con Quantec, puedes personalizar reglas simples para automatizar tus ahorros, lo que te permite controlar y visualizar  como  tus metas se hacen realidad.</H3>
+                    <H1>Ponle un objetivo a tu día día</H1>
+                    <H3>Con la opción de “objetivos”, alcanza cada una de las cosas que te propones; ya que solo debes tener tu objetivo claro y la app se encargará de recomendarte cuanto debes ahorrar para que alcances tus metas.</H3>
                 </div>
 
-                <center> <ImgReg src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647478840/proyecto-final/Section_3_byuzen.svg" alt="" /></center>
+
+                <div>
 
 
+                    <center> <ImgReg src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647478840/proyecto-final/Section_3_byuzen.svg" alt="" /></center>
+
+
+                </div>
+                <Footer />
             </div>
-            <Footer />
         </div>
     )
 
@@ -51,12 +64,27 @@ const Home = () => {
 }
 const Line1 = styled.div`
 display:flex;
-color:#798390;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 28px;
+line-height: 34px;
+letter-spacing: -0.3px;
+
+
+
+
+color: #333333;
 margin-top:20px;
 margin-bottom:20px;
+margin-left:30px;
+
 h3{
   margin-left:40px
 
+}
+img{
+    margin-right:-30px
 }
 
 
@@ -70,7 +98,7 @@ letter-spacing:-0.3px;
 text-align: left
 `
 export const H2 = styled.h2`
-color:white;
+color:inherit;
 font-weight:700;
 font-size:16px;
 line-height:24px;
@@ -84,6 +112,7 @@ line-height:24px;
 letter-spacing:-0.3px;
 color:#6F6F70;
 text-align: justify;
+padding-bottom:0;
   
 `
 const Img = styled.img`
@@ -98,8 +127,9 @@ border:none;
 border-radius:20px;
 align-items: center;
 margin-top:24px;
+color:white;
 `
 const ImgReg = styled.img`
-
+margin-bottom:30px;
 width:325px`
 export default Home

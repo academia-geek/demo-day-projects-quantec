@@ -1,0 +1,13 @@
+.MuiBottomNavigationAction-label,
+.Mui-selected,
+.css-imwso6-MuiBottomNavigationAction-label {
+  color: #3c1280;
+}
+.MuiBottomNavigation-root,
+.css-6mda60-MuiBottomNavigation-root {
+  background-color: #f6f5f7;
+  height: 48px;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+}

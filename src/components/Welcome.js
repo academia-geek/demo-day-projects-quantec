@@ -19,7 +19,7 @@ const Welcome = () => {
                     Comenzar
                 </CustomButtonCards></Link>
                 <br />
-                <CustomLink to={"/"}>Ya estoy registrado</CustomLink>
+                <CustomLink to={"/login"}>Ya estoy registrado</CustomLink>
             </center>
         </BlackCards>
     )
@@ -40,18 +40,20 @@ color:white;
 margin-top:10%`
 
 
-export const H3 = styled.h3`font-family: 'Montserrat';
+export const H3 = styled.h3`
+font-family: 'Montserrat';
 font-style: normal;
 font-weight: 500;
 font-size: 16px;
 line-height: 24px;
-
+margin:0;
 letter-spacing: -0.3px;
+padding:25px;
 
 color: #FFFFFF;`
 
 export const CustomButtonCards = styled.button`
-
+margin-top: 10%;
 width: 327px;
 height: 44px;
 

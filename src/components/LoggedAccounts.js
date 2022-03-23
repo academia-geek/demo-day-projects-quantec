@@ -7,16 +7,17 @@ import SaldoCuentas from './SaldoCuentas'
 const LoggedAccounts = () => {
     return (
         <Container>
-            <SaldoCuentas/>
+            <SaldoCuentas />
             <ContainerP>
                 <H5>Mis objetivos </H5>
-                <div>
-                    <h2>Aun no tienes ningun objetivo</h2> 
+                <center>
+                    <h2>Aun no tienes ningun objetivo</h2>
                     <DivAccount>
-                        <MyAccounts/>  
-                    </DivAccount>                
-                </div>
-                <CustomButton className='text-light mt-5'><b>Agregar un objetivo</b></CustomButton>
+                        <MyAccounts />
+                    </DivAccount>
+
+                    <CustomButton className='text-light mt-5'><b>Agregar un objetivo</b></CustomButton>
+                </center>
             </ContainerP>
         </Container>
     )

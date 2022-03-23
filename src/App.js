@@ -7,36 +7,49 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Welcome from './components/Welcome';
 import Aim from './components/Aim';
 import Debts from './components/Debts';
-import Invest from './components/Invest';
 import SaveMoney from './components/SaveMoney';
 import Register from './components/Register';
 import Login from './components/Login';
 import RegisterAccount from './components/RegisterAccount';
-import Password from './components/Password';
 import Terms from './components/Terms';
 import WelcomeAccount from './components/WelcomeAccount';
 import AccDesc from './components/AccDesc';
 import AddNewAcc from './components/AddNewAcc';
+import LoggedHome from './components/LoggedHome';
+import LoggedProfile from './components/LoggedProfile';
+import LoggedAims from './components/LoggedAims';
+import LoggedAccounts from './components/LoggedAccounts';
+import PlusAim from './components/PlusAim';
+import PlusAimType from './components/PlusAimType';
+import YourCustomAim from './components/YourCustomAim';
+import AddNewAim from './components/AddNewAim';
+
 function App() {
   return (
     <Document className="App">
-      <Router>
 
+      <Router>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/welcome" element={<Welcome />}></Route>
-          <Route path="/aim" element={<Aim />}></Route>
-          <Route path="/debts" element={<Debts />}></Route>
-          <Route path="/savemoney" element={<SaveMoney />}></Route>
-          <Route path="/invest" element={<Invest />}></Route>
-          <Route path="/register" element={<Register />}></Route>
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/registerAcc" element={<RegisterAccount />}></Route>
-          <Route path="/password" element={<Password />}></Route>
-          <Route path="/terms" element={<Terms />}></Route>
-          <Route path="/welcomeacc" element={<WelcomeAccount />}></Route>
-          <Route path="/accdesc" element={<AccDesc />}></Route>
-          <Route path="/addnewacc" element={<AddNewAcc />}></Route>
+          <Route exact path="/" element={<Home />}></Route>
+          <Route exact path="/welcome" element={<Welcome />}></Route>
+          <Route exact path="/plusaim" element={<PlusAim />}></Route>
+          <Route exact path="/yourcustomaim" element={<YourCustomAim />}></Route>
+          <Route exact path="/plusaimtype" element={<PlusAimType />}></Route>
+          <Route exact path="/aim" element={<Aim />}></Route>
+          <Route exact path="/debts" element={<Debts />}></Route>
+          <Route exact path="/savemoney" element={<SaveMoney />}></Route>
+          <Route exact path="/register" element={<Register />}></Route>
+          <Route exact path="/login" element={<Login />}></Route>
+          <Route exact path="/registerAcc" element={<RegisterAccount />}></Route>
+          <Route exact path="/terms" element={<Terms />}></Route>
+          <Route exact path="/welcomeacc" element={<WelcomeAccount />}></Route>
+          <Route exact path="/accdesc" element={<AccDesc />}></Route>
+          <Route exact path="/addnewacc" element={<AddNewAcc />}></Route>
+          <Route exact path="/loggedhome" element={<LoggedHome />}></Route>
+          <Route exact path="/loggedprofile" element={<LoggedProfile />}></Route>
+          <Route exact path="/loggedacc" element={<LoggedAims />}></Route>
+          <Route exact path="/loggedaims" element={<LoggedAccounts />}></Route>
+          <Route exact path="/addnewaim" element={<AddNewAim />}></Route>
         </Routes>
       </Router>
 
