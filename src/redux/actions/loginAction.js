@@ -59,7 +59,7 @@ export const logoutAsyn = () => {
         const auth = getAuth;
         signOut(auth)
         .then(user => {
-            dispatch(logoutSyn)
+            dispatch(logoutSyn())
         }).catch(error => {
             console.log(error);
         })

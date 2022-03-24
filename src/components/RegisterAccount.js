@@ -1,45 +1,56 @@
-import React from 'react'
-import { CustomLink } from './Aim'
-import { BlackCards, CustomButtonCards, H2, H3 } from './Welcome'
-import styled from "styled-components"
-import { Link } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
-import { useForm } from '../hooks/useForm'
-import { registroEmailPasswordNombre } from '../redux/actions/registerAction'
-import Swal from 'sweetalert2'
-import "../styles/registeraccount.css"
+import React from 'react';
+import { CustomLink } from './Aim';
+import { BlackCards, CustomButtonCards, H2, H3 } from './Welcome';
+import styled from "styled-components";
+import { useDispatch } from 'react-redux';
+import { registroEmailPasswordNombre } from '../redux/actions/registerAction';
+import "../styles/registeraccount.css";
+import { fileUpload } from '../helpers/fileUpLoad';
+import { useFormik } from 'formik';
 
 const RegisterAccount = () => {
     const dispatch = useDispatch();
-    const [values, handleInputChange, reset] = useForm({
-        nombre: '',
-        email: '',
-        password: ''
-    });
-    const {nombre, email, password} = values;
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(nombre, email, password);
-        dispatch(registroEmailPasswordNombre(email, password, nombre));
-        reset();
-    }
-    const handleFileUp = () => {
-        
+    const formik = useFormik({
+        initialValues: {
+            nombre: '',
+            email: '',
+            password: '',
+            photo: ''
+        },
+        onSubmit: (data) => {
+            console.log(data.email);
+        dispatch(registroEmailPasswordNombre(data));
+        }
+    });   
+
+    
+    const handleFileUp = (e) => {
+        const file = e.target.files[0];
+        fileUpload(file)
+            .then(response => {
+                formik.initialValues.url = response
+                console.log(response);
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
     }
     return (
         <BlackCards className={"registerAccount"}>
             <CustomLink to={"/register"}><img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647530651/proyecto-final/ep_arrow-left_zxewky.svg" alt="" className="back" /></CustomLink>
             <H2>Bienvenido</H2>
             <H3>Completa la siguiente información para poder conocerte y empezar a trabajar en tu plan financiero.</H3>
-            <RegisterForm onSubmit={handleSubmit}>
+            <RegisterForm 
+                onSubmit={formik.handleSubmit}
+            >
                 <H3>
                     Prefiero que me llamen:
                     <Name
                         name='nombre'
                         type="text"
                         placeholder="Tu nombre"
-                        onChange={handleInputChange}    
+                        onChange={formik.handleChange}    
                     />
                 </H3>
                 <H3>
@@ -48,7 +59,7 @@ const RegisterAccount = () => {
                         name='email'
                         type="email"
                         placeholder="Correo electrónico"
-                        onChange={handleInputChange}
+                        onChange={formik.handleChange}
                     />
                 </H3>
                 <H3>
@@ -56,7 +67,7 @@ const RegisterAccount = () => {
                     <Mail
                         name='photo'
                         type="file"
-                        onChange={handleInputChange}
+                        onChange={handleFileUp}
                     />
                 </H3>       
                 <H3>
@@ -65,19 +76,11 @@ const RegisterAccount = () => {
                         type="password" 
                         placeholder='Contraseña' 
                         name='password' 
-                        onChange={handleInputChange}
+                        onChange={formik.handleChange}
                     />
                 </H3>
                 <center>
-                <CustomButtonCards className="button" onClick={() => {
-                    Swal.fire({
-                        html: '<br/><br/><h4 >¡Tu cuenta ha sido creada correctamente!<h3><br/><img class="checked" src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647621171/proyecto-final/Group_349_v0ofdt.svg" alt=""/>',
-                        showConfirmButton: false,
-                        timer: 2000,
-                    }).then(function () {
-                        window.location = "/loggedhome";
-                    });
-                }}>
+                <CustomButtonCards className="submit">
                     Guardar
                 </CustomButtonCards>
             </center>

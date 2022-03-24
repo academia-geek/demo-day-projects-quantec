@@ -3,6 +3,8 @@ import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import "../styles/labelbottomnavbar.css"
 import { NavLink, useLocation } from 'react-router-dom';
+
+
 export default function LabelBottomNavigation() {
   const [value, setValue] = React.useState('recents');
   const handleChange = (event, newValue) => {
