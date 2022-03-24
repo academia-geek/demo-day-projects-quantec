@@ -56,7 +56,7 @@ export const loginSyn = (id, displayname) => {
 //---------------Logout Asincrono-------------
 export const logoutAsyn = () => {
     return (dispatch) => {
-        const auth = getAuth;
+        const auth = getAuth();
         signOut(auth)
         .then(user => {
             dispatch(logoutSyn())

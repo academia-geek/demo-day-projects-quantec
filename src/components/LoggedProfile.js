@@ -21,7 +21,8 @@ const LoggedProfile = () => {
                 <ImageProfile src='https://res.cloudinary.com/ddxauuwcf/image/upload/v1644609218/images/avatar1_zp8pvi.png' />
 
                 <Nombre>nombre</Nombre>
-                <button 
+                <button
+                    type='button' 
                     onClick={handleLogout}
                     style={{ color: "#AA75FF" }}>
                     <RiLogoutCircleLine />
