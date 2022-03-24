@@ -15,7 +15,7 @@ export default function LabelBottomNavigation() {
     console.log("match");
     console.log(setTimeout(document.querySelector(".navbar"), 300));
     setTimeout(() => {
-      document.querySelector(".navbar").style.cssText = "z-index:0; height: 70px; position: absolute; bottom: 0; background-color:#f6f5f7"
+      document.querySelector(".navbar").style.cssText = "height: 70px; position: absolute; bottom: 0; background-color:#f6f5f7"
     }, 100);
 
   } else {

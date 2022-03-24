@@ -10,7 +10,7 @@ const Home = () => {
                 <NavBar />
                 <Line1>
                     <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647471481/proyecto-final/Group_1_r5nm9t.svg" alt="" />
-                    <H3>CON NOSOTROS PUEDES</H3>
+                    <H3>CON QUANTEC PUEDES</H3>
                 </Line1>
                 <center>
                     <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647532695/proyecto-final/undraw_vault_re_s4my_1_vkhyit.svg" alt="" />
@@ -29,7 +29,7 @@ const Home = () => {
 
                     </Link>
                     <p></p>
-                    <Link to={"/login"} style={{ color: "#3C1280" }}>Iniciar sesión</Link>
+                    <LinkLoggin to={"/login"} style={{ color: "#3C1280" }}>Iniciar sesión</LinkLoggin>
                 </center>
 
                 <Line1>
@@ -130,4 +130,12 @@ color:white;
 const ImgReg = styled.img`
 margin-bottom:30px;
 width:325px`
+const LinkLoggin = styled(Link)`
+color:#3C1280;
+text-decoration:none;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 24px;`
 export default Home

@@ -54,7 +54,7 @@ color: #FFFFFF;`
 
 export const CustomButtonCards = styled.button`
 margin-top: 5%;
-margin-bottom: 5%;
+margin-bottom: 13%;
 width: 327px;
 height: 44px;
 

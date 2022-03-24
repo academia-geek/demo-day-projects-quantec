@@ -6,13 +6,10 @@ export const Container = styled.div`
 `
 export const ContainerP = styled.div`
     border: 1px solid #F6F5F7;
-    border-radius: 30px 30px 0 0;
     background-color: #F6F5F7;
        height:630px;
-       z-index: 1;
-       position: relative;
-       bottom:28px;
-       
+  display: table-cell;
+  vertical-align: middle;
        `
 export const H5 = styled.h5`
     

@@ -3,6 +3,7 @@ import { CustomLink } from './Aim'
 import { BlackCards, CustomButtonCards, H2, H3 } from './Welcome'
 import styled from "styled-components"
 import Swal from 'sweetalert2'
+import "../styles/registeraccount.css"
 
 const RegisterAccount = () => {
     return (
@@ -34,9 +35,9 @@ const RegisterAccount = () => {
             <center>
                 <CustomButtonCards className="button" onClick={() => {
                     Swal.fire({
-                        html: '<h3>Guardado con éxito!<h3><br/><img class="checked" src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647621171/proyecto-final/Group_349_v0ofdt.svg" alt=""/>',
+                        html: '<br/><br/><h4 >¡Tu cuenta ha sido creada correctamente!<h3><br/><img class="checked" src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647621171/proyecto-final/Group_349_v0ofdt.svg" alt=""/>',
                         showConfirmButton: false,
-                        timer: 800,
+                        timer: 2000,
                     }).then(function () {
                         window.location = "/loggedhome";
                     });

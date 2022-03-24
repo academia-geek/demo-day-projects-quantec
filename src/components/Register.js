@@ -70,13 +70,18 @@ font-size: 16px;
 line-height: 24px;
 color:#464544;
 margin-bottom:0`
+
 export const HR = styled.hr`
- height: 0px;
+opacity:1;
+ height: 1px;
     border: none;
     border-top: 1px solid white;
-    opacity:1;
     margin:0;
     margin-bottom:10px;
+    color:white;
+    background-color:white;
+    z-index:2;
+    width:100%;
     
 `
 export const Options = styled.div`
