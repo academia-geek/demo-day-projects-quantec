@@ -6,7 +6,7 @@ import { H4 } from './AddNewAcc'
 const PlusAimType = () => {
     return (
         <BlackCards>
-            <CustomLink to={"/welcome"}>
+            <CustomLink to={"/loggedaims"}>
                 <ImgPlusAimType src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647530651/proyecto-final/ep_arrow-left_zxewky.svg" alt="" className="back" />
             </CustomLink>
             <AimContainer>
@@ -18,39 +18,53 @@ const PlusAimType = () => {
                 <CustomLink to={"/yourcustomaim"}>
                     <AimType className="AimType">
                         <ImgPlusAimType src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647955866/proyecto-final/home_af9yjy.svg" alt="" height={38} width={60} />
-                        <H3>Finca raíz</H3>
+                        <H3>Mi casa</H3>
                     </AimType>
                 </CustomLink>
                 <CustomLink to={"/yourcustomaim"}>
                     <AimType>
                         <ImgPlusAimType src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647955865/proyecto-final/grade_qs9k9s.svg" alt="" height={49.45} width={60} />
-                        <H3>Educación</H3>
+                        <H3>Mis estudios</H3>
+                    </AimType>
+                </CustomLink>
+                <CustomLink to={"/yourcustomaim"}>
+                    <AimType>
+                        <ImgPlusAimType src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648050466/proyecto-final/car_kiiud0.svg" alt="" height={49.77} width={60} />
+                        <H3>Mi auto</H3>
                     </AimType>
                 </CustomLink>
                 <CustomLink to={"/yourcustomaim"}>
                     <AimType>
                         <ImgPlusAimType src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647529371/proyecto-final/ScreenChart_cfj0j4.svg" alt="" height={49.77} width={60} />
-                        <H3>inversión</H3>
+                        <H3>Mi emprendimiento</H3>
+                    </AimType>
+                </CustomLink>
+                <CustomLink to={"/yourcustomaim"}>
+                    <AimType>
+                        <ImgPlusAimType src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648048236/proyecto-final/plane_qb4sro.svg" alt="" height={49.77} width={60} />
+                        <H3>El viaje de mis sueños</H3>
+                    </AimType>
+                </CustomLink>
+                <CustomLink to={"/yourcustomaim"}>
+                    <AimType>
+                        <ImgPlusAimType src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648050010/proyecto-final/Gift_a8d99v.svg" alt="" height={49.45} width={60} />
+                        <H3>Hacer un regalo</H3>
+                    </AimType>
+                </CustomLink>
+                <CustomLink to={"/yourcustomaim"}>
+                    <AimType>
+                        <ImgPlusAimType src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648049510/proyecto-final/Security_yoyvq7.svg" alt="" height={49.77} width={60} />
+                        <H3>Objetos tecnológico</H3>
                     </AimType>
                 </CustomLink>
                 <CustomLink to={"/yourcustomaim"}>
                     <AimType>
                         <ImgPlusAimType src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647955865/proyecto-final/Pig_mjwp2s.svg" alt="" height={49.77} width={60} />
-                        <H3>Retiro</H3>
+                        <H3>Quiero ahorrar</H3>
                     </AimType>
                 </CustomLink>
-                <CustomLink to={"/yourcustomaim"}>
-                    <AimType>
-                        <ImgPlusAimType src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647955865/proyecto-final/Happy_ael4uy.svg" alt="" height={49.77} width={60} />
-                        <H3>Bienestar</H3>
-                    </AimType>
-                </CustomLink>
-                <CustomLink to={"/yourcustomaim"}>
-                    <AimType>
-                        <ImgPlusAimType src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647529371/proyecto-final/ScreenChart_cfj0j4.svg" alt="" height={49.77} width={60} />
-                        <H3>Otro</H3>
-                    </AimType>
-                </CustomLink>
+
+
             </center>
         </BlackCards>
     )

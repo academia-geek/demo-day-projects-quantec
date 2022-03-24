@@ -1,11 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from "styled-components"
-import Footer from './Footer'
 import NavBar from './NavBar'
 import "../styles/home.css"
-import { H3Ask, Options, RegisterWith } from './Register'
-import { CustomLink } from './Welcome'
 const Home = () => {
     return (
         <div className="box">
@@ -31,6 +28,7 @@ const Home = () => {
 
 
                     </Link>
+                    <p></p>
                     <Link to={"/login"} style={{ color: "#3C1280" }}>Iniciar sesión</Link>
                 </center>
 
@@ -54,7 +52,7 @@ const Home = () => {
 
 
                 </div>
-                <Footer />
+                <footer><img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647479334/proyecto-final/Footer_qx2qyk.svg" alt="" /></footer>
             </div>
         </div>
     )

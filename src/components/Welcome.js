@@ -53,7 +53,8 @@ padding:25px;
 color: #FFFFFF;`
 
 export const CustomButtonCards = styled.button`
-margin-top: 10%;
+margin-top: 5%;
+margin-bottom: 5%;
 width: 327px;
 height: 44px;
 
@@ -77,7 +78,6 @@ line-height: 24px;
 letter-spacing: -0.3px;
 
 color: #AA75FF;
-position:relative;
-top:20px`
+`
 
 export default Welcome

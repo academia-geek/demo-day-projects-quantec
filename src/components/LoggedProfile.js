@@ -1,8 +1,7 @@
 import React from 'react'
 import { RiLogoutCircleLine } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
-import { Contenedor, ImageProfile, Logout, Nombre } from '../styled/LoggedProfileStyled'
-import LabelBottomNavigation from './LabelBottomNavigation'
+import { Contenedor, ImageProfile, Nombre } from '../styled/LoggedProfileStyled'
 
 const LoggedProfile = () => {
     return (
@@ -19,7 +18,7 @@ const LoggedProfile = () => {
                     Cerrar Sesión
                 </Link>
             </center>
-            <LabelBottomNavigation />
+
         </Contenedor>
 
 

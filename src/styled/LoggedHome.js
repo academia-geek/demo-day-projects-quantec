@@ -8,15 +8,11 @@ export const ContainerP = styled.div`
     border: 1px solid #F6F5F7;
     border-radius: 30px 30px 0 0;
     background-color: #F6F5F7;
-       height:510px;
+       height:630px;
        z-index: 1;
        position: relative;
-<<<<<<< HEAD
        bottom:28px;
        
-=======
-       bottom:28px
->>>>>>> ba57a0b1547f3986e1601f0c8624ed3577530489
        `
 export const H5 = styled.h5`
     
@@ -28,11 +24,7 @@ line-height: 22px;
 letter-spacing: -0.3px;
 
 color: #757575;
-<<<<<<< HEAD
     margin:37px 25px 60px 31px
-=======
-    margin:37px 25px 44px 31px
->>>>>>> ba57a0b1547f3986e1601f0c8624ed3577530489
 
 `
 export const P = styled.p`

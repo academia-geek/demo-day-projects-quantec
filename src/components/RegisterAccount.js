@@ -2,7 +2,8 @@ import React from 'react'
 import { CustomLink } from './Aim'
 import { BlackCards, CustomButtonCards, H2, H3 } from './Welcome'
 import styled from "styled-components"
-import { Link } from 'react-router-dom'
+import Swal from 'sweetalert2'
+
 const RegisterAccount = () => {
     return (
         <BlackCards className={"registerAccount"}>
@@ -22,34 +23,41 @@ const RegisterAccount = () => {
                         type="email"
                         placeholder="Correo electrónico" />
                 </H3>
+                <H3>
+                    Asigna la contraseña para ingresar a tu cuenta de Quantect
+
+
+                    <Mail type="password" placeholder='Contraseña' />
+                </H3>
             </RegisterForm>
 
-            <RegisterForm style={{ marginTop: '-35px' }}>
-                <H3>Asigna la contraseña para ingresar a tu cuenta de Quantect</H3>
+            <center>
+                <CustomButtonCards className="button" onClick={() => {
+                    Swal.fire({
+                        html: '<h3>Guardado con éxito!<h3><br/><img class="checked" src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647621171/proyecto-final/Group_349_v0ofdt.svg" alt=""/>',
+                        showConfirmButton: false,
+                        timer: 800,
+                    }).then(function () {
+                        window.location = "/loggedhome";
+                    });
+                }}>
+                    Guardar
+                </CustomButtonCards>
+            </center>
 
-                <input type="password" placeholder='Contraseña' />
-
-            </RegisterForm>
-            <Link to={"/terms"} style={{ color: "inherit", textDecoration: "none" }}>
-                <center>
-                    <CustomButtonCards>
-                        Continuar
-                    </CustomButtonCards>
-                </center>
-            </Link>
         </BlackCards>
     )
 }
 export const RegisterForm = styled.div`
 display:flex;
 flex-direction:column;
-margin-left:8%;
+
 
 
 
 input{
     border:none;
-    margin-bottom:5%;
+    margin-bottom:10px;
     border-bottom:1px  solid gray;
     background-color:#1C1C1E;
     color:rgba(255,255,255,0.8);
@@ -72,7 +80,5 @@ width:160px;
 padding-bottom:0;
 margin-bottom:0;`
 
-const Age = styled.input`
-width:50px`
 const Mail = styled.input``
 export default RegisterAccount
