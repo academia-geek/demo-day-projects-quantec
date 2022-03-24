@@ -28,18 +28,16 @@ import DashboardRoutes from "./DashboardRoutes";
 function App() {
 
   const [checking, setChecking] = useState(true);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
 
         const auth = getAuth()
         onAuthStateChanged(auth, (user) => {            
             if(user?.uid){
-                setIsLoggedIn(true)
-                console.log('aquí estoy');
+                setIsLoggedIn(true)                
             }else{
-                setIsLoggedIn(false)
-                console.log('o aquí');
+                setIsLoggedIn(false)                
             }
             setChecking(false)
         })
@@ -57,9 +55,9 @@ function App() {
     <Document className="App">
 
       <Router>
-        <LabelBottomNavigation />
+        
         <Routes>
-        <Route exact path="/" element={
+        <Route exact path="/home" element={
             <PublicRoute isAuth={isLoggedIn}>
                 <Home />
             </PublicRoute>
@@ -88,11 +86,7 @@ function App() {
           
           <Route exact path="/plusaim" element={<PlusAim />}></Route>
           <Route exact path="/yourcustomaim" element={<YourCustomAim />}></Route>
-          <Route exact path="/plusaimtype" element={<PlusAimType />}></Route>
-          <Route exact path="/loggedhome" element={<LoggedHome />}/>
-          <Route exact path="/loggedprofile" element={<LoggedProfile />}></Route>
-          <Route exact path="/loggedaims" element={<LoggedAims />}></Route>
-          <Route exact path="/loggedacc" element={<LoggedAccounts />}></Route>
+          <Route exact path="/plusaimtype" element={<PlusAimType />}></Route>         
           <Route exact path="/addnewaim" element={<AddNewAim />}></Route>
         </Routes>
       </Router>

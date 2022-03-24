@@ -11,7 +11,7 @@ const LoggedProfile = () => {
 
     const handleLogout = () => {
         dispatch(logoutAsyn())
-        navigate('/')
+        navigate('/home')
     }
     return (
         <Contenedor>
