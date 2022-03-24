@@ -16,17 +16,18 @@ const YourCustomAim = () => {
                 <InputAim type="date" placeholder='Fecha inicial' />
                 <H3>Hasta:</H3>
                 <InputAim type="date" placeholder='Fecha final' />
-                <H3>Cada:</H3>
                 <SelectDiv>
-                    <Select >
-                        <option value="Días">Días</option>
-                        <option value="Semanas">Semanas</option>
-                        <option value="Meses">Meses</option>
-                        <option value="Años">Años</option>
-                    </Select>
+                    <H3>Quiero ahorrar:</H3>
+
+                    <InputAim type="value" placeholder='' />
+                </SelectDiv>
+                <H3>Y quiero alcanzarlo ahorrando cada:</H3>
+                <SelectDiv>
 
 
-                    <InputAim type="value" placeholder='valor' />
+
+                    <InputAim type="value" placeholder='' />
+                    <H3>días</H3>
                 </SelectDiv>
 
             </RegisterForm>
@@ -43,20 +44,13 @@ const YourCustomAim = () => {
 const InputAim = styled.input`
 margin-left: 5%;
 `
-const Select = styled.select`
-background-color:#1c1c1e;
-color:white;
-margin-left: 5%;
-border:none;
-width:100px;
-`
 const SelectDiv = styled.div`
 display:flex;
-select{
-    width:70px;
-};
+align-items: center;
 input{
     width:100px;
+    height:30px;
+    
 }
 `
 
