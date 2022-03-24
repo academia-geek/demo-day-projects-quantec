@@ -48,7 +48,7 @@ function App() {
       <Router>
         
         <Routes>
-        <Route exact path="/home" element={
+        <Route exact path="/" element={
             <PublicRoute isAuth={isLoggedIn}>
                 <Home />
             </PublicRoute>

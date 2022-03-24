@@ -14,8 +14,7 @@ export default function LabelBottomNavigation() {
   const location = useLocation();
   console.log(location.pathname);
   if (location.pathname.match("/loggedhome") || location.pathname.match("/loggedprofile") || location.pathname.match("/loggedaims") || location.pathname.match("/loggedacc")) {
-    console.log("match");
-    console.log(setTimeout(document.querySelector(".navbar"), 300));
+    
     setTimeout(() => {
       document.querySelector(".navbar").style.cssText = "height: 70px; position: absolute; bottom: 0; background-color:#f6f5f7"
     }, 100);
