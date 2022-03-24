@@ -3,21 +3,38 @@ import { BlackCards, CustomLink, H2, H3 } from './Welcome'
 import styled from "styled-components"
 import "../styles/blackCards.css"
 import { Link } from 'react-router-dom'
+import { loginFacebook, loginGoogle } from '../redux/actions/loginAction'
+import { useDispatch } from 'react-redux'
 
 const Register = () => {
+    const dispatch = useDispatch();
+
+
+    const handleFacebook = () => {
+        dispatch(loginFacebook())
+    }
+    const handleGoogle = () => {
+        dispatch(loginGoogle())
+    }
     return (
         <BlackCards className='register'>
             <H2 className='H2'>¡Es hora de comenzar tu viaje!</H2>
             <H3>Crea tu cuenta y comienza a transformar tus finanzas</H3>
             <center><RegisterWithContainer>
                 <RegisterWith><img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647535583/proyecto-final/flat-color-icons_google_vbize0.svg" alt="" />
-                    <LoginH2>
+                    <LoginH2
+                        type='button'
+                        onClick={handleGoogle}
+                    >
                         Continuar con Google
                     </LoginH2>
                 </RegisterWith>
                 <RegisterWith>
                     <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647535583/proyecto-final/logos_facebook_jvo9pb.svg" alt="" />
-                    <LoginH2>
+                    <LoginH2
+                        type='button'
+                        onClick={handleFacebook}
+                    >
                         Continuar con Facebook
                     </LoginH2>
                 </RegisterWith>

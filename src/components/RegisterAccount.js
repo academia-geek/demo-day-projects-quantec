@@ -1,55 +1,97 @@
-import React from 'react'
-import { CustomLink } from './Aim'
-import { BlackCards, CustomButtonCards, H2, H3 } from './Welcome'
-import styled from "styled-components"
-import Swal from 'sweetalert2'
-import "../styles/registeraccount.css"
+import React from 'react';
+import { CustomLink } from './Aim';
+import { BlackCards, CustomButtonCards, H2, H3 } from './Welcome';
+import styled from "styled-components";
+import { useDispatch } from 'react-redux';
+import { registroEmailPasswordNombre } from '../redux/actions/registerAction';
+import "../styles/registeraccount.css";
+import { fileUpload } from '../helpers/fileUpLoad';
+import { useFormik } from 'formik';
 
 const RegisterAccount = () => {
+    const dispatch = useDispatch();
+
+    const formik = useFormik({
+        initialValues: {
+            nombre: '',
+            email: '',
+            password: '',
+            photo: ''
+        },
+        onSubmit: (data) => {
+            console.log(data.email);
+        dispatch(registroEmailPasswordNombre(data));
+        }
+    });   
+
+    
+    const handleFileUp = (e) => {
+        const file = e.target.files[0];
+        fileUpload(file)
+            .then(response => {
+                formik.initialValues.url = response
+                console.log(response);
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
+    }
     return (
         <BlackCards className={"registerAccount"}>
             <CustomLink to={"/register"}><img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647530651/proyecto-final/ep_arrow-left_zxewky.svg" alt="" className="back" /></CustomLink>
             <H2>Bienvenido</H2>
             <H3>Completa la siguiente información para poder conocerte y empezar a trabajar en tu plan financiero.</H3>
-            <RegisterForm>
+            <RegisterForm 
+                onSubmit={formik.handleSubmit}
+            >
                 <H3>
                     Prefiero que me llamen:
                     <Name
+                        name='nombre'
                         type="text"
-                        placeholder="Tu nombre" />
+                        placeholder="Tu nombre"
+                        onChange={formik.handleChange}    
+                    />
                 </H3>
                 <H3>
                     Mi correo electrónico es:
                     <Mail
+                        name='email'
                         type="email"
-                        placeholder="Correo electrónico" />
+                        placeholder="Correo electrónico"
+                        onChange={formik.handleChange}
+                    />
                 </H3>
                 <H3>
+                    Mi foto de perfil:
+                    <Mail
+                        name='photo'
+                        type="file"
+                        onChange={handleFileUp}
+                    />
+                </H3>       
+                <H3>
                     Asigna la contraseña para ingresar a tu cuenta de Quantect
-
-
-                    <Mail type="password" placeholder='Contraseña' />
+                    <Mail 
+                        type="password" 
+                        placeholder='Contraseña' 
+                        name='password' 
+                        onChange={formik.handleChange}
+                    />
                 </H3>
-            </RegisterForm>
-
-            <center>
-                <CustomButtonCards className="button" onClick={() => {
-                    Swal.fire({
-                        html: '<br/><br/><h4 >¡Tu cuenta ha sido creada correctamente!<h3><br/><img class="checked" src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647621171/proyecto-final/Group_349_v0ofdt.svg" alt=""/>',
-                        showConfirmButton: false,
-                        timer: 2000,
-                    }).then(function () {
-                        window.location = "/loggedhome";
-                    });
-                }}>
+                <center>
+                <CustomButtonCards className="submit">
                     Guardar
                 </CustomButtonCards>
             </center>
+            </RegisterForm>
+
+            
 
         </BlackCards>
     )
 }
-export const RegisterForm = styled.div`
+export const RegisterForm = styled.form`
 display:flex;
 flex-direction:column;
 
