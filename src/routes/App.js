@@ -81,13 +81,8 @@ function App() {
               <PrivateRoute isAuth={isLoggedIn}>
                 <DashboardRoutes />
               </PrivateRoute> 
-            }/>
-
+            }/>          
           
-          <Route exact path="/plusaim" element={<PlusAim />}></Route>
-          <Route exact path="/yourcustomaim" element={<YourCustomAim />}></Route>
-          <Route exact path="/plusaimtype" element={<PlusAimType />}></Route>         
-          <Route exact path="/addnewaim" element={<AddNewAim />}></Route>
         </Routes>
       </Router>
 
