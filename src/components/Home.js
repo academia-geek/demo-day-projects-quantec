@@ -1,11 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from "styled-components"
-import Footer from './Footer'
 import NavBar from './NavBar'
 import "../styles/home.css"
-import { H3Ask, Options, RegisterWith } from './Register'
-import { CustomLink } from './Welcome'
 const Home = () => {
     return (
         <div className="box">
@@ -13,7 +10,7 @@ const Home = () => {
                 <NavBar />
                 <Line1>
                     <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647471481/proyecto-final/Group_1_r5nm9t.svg" alt="" />
-                    <H3>CON NOSOTROS PUEDES</H3>
+                    <H3>CON QUANTEC PUEDES</H3>
                 </Line1>
                 <center>
                     <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647532695/proyecto-final/undraw_vault_re_s4my_1_vkhyit.svg" alt="" />
@@ -31,7 +28,8 @@ const Home = () => {
 
 
                     </Link>
-                    <Link to={"/login"} style={{ color: "#3C1280" }}>Iniciar sesión</Link>
+                    <p></p>
+                    <LinkLoggin to={"/login"} style={{ color: "#3C1280" }}>Iniciar sesión</LinkLoggin>
                 </center>
 
                 <Line1>
@@ -54,7 +52,7 @@ const Home = () => {
 
 
                 </div>
-                <Footer />
+                <footer><img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647479334/proyecto-final/Footer_qx2qyk.svg" alt="" /></footer>
             </div>
         </div>
     )
@@ -132,4 +130,12 @@ color:white;
 const ImgReg = styled.img`
 margin-bottom:30px;
 width:325px`
+const LinkLoggin = styled(Link)`
+color:#3C1280;
+text-decoration:none;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 24px;`
 export default Home

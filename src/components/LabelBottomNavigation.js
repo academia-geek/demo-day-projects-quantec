@@ -2,18 +2,31 @@ import * as React from 'react';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import "../styles/labelbottomnavbar.css"
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 export default function LabelBottomNavigation() {
   const [value, setValue] = React.useState('recents');
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
+  const location = useLocation();
+  console.log(location.pathname);
+  if (location.pathname.match("/loggedhome") || location.pathname.match("/loggedprofile") || location.pathname.match("/loggedaims") || location.pathname.match("/loggedacc")) {
+    console.log("match");
+    console.log(setTimeout(document.querySelector(".navbar"), 300));
+    setTimeout(() => {
+      document.querySelector(".navbar").style.cssText = "height: 70px; position: absolute; bottom: 0; background-color:#f6f5f7"
+    }, 100);
 
+  } else {
+    setTimeout(() => {
+      document.querySelector(".navbar").style.cssText = "display:none;"
+    }, 100);
+  }
 
 
   return (
-    <BottomNavigation sx={{ width: 375 }} value={value} onChange={handleChange} >
+    <BottomNavigation sx={{ width: 375 }} value={value} onChange={handleChange} style={{ zIndex: "-2" }} className="navbar" >
       <BottomNavigationAction
         component={NavLink}
         to="/loggedhome"
@@ -31,9 +44,9 @@ export default function LabelBottomNavigation() {
       <BottomNavigationAction
         component={NavLink}
         to="/loggedacc"
-        label="Cuentas"
-        value="Cuentas"
-        icon={<img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647726334/proyecto-final/card-outline_mdesrn.svg" alt="" />}
+        label="Tips"
+        value="Tips"
+        icon={<img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648059986/proyecto-final/bombillo_pdz8jp.svg" width="24px" height="24px" alt="" />}
       />
       <BottomNavigationAction
         component={NavLink}

@@ -38,17 +38,20 @@ const Register = () => {
                         Continuar con Facebook
                     </LoginH2>
                 </RegisterWith>
-                <RegisterWith>
+                <Link to={"/registerAcc"}
+                    style={{
+                        textDecoration: "none",
+                        color: "inherit"
+                    }}>
+                    <RegisterWith>
 
-                    <LoginH2>
-                        <Link to={"/registerAcc"}
-                            style={{
-                                textDecoration: "none",
-                                color: "inherit"
-                            }}>
-                            Registrarte con tu correo</Link>
-                    </LoginH2>
-                </RegisterWith>
+                        <LoginH2>
+                            Registrarte con tu correo
+
+                        </LoginH2>
+
+                    </RegisterWith>
+                </Link>
             </RegisterWithContainer></center>
             <HR />
             <Options>
@@ -84,23 +87,29 @@ font-size: 16px;
 line-height: 24px;
 color:#464544;
 margin-bottom:0`
+
 export const HR = styled.hr`
- height: 0px;
+opacity:1;
+ height: 1px;
     border: none;
     border-top: 1px solid white;
-    opacity:1;
     margin:0;
     margin-bottom:10px;
+    color:white;
+    background-color:white;
+    z-index:2;
+    width:100%;
     
 `
 export const Options = styled.div`
 display: flex;
 justify-content: center;
+align-items: center;
 
 `
 export const H3Ask = styled.h3`
 margin:0px;
-margin-right:0;
+margin-right:20px;
 font-style: normal;
 font-weight: 500;
 font-size: 16px;

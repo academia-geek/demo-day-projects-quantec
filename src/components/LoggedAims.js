@@ -3,21 +3,21 @@ import { Link } from 'react-router-dom'
 import { Container, ContainerP, CustomButton, DivAims, H5 } from '../styled/LoggedHome'
 import NewAims from './NewAims'
 
-import SaldoCuentas from './SaldoCuentas'
 
 const LoggedAims = () => {
     return (
         <Container>
-            <SaldoCuentas />
+
             <ContainerP>
-                <H5>Mis cuentas </H5>
+                <H5>Mis objetivos </H5>
                 <center>
-                    <h2>Aun no tienes ninguna cuenta</h2>
+                    <h2>Aun no tienes ningun objetivo</h2>
+                    <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648132063/proyecto-final/Pig_2_ywta35.svg" alt="" />
                     <DivAims>
                         <NewAims />
                     </DivAims>
 
-                    <Link to={"/addnewaim"}><CustomButton className='text-light mt-5'><b>Agregar una cuenta</b></CustomButton>
+                    <Link to={"/addnewaim"}><CustomButton className='text-light mt-5'><b>Agregar un objetivo</b></CustomButton>
                     </Link>
                 </center>
             </ContainerP>

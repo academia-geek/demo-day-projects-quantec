@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useForm } from '../hooks/useForm'
 import { registroEmailPasswordNombre } from '../redux/actions/registerAction'
+import Swal from 'sweetalert2'
+import "../styles/registeraccount.css"
+
 const RegisterAccount = () => {
     const dispatch = useDispatch();
     const [values, handleInputChange, reset] = useForm({
@@ -55,45 +58,46 @@ const RegisterAccount = () => {
                         type="file"
                         onChange={handleInputChange}
                     />
+                </H3>       
+                <H3>
+                    Asigna la contraseña para ingresar a tu cuenta de Quantect
+                    <Mail 
+                        type="password" 
+                        placeholder='Contraseña' 
+                        name='password' 
+                        onChange={handleInputChange}
+                    />
                 </H3>
-                <H3>Asigna la contraseña para ingresar a tu cuenta de Quantect</H3>
-
-                <input 
-                    type="password" 
-                    placeholder='Contraseña' 
-                    name='password' 
-                    onChange={handleInputChange}
-                />
                 <center>
-                    <CustomButtonCards type='submit'>
-                        Continuar
-                    </CustomButtonCards>
-                </center>
-
+                <CustomButtonCards className="button" onClick={() => {
+                    Swal.fire({
+                        html: '<br/><br/><h4 >¡Tu cuenta ha sido creada correctamente!<h3><br/><img class="checked" src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647621171/proyecto-final/Group_349_v0ofdt.svg" alt=""/>',
+                        showConfirmButton: false,
+                        timer: 2000,
+                    }).then(function () {
+                        window.location = "/loggedhome";
+                    });
+                }}>
+                    Guardar
+                </CustomButtonCards>
+            </center>
             </RegisterForm>
 
-            {/* <RegisterForm style={{ marginTop: '-35px' }}>
-                <H3>Asigna la contraseña para ingresar a tu cuenta de Quantect</H3>
+            
 
-                <input type="password" placeholder='Contraseña' name='password' />
-
-            </RegisterForm> */}
-            {/* <Link to={"/terms"} style={{ color: "inherit", textDecoration: "none" }}> */}
-                
-            {/* </Link> */}
         </BlackCards>
     )
 }
 export const RegisterForm = styled.form`
 display:flex;
 flex-direction:column;
-margin-left:8%;
+
 
 
 
 input{
     border:none;
-    margin-bottom:5%;
+    margin-bottom:10px;
     border-bottom:1px  solid gray;
     background-color:#1C1C1E;
     color:rgba(255,255,255,0.8);
@@ -116,7 +120,5 @@ width:160px;
 padding-bottom:0;
 margin-bottom:0;`
 
-const Age = styled.input`
-width:50px`
 const Mail = styled.input``
 export default RegisterAccount

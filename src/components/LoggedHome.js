@@ -1,10 +1,10 @@
 import React from 'react'
 import { Container, ContainerP, H5, Img, P } from '../styled/LoggedHome'
-import SaldoCuentas from './SaldoCuentas'
 const LoggedHome = () => {
+
     return (
-        <Container>
-            <SaldoCuentas />
+        <Container className={"loggedhome"}>
+
             <ContainerP>
                 <H5>Descubre el potencial de tus finanzas </H5>
 
