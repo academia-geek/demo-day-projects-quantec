@@ -52,7 +52,7 @@ const Login = () => {
                         onChange={handleInputChange}
                     />
                     <center>
-                        <CustomButtonCards className="continue">
+                        <CustomButtonCards className="continue" type='submit'>
                             Continuar
                         </CustomButtonCards>
                     </center>

@@ -20,6 +20,7 @@ export const loginGoogle = () => {
         const auth = getAuth();
         signInWithPopup(auth, google)
         .then(({user}) => {
+            console.log(user.displayName);
             dispatch(loginSyn(user.uid, user.displayName))
             console.log(`Bienvenido ${user.displayName}`);
         }).catch(error => {
@@ -33,9 +34,8 @@ export const loginAsyn = (email, password) => {
         const auth = getAuth();
         signInWithEmailAndPassword(auth, email, password)
         .then(({user}) => {
-            dispatch(
-                loginSyn(user.uid, user.displayName)
-            )
+            console.log(user);
+            dispatch(loginSyn(user.uid, user.displayName))
             console.log(`Bienvenido ${user.displayName}`);
         }).catch(error => {
             console.log(error);
@@ -47,7 +47,7 @@ export const loginAsyn = (email, password) => {
 //--------------Login Sincrono-------------
 export const loginSyn = (id, displayname) => {
     return{
-        id: types.login,
+        type: types.login,
         payload: {
             id,
             displayname
@@ -67,6 +67,6 @@ export const logoutAsyn = () => {
 //----------------Logout Sincrono--------------
 export const logoutSyn = () => {
     return {
-        id: types.logout
+        type: types.logout
     }
 }

@@ -7,8 +7,11 @@ import { BlackCards, CustomButtonCards, CustomLink, H2, H3 } from './Welcome'
 const YourCustomAim = () => {
 
     const location = useLocation();
-    const {newAims} = location.state
-    console.log(newAims);
+    const {aim} = location.state
+    console.log(aim);
+
+    
+
     return (
         <BlackCards className="password" >
             <CustomLink to={"/plusaimtype"}><img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647530651/proyecto-final/ep_arrow-left_zxewky.svg" alt="" className="back" /></CustomLink>
