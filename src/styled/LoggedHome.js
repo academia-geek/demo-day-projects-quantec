@@ -5,8 +5,8 @@ export const Container = styled.div`
     /* padding: 30px; */
 `
 export const ContainerP = styled.div`
-    border: 1px solid #F6F5F7;
-    background-color: #F6F5F7;
+    border: 1px solid white;
+    background-color: white;
        height:630px;
   display: table-cell;
   vertical-align: middle;
