@@ -38,6 +38,7 @@ export const loginAsyn = (email, password) => {
             )
             console.log(`Bienvenido ${user.displayName}`);
         }).catch(error => {
+            console.log(error);
             console.log('El usuario no existe');
             
         })
@@ -56,13 +57,11 @@ export const loginSyn = (id, displayname) => {
 //---------------Logout Asincrono-------------
 export const logoutAsyn = () => {
     return (dispatch) => {
-        const auth = getAuth();
+        const auth = getAuth()
         signOut(auth)
         .then(user => {
             dispatch(logoutSyn())
-        }).catch(error => {
-            console.log(error);
-        })
+        }).catch(error => console.log(error))
     }
 }
 //----------------Logout Sincrono--------------
