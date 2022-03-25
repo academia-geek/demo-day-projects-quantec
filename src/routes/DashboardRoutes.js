@@ -13,20 +13,20 @@ import YourCustomAim from '../components/YourCustomAim'
 const DashboardRoutes = () => {
   return (
     <>
-        <div>
+      <div>
         <LabelBottomNavigation />
-            <Routes>
-                <Route exact path="/loggedhome" element={<LoggedHome />}/>
-                <Route exact path="/loggedprofile" element={<LoggedProfile />}/>
-                <Route exact path="/loggedacc" element={<LoggedAccounts />}/> 
-                <Route exact path='/loggedaims' element={<LoggedAims/>}/>               
-                <Route exact path="/plusaim" element={<PlusAim />}/>
-                <Route exact path="/yourcustomaim" element={<YourCustomAim />}/>
-                <Route exact path="/plusaimtype" element={<PlusAimType />}/>         
-                <Route exact path="/addnewaim" element={<AddNewAim />}/>
-                <Route path='*' element={<Navigate to='/loggedhome' />} />
-            </Routes>
-        </div>
+        <Routes>
+          <Route exact path="/loggedhome" element={<LoggedHome />} />
+          <Route exact path="/loggedprofile" element={<LoggedProfile />} />
+          <Route exact path="/loggedacc" element={<LoggedAccounts />} />
+          <Route exact path='/loggedaims' element={<LoggedAims />} />
+          <Route exact path="/plusaim" element={<PlusAim />} />
+          <Route exact path="/yourcustomaim" element={<YourCustomAim />} />
+          <Route exact path="/plusaimtype" element={<PlusAimType />} />
+          <Route exact path="/addnewaim" element={<AddNewAim />} />
+          <Route path='*' element={<Navigate to='/loggedhome' />} />
+        </Routes>
+      </div>
     </>
   )
 }

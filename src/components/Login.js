@@ -5,7 +5,7 @@ import { BlackCards, CustomButtonCards, CustomLink, H2 } from './Welcome'
 import "../styles/login.css"
 import { useDispatch } from 'react-redux'
 import { loginAsyn, loginFacebook, loginGoogle } from '../redux/actions/loginAction'
-import {useForm} from '../hooks/useForm'
+import { useForm } from '../hooks/useForm'
 import styled from "styled-components"
 
 
@@ -17,7 +17,7 @@ const Login = () => {
         password: ''
     })
 
-    const {email, password} = values; 
+    const { email, password } = values;
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -33,36 +33,38 @@ const Login = () => {
     }
     return (
         <BlackCards className="login">
-            <H2 className="welcome">Bienvenido de nuevo</H2>            
-            <center>                 
-            <RegisterForm className="form"
-                onSubmit={handleSubmit}    
-            >
-                <InputLogin 
-                    type="email" 
-                    placeholder='correo electrónico'
-                    name='email' 
-                    onChange={handleInputChange}
-                />
+            <H2 className="welcome">Bienvenido de nuevo</H2>
+            <center>
+                <RegisterForm className="form"
+                    onSubmit={handleSubmit}
+                >
+                    <InputLogin
+                        type="email"
+                        placeholder='correo electrónico'
+                        name='email'
+                        onChange={handleInputChange}
+                    />
 
-                <InputLogin 
-                    type="password" 
-                    placeholder="contraseña" 
-                    name='password'
-                    onChange={handleInputChange}
-                />
-                <CustomButtonCards className="continue">
-                    Continuar
-                </CustomButtonCards>
+                    <InputLogin
+                        type="password"
+                        placeholder="contraseña"
+                        name='password'
+                        onChange={handleInputChange}
+                    />
+                    <center>
+                        <CustomButtonCards className="continue">
+                            Continuar
+                        </CustomButtonCards>
+                    </center>
 
-            </RegisterForm>
+                </RegisterForm>
             </center>
             <center>
-                
+
                 <RegisterWith
                     type='button'
                     onClick={handleGoogle}
-                >                    
+                >
                     <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647535583/proyecto-final/flat-color-icons_google_vbize0.svg" alt="" />
                     <LoginH2>
                         Continuar con Google
