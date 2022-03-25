@@ -7,11 +7,11 @@ import { Contenedor, ImageProfile, Nombre } from '../styled/LoggedProfileStyled'
 
 const LoggedProfile = () => {
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const handleLogout = () => {
         dispatch(logoutAsyn())
-        navigate('/home')
+        // navigate('/home')
     }
     return (
         <Contenedor>
