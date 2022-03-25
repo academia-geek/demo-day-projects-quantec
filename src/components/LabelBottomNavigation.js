@@ -14,9 +14,9 @@ export default function LabelBottomNavigation() {
   const location = useLocation();
   console.log(location.pathname);
   if (location.pathname.match("/loggedhome") || location.pathname.match("/loggedprofile") || location.pathname.match("/loggedaims") || location.pathname.match("/loggedacc")) {
-    
+
     setTimeout(() => {
-      document.querySelector(".navbar").style.cssText = "height: 70px; position: absolute; bottom: 0; background-color:#f6f5f7"
+      document.querySelector(".navbar").style.cssText = "height: 70px; position: absolute; bottom: 0; background-color:white"
     }, 100);
 
   } else {
@@ -47,7 +47,7 @@ export default function LabelBottomNavigation() {
         to="/loggedacc"
         label="Tips"
         value="Tips"
-        icon={<img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648059986/proyecto-final/bombillo_pdz8jp.svg" width="24px" height="24px" alt="" />}
+        icon={<img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648217880/proyecto-final/Vector_vewn8a.svg" width="24px" height="24px" alt="" />}
       />
       <BottomNavigationAction
         component={NavLink}
