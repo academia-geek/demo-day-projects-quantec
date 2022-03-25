@@ -1,14 +1,43 @@
-import { addDoc, collection } from "firebase/firestore"
+import { async } from "@firebase/util"
+import { addDoc, collection, deleteDoc, doc, getDocs } from "firebase/firestore"
 import { typesAims } from "../types/types"
 
 
 //-------------------Asincrono-----------------
-export const addAimsAsyn = () => {
+export const addAimsAsyn = (newAims) => {
     return (dispatch) => {
-        addDoc(collection(db, 'AimsQuantec'))
+        addDoc(collection(db, 'AimsQuantec'), newAims)
+        .then(resp => {
+            dispatch(addAimsSyn(newAims))
+            dispatch(listAimsAsyn())
+        }).catch(error => {
+            console.log(error);
+        })
     }
 }
-
+export const listAimsAsyn = () => {
+    return async(dispatch) => {
+        const aimsCollection = await getDocs(collection(db, 'AimsQuantec'))
+        const aims = []
+        aimsCollection.forEach((doc) => {
+            aims.push({
+                ...doc.data()
+            })
+        })
+        dispatch(listAimsSyn(aims))
+    }
+}
+export const deleteAimsAsyn = (aim) => {
+    return async(dispatch) => {
+        const getAims = collection(db, 'AimsQuantec');
+        const q = query(getAims, where('aim', '==', aim))
+        const datos = await getDocs(q);
+        datos.forEach((docu) => {
+            deleteDoc(doc(db, 'AimsQuantec', docu.id));
+        })
+        dispatch(deleteAimsSyn(aim))
+    }
+}
 //-------------------Sincorono------------------
 export const addAimsSyn = (aims) => {
     return {
