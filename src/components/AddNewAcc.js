@@ -1,5 +1,5 @@
 import React from 'react'
-import { BlackCards, CustomButtonCards, H2, H3 } from './Welcome'
+import { BlackCards, H2, H3 } from './Welcome'
 import styled from "styled-components"
 import { RegisterForm } from './RegisterAccount'
 import "../styles/addnewacc.css"

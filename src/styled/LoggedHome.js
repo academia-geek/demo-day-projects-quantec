@@ -7,7 +7,7 @@ export const Container = styled.div`
 export const ContainerP = styled.div`
     border: 1px solid white;
     background-color: white;
-       height:630px;
+    height:672px;
   display: table-cell;
   vertical-align: middle;
        `

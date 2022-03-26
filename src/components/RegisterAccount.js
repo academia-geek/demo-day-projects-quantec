@@ -20,11 +20,11 @@ const RegisterAccount = () => {
         },
         onSubmit: (data) => {
             console.log(data.email);
-        dispatch(registroEmailPasswordNombre(data));
+            dispatch(registroEmailPasswordNombre(data));
         }
-    });   
+    });
 
-    
+
     const handleFileUp = (e) => {
         const file = e.target.files[0];
         fileUpload(file)
@@ -41,7 +41,7 @@ const RegisterAccount = () => {
             <CustomLink to={"/register"}><img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647530651/proyecto-final/ep_arrow-left_zxewky.svg" alt="" className="back" /></CustomLink>
             <H2>Bienvenido</H2>
             <H3>Completa la siguiente información para poder conocerte y empezar a trabajar en tu plan financiero.</H3>
-            <RegisterForm 
+            <RegisterForm
                 onSubmit={formik.handleSubmit}
             >
                 <H3>
@@ -50,7 +50,7 @@ const RegisterAccount = () => {
                         name='nombre'
                         type="text"
                         placeholder="Tu nombre"
-                        onChange={formik.handleChange}    
+                        onChange={formik.handleChange}
                     />
                 </H3>
                 <H3>
@@ -69,24 +69,24 @@ const RegisterAccount = () => {
                         type="file"
                         onChange={handleFileUp}
                     />
-                </H3>       
+                </H3>
                 <H3>
                     Asigna la contraseña para ingresar a tu cuenta de Quantect
-                    <Mail 
-                        type="password" 
-                        placeholder='Contraseña' 
-                        name='password' 
+                    <Mail
+                        type="password"
+                        placeholder='Contraseña'
+                        name='password'
                         onChange={formik.handleChange}
                     />
                 </H3>
                 <center>
-                <CustomButtonCards className="submit">
-                    Guardar
-                </CustomButtonCards>
-            </center>
+                    <CustomButtonCards className="submit">
+                        Guardar
+                    </CustomButtonCards>
+                </center>
             </RegisterForm>
 
-            
+
 
         </BlackCards>
     )
@@ -123,5 +123,6 @@ width:160px;
 padding-bottom:0;
 margin-bottom:0;`
 
-const Mail = styled.input``
+const Mail = styled.input`
+color:red`
 export default RegisterAccount
