@@ -1,5 +1,6 @@
 import { async } from "@firebase/util"
-import { addDoc, collection, deleteDoc, doc, getDocs } from "firebase/firestore"
+import { addDoc, collection, deleteDoc, doc, getDocs, query, where } from "firebase/firestore"
+import { db } from "../../firebase/firebaseConfig"
 import { typesAims } from "../types/types"
 
 

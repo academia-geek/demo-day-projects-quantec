@@ -1,21 +1,56 @@
-import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import styled from "styled-components"
+import { addAimsAsyn } from '../redux/actions/aimsAction'
 import { RegisterForm } from './RegisterAccount'
 import { BlackCards, CustomButtonCards, CustomLink, H2, H3 } from './Welcome'
 
 const YourCustomAim = () => {
 
     const location = useLocation();
-    const {aim} = location.state
-    console.log(aim);
-
+    const {aims} = location.state
     
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const [newAims, setNewAims] = useState({
+        aim: '',
+        date1: '',
+        date2: '',
+        quantity: '',
+        time: ''
+    })
+    useEffect(() => {
+      newAimsAsingna()
+    }, [])
+    
+
+    // const {aim, date1, date2, quantity, time} = newAims;
+    const newAimsAsingna = () => {
+        setNewAims({aim: aims})
+    }
+    console.log(newAims);
+    const handleInputChange = ({target}) => {
+        setNewAims({
+            
+            ...newAims,
+            [target.name]: target.value
+        })
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(newAims);
+        dispatch(addAimsAsyn(newAims));
+        navigate('/loggedaims')
+    }
 
     return (
         <BlackCards className="password" >
             <CustomLink to={"/plusaimtype"}><img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647530651/proyecto-final/ep_arrow-left_zxewky.svg" alt="" className="back" /></CustomLink>
-            <RegisterForm style={{ marginTop: '35px', marginLeft: "0" }}>
+            <RegisterForm style={{ marginTop: '35px', marginLeft: "0" }}
+                onSubmit={handleSubmit}
+            >
                 <H2 >Personaliza tu objetivo</H2>
 
                 <H3>Mi objetivo va desde:</H3>
@@ -24,12 +59,14 @@ const YourCustomAim = () => {
                     type="date" 
                     placeholder='Fecha inicial'
                     name='date1'
+                    onChange={handleInputChange}
                 />
                 <H3>Hasta:</H3>
                 <InputAim 
                     type="date" 
                     placeholder='Fecha final'
                     name='date2'
+                    onChange={handleInputChange}
                 />
                 <SelectDiv>
                     <H3>Quiero ahorrar:</H3>
@@ -38,6 +75,7 @@ const YourCustomAim = () => {
                         type="value" 
                         placeholder='' 
                         name='quantity'
+                        onChange={handleInputChange}
                     />
                 </SelectDiv>
                 <H3>Y quiero alcanzarlo ahorrando cada:</H3>
@@ -46,18 +84,17 @@ const YourCustomAim = () => {
                         type="value" 
                         placeholder='' 
                         name='time'
+                        onChange={handleInputChange}
                     />
                     <H3>días</H3>
                 </SelectDiv>
-
-            </RegisterForm>
-            <Link to={"/loggedaims"} style={{ color: "inherit", textDecoration: "none" }}>
                 <center>
-                    <CustomButtonCards>
+                    <CustomButtonCards type='submit'>
                         Continuar
                     </CustomButtonCards>
                 </center>
-            </Link>
+            </RegisterForm>
+            
         </BlackCards>
     )
 }

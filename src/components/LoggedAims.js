@@ -1,18 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Container, ContainerP, CustomButton, DivAims, H5 } from '../styled/LoggedHome'
+import { Container, ContainerP, CustomButton, DivAims, DivInfoAims, H5 } from '../styled/LoggedHome'
 import NewAims from './NewAims'
 
 
 const LoggedAims = () => {
+
+    const [show, setShow] = useState(false);
+    console.log(show);
+    useEffect(() => {
+      
+    }, [])
+    
+
     return (
         <Container>
 
             <ContainerP>
                 <H5>Mis objetivos </H5>
                 <center>
-                    <h2>Aun no tienes ningun objetivo</h2>
-                    <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648132063/proyecto-final/Pig_2_ywta35.svg" alt="" />
+                    <DivInfoAims>
+                        <h2>Aun no tienes ningun objetivo</h2>
+                        <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648132063/proyecto-final/Pig_2_ywta35.svg" alt="" />
+                    </DivInfoAims>
                     <DivAims>
                         <NewAims />
                     </DivAims>
