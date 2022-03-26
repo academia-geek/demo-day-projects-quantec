@@ -14,9 +14,12 @@ const LoggedAccounts = () => {
                 </CardDesc>
             </header>
             <Cards>
-                <img src="" alt="" width="96" height="67" />
+                <CardsImg
+                    src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648310142/proyecto-final/Group_2158_tx8hgm.svg"
+                    alt="" />
                 <CardText>8 maneras sencillas de
-                    ahorrar dinero</CardText>
+                    ahorrar dinero
+                </CardText>
                 <hr />
 
             </Cards>
@@ -60,6 +63,12 @@ letter-spacing: -0.3px;
 
 color: #8D8A8A;
 
+`
+const CardsImg = styled.img`
+width:96px;
+height:67px;
+border-radius:10px;
+margin-right:13px;
 `
 const CardText = styled.h3`
 margin:0;
