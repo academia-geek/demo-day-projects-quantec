@@ -17,7 +17,7 @@ const LoggedAims = () => {
                         <NewAims />
                     </DivAims>
 
-                    <Link to={"/addnewaim"}><CustomButton className='text-light mt-5'><b>Agregar un objetivo</b></CustomButton>
+                    <Link to={"/plusaimtype"}><CustomButton className='text-light mt-5'><b>Agregar un objetivo</b></CustomButton>
                     </Link>
                 </center>
             </ContainerP>
