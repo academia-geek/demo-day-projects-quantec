@@ -21,7 +21,7 @@ line-height: 22px;
 letter-spacing: -0.3px;
 
 color: #757575;
-    margin:37px 25px 60px 31px
+    margin:37px 25px 60px 31px;
 
 `
 export const P = styled.p`
@@ -58,8 +58,10 @@ export const Crear = styled(Link)`
     margin: 25% 25% 0 30%;
 `
 export const DivAims = styled.div`
-    display: none;
+    /* display: none; */
+
+
 `
-export const DivAccount = styled.div`
-    display: none;
+export const DivInfoAims = styled.div`
+    
 `
