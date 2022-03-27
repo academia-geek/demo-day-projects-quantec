@@ -9,6 +9,7 @@ const LoggedProfile = () => {
 
     const handleLogout = () => {
         dispatch(logoutAsyn())
+
     }
     return (
         <Contenedor>

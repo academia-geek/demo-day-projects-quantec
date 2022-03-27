@@ -8,7 +8,6 @@ import { loginAsyn, loginFacebook, loginGoogle } from '../redux/actions/loginAct
 import { useForm } from '../hooks/useForm'
 import styled from "styled-components"
 
-
 const Login = () => {
     const dispatch = useDispatch();
 
