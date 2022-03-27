@@ -54,8 +54,9 @@ export const Meta = styled.span`
     margin-left: 52%;
 `
 export const Progress = styled(ProgressBar)`
-    background: linear-gradient(90deg, #31D3FB 0%, #3C1280 100%);
-    border-radius: 20px 20px 20px 20px;
+   
+border-radius: 20px;
+    
     width: 92%;
     height: 10px;
     margin: 1% 2% 2% 3%;

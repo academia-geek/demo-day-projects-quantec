@@ -6,12 +6,8 @@ import styled from "styled-components"
 
 const LoggedAims = () => {
 
-    const [show, setShow] = useState(false);
-    console.log(show);
-    useEffect(() => {
-      
-    }, [])
-    
+
+
 
     return (
         <Container>
