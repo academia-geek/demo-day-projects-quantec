@@ -8,8 +8,6 @@ export const ContainerP = styled.div`
     
     background-color: white;
     height:672px;
-  display: table-cell;
-  vertical-align: middle;
        `
 export const H5 = styled.h5`
     
@@ -21,7 +19,7 @@ line-height: 22px;
 letter-spacing: -0.3px;
 
 color: #757575;
-    margin:37px 25px 60px 31px;
+    margin:37px 25px 32px 31px;
 
 `
 export const P = styled.p`
@@ -33,8 +31,6 @@ font-size: 14px;
 line-height: 24px;
 margin-left:24px;
 margin-right:24px;
-
-
 /* or 171% */
 letter-spacing: -0.3px;
 `
@@ -63,5 +59,6 @@ export const DivAims = styled.div`
 
 `
 export const DivInfoAims = styled.div`
-    
+   margin-bottom:10px;
 `
+export const DivAccount = styled.div``
