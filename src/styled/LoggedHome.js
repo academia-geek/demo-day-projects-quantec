@@ -33,8 +33,6 @@ font-size: 14px;
 line-height: 24px;
 margin-left:24px;
 margin-right:24px;
-
-
 /* or 171% */
 letter-spacing: -0.3px;
 `
@@ -63,5 +61,6 @@ export const DivAims = styled.div`
 
 `
 export const DivInfoAims = styled.div`
-    
+    /* display: none; */
 `
+export const DivAccount = styled.div``
