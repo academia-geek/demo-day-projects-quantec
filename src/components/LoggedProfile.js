@@ -5,7 +5,7 @@ import { Contenedor, ImageProfile, Nombre } from '../styled/LoggedProfileStyled'
 import styled from 'styled-components'
 import "../styles/logged.css"
 const LoggedProfile = () => {
-    const dispatch = useDispatch();
+    const dispatch = useDispatch();    
 
     const handleLogout = () => {
         dispatch(logoutAsyn())

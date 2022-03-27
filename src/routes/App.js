@@ -14,6 +14,7 @@ import { Spinner } from "react-bootstrap";
 import PublicRoute from "./PublicRoute";
 import PrivateRoute from "./PrivateRoute";
 import DashboardRoutes from "./DashboardRoutes";
+import LabelBottomNavigation from "../components/LabelBottomNavigation";
 
 
 function App() {
@@ -46,7 +47,7 @@ function App() {
     <Document className="App">
 
       <Router>
-        
+      <LabelBottomNavigation />
         <Routes>
         <Route exact path="/" element={
             <PublicRoute isAuth={isLoggedIn}>

@@ -7,6 +7,11 @@ export const typesAims = {
     add: 'addAims', 
     list: 'listAims',
     edit: 'editAims',
-    delete: 'deleteAims',
-    search: 'searchAims'
+    delete: 'deleteAims'
+}
+export const typesUser = {
+    add: 'addUser',
+    list: 'listUser',
+    edit: 'editUser',
+    delete: 'deleteUser'
 }
