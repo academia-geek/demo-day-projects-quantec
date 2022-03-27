@@ -1,17 +1,14 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
 import { logoutAsyn } from '../redux/actions/loginAction'
 import { Contenedor, ImageProfile, Nombre } from '../styled/LoggedProfileStyled'
 import styled from 'styled-components'
 import "../styles/logged.css"
 const LoggedProfile = () => {
-    const dispatch = useDispatch();
-    // const navigate = useNavigate();
+    const dispatch = useDispatch();    
 
     const handleLogout = () => {
         dispatch(logoutAsyn())
-        // navigate('/home')
     }
     return (
         <Contenedor>

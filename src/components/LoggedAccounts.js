@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, ContainerP, CustomButton, DivAccount, H5 } from '../styled/LoggedHome'
+import { Container, ContainerP, CustomButton, H5 } from '../styled/LoggedHome'
 
 
 const LoggedAccounts = () => {
@@ -9,9 +9,7 @@ const LoggedAccounts = () => {
                 <H5>Mis cuentas </H5>
                 <center>
                     <h2>Aun no tienes ninguna cuenta</h2>
-                    <DivAccount>
-
-                    </DivAccount>
+                    
 
                     <CustomButton className='text-light mt-5'><b>Agregar una cuenta</b></CustomButton>
                 </center>
