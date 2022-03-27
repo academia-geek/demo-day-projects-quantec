@@ -46,7 +46,7 @@ const LoggedHome = () => {
                 </AimsHome>
 
                 <AimsTitle>
-                    <H5Aims>Tips:</H5Aims>
+                    <H5Aims>Tips</H5Aims>
                     <Link to={"/loggedaims"} style={{ textDecoration: "none" }}> <VerMasH6>Ver más</VerMasH6></Link>
 
                 </AimsTitle>
@@ -112,6 +112,7 @@ margin-top:32px;
 
 const HomeImg = styled.img`
 margin-left:50%;
+margin-top:10%;
 
 `
 const H4Home = styled.h4`
@@ -189,6 +190,7 @@ box-shadow:0px 0px 4px rgba(0, 0, 0, 0.25);
 border-radius: 8px;
 margin:0px 25px;
 align-items:center;
+
 `
 
 const Cards = styled.div`
