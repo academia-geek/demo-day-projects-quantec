@@ -1,13 +1,19 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { listAimsAsyn } from '../redux/actions/aimsAction';
 import { Ahorro, Aims, ContainerAims, DivInfo, Final, H3, Inicial, Meta, Progress, VerMas } from '../styled/NewAimsStyled';
 
 const NewAims = () => {
 
     const {aims} = useSelector(store => store.aims)
     console.log(aims);
+    const dispatch = useDispatch();
     const now = 20;
 
+    useEffect(() => {
+      dispatch(listAimsAsyn())
+    }, [dispatch])
+    
     return (
         <div>
             <ContainerAims>
