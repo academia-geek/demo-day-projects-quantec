@@ -7,6 +7,7 @@ import { registroEmailPasswordNombre } from '../redux/actions/registerAction';
 import "../styles/registeraccount.css";
 import { fileUpload } from '../helpers/fileUpLoad';
 import { useFormik } from 'formik';
+import { addUserAsyn } from '../redux/actions/userAction';
 
 const RegisterAccount = () => {
     const dispatch = useDispatch();
@@ -20,7 +21,9 @@ const RegisterAccount = () => {
         },
         onSubmit: (data) => {
             console.log(data.email);
-            dispatch(registroEmailPasswordNombre(data));
+
+        dispatch(registroEmailPasswordNombre(data));
+        dispatch(addUserAsyn(data));
         }
     });
 

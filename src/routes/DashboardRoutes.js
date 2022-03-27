@@ -13,7 +13,7 @@ const DashboardRoutes = () => {
   return (
     <>
       <div>
-        <LabelBottomNavigation />
+        
         <Routes>
           <Route exact path="/loggedhome" element={<LoggedHome />} />
           <Route exact path="/loggedprofile" element={<LoggedProfile />} />

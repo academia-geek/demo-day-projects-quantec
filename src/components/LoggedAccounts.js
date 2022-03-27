@@ -24,6 +24,7 @@ const LoggedAccounts = () => {
 
             </Cards>
         </Tips>
+
     )
 }
 const Tips = styled.div`
