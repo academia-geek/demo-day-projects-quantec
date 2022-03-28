@@ -19,6 +19,7 @@ const DashboardRoutes = () => {
           <Route exact path='/loggedaims' element={<LoggedAims />} />
           <Route exact path="/yourcustomaim" element={<YourCustomAim />} />
           <Route exact path="/plusaimtype" element={<PlusAimType />} />
+
           <Route path='*' element={<Navigate to='/loggedhome' />} />
         </Routes>
       </div>
