@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Container, ContainerP, CustomButton, DivAims, DivInfoAims, H5 } from '../styled/LoggedHome'
+import { Container, ContainerP, CustomButton, DivInfoAims, H5 } from '../styled/LoggedHome'
 import InfoAimsNone from './InfoAimsNone'
 import NewAims from './NewAims'
 import styled from "styled-components"

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, ContainerP, CustomButton } from '../styled/LoggedHome'
+import { Container, ContainerP } from '../styled/LoggedHome'
 import styled from "styled-components"
 import { Link } from 'react-router-dom'
 const LoggedHome = () => {
@@ -46,7 +46,7 @@ const LoggedHome = () => {
 
                 <AimsTitle>
                     <H5Aims>Tips</H5Aims>
-                    <Link to={"/loggedaims"} style={{ textDecoration: "none" }}> <VerMasH6>Ver más</VerMasH6></Link>
+                    <Link to={"/loggedacc"} style={{ textDecoration: "none" }}> <VerMasH6>Ver más</VerMasH6></Link>
 
                 </AimsTitle>
                 <Cards>
