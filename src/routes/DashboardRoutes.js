@@ -1,6 +1,5 @@
 import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
-import LabelBottomNavigation from '../components/LabelBottomNavigation'
 import LoggedAccounts from '../components/LoggedAccounts'
 import LoggedAims from '../components/LoggedAims'
 import LoggedHome from '../components/LoggedHome'
@@ -13,7 +12,7 @@ const DashboardRoutes = () => {
   return (
     <>
       <div>
-        
+
         <Routes>
           <Route exact path="/loggedhome" element={<LoggedHome />} />
           <Route exact path="/loggedprofile" element={<LoggedProfile />} />
