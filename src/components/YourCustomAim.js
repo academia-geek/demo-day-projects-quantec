@@ -8,9 +8,9 @@ import { BlackCards, CustomButtonCards, CustomLink, H2, H3 } from './Welcome'
 
 const YourCustomAim = () => {
 
-    const location = useLocation();
+    const location = useLocation();    
     const {aims} = location.state
-    
+    console.log(aims);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 

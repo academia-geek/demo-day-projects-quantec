@@ -15,3 +15,6 @@ export const typesUser = {
     edit: 'editUser',
     delete: 'deleteUser'
 }
+export const typesTips = {
+    list: 'listTips'
+}

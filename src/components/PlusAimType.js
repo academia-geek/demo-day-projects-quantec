@@ -15,7 +15,7 @@ const PlusAimType = () => {
                 <H4>Para comenzar selecciona una opción:</H4>
             </AimContainer>
             <center>
-                <CustomLink to={"/yourcustomaim"} state={{aims: 'Mi casa'}}>
+                <CustomLink to={"/yourcustomaim"} state={{aims: 'Mi casa'}}>                    
                     <AimType className="AimType">
                         <ImgPlusAimType src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647955866/proyecto-final/home_af9yjy.svg" alt="" height={38} width={60} />
                         <H3>Mi casa</H3>

@@ -10,6 +10,7 @@ export const ContainerAims = styled.div`
     border-radius: 8px;
     /* margin: 10%;  */
     padding-bottom: 10px;
+    
 `
 export const DivInfo = styled.div`
     display: flexbox;

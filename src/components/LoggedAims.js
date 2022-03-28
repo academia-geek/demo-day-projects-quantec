@@ -9,9 +9,6 @@ const LoggedAims = () => {
 
     const [show, setShow] = useState(true);
     console.log(show);
-    useEffect(() => {
-      
-    }, [])
     
 
     return (

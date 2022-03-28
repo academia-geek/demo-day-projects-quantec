@@ -61,6 +61,6 @@ export const DivAims = styled.div`
 
 `
 export const DivInfoAims = styled.div`
-    /* display: none; */
+    
 `
 export const DivAccount = styled.div``
