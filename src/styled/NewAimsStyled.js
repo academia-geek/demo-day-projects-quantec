@@ -9,7 +9,6 @@ width:327px;
     box-sizing: border-box;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
-    margin-left:6%;
     padding-bottom: 10px;
 `
 export const DivInfo = styled.div`

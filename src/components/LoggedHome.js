@@ -2,7 +2,6 @@ import React from 'react'
 import { Container, ContainerP, CustomButton } from '../styled/LoggedHome'
 import styled from "styled-components"
 import { Link } from 'react-router-dom'
-import { Carousel } from 'react-bootstrap'
 const LoggedHome = () => {
 
     return (

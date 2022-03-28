@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
-    /* padding: 30px; */
+    background-color:white;
 `
 export const ContainerP = styled.div`
     
