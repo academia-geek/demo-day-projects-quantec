@@ -2,14 +2,12 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
-    /* padding: 30px; */
+    background-color:white;
 `
 export const ContainerP = styled.div`
-    border: 1px solid white;
+    
     background-color: white;
     height:672px;
-  display: table-cell;
-  vertical-align: middle;
        `
 export const H5 = styled.h5`
     
@@ -21,7 +19,7 @@ line-height: 22px;
 letter-spacing: -0.3px;
 
 color: #757575;
-    margin:37px 25px 60px 31px;
+    margin:37px 25px 32px 31px;
 
 `
 export const P = styled.p`
@@ -61,6 +59,8 @@ export const DivAims = styled.div`
 
 `
 export const DivInfoAims = styled.div`
-    
+
+   margin-bottom:10px;
+
 `
 export const DivAccount = styled.div``

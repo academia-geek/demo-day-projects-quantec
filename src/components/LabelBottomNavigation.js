@@ -16,7 +16,7 @@ export default function LabelBottomNavigation() {
   if (location.pathname.match("/loggedhome") || location.pathname.match("/loggedprofile") || location.pathname.match("/loggedaims") || location.pathname.match("/loggedacc")) {
 
     setTimeout(() => {
-      document.querySelector(".navbar").style.cssText = "height: 70px; position: absolute; bottom: 0; background-color:white"
+      document.querySelector(".navbar").style.cssText = "height: 70px; position: fixed  ; bottom: 0; background-color:white; z-index:10;"
     }, 100);
 
   } else {
@@ -27,7 +27,7 @@ export default function LabelBottomNavigation() {
 
 
   return (
-    <BottomNavigation sx={{ width: 375 }} value={value} onChange={handleChange} style={{ zIndex: "-2" }} className="navbar" >
+    <BottomNavigation sx={{ width: 375 }} value={value} onChange={handleChange} className="navbar" >
       <BottomNavigationAction
         component={NavLink}
         to="/loggedhome"

@@ -1,11 +1,9 @@
 import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
-import LabelBottomNavigation from '../components/LabelBottomNavigation'
 import LoggedAccounts from '../components/LoggedAccounts'
 import LoggedAims from '../components/LoggedAims'
 import LoggedHome from '../components/LoggedHome'
 import LoggedProfile from '../components/LoggedProfile'
-import OpenedTips from '../components/OpenedTips'
 import PlusAimType from '../components/PlusAimType'
 import VerMas from '../components/VerMas'
 import YourCustomAim from '../components/YourCustomAim'
@@ -14,7 +12,7 @@ const DashboardRoutes = () => {
   return (
     <>
       <div>
-        
+
         <Routes>
           <Route exact path="/loggedhome" element={<LoggedHome />} />
           <Route exact path="/loggedprofile" element={<LoggedProfile />} />
@@ -22,8 +20,9 @@ const DashboardRoutes = () => {
           <Route exact path='/loggedaims' element={<LoggedAims />} />
           <Route exact path="/yourcustomaim" element={<YourCustomAim />} />
           <Route exact path="/plusaimtype" element={<PlusAimType />} />
-          <Route exact path="/openedtips" element={<OpenedTips />} />
+
           <Route exact path='/vermas' element={<VerMas/>} />
+
           <Route path='*' element={<Navigate to='/loggedhome' />} />
         </Routes>
       </div>

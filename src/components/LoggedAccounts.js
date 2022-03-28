@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from "styled-components"
-
+import { tips } from '../data/tips';
 const LoggedAccounts = () => {
+    console.log(tips);
     return (
 
         <Tips>
@@ -13,16 +14,25 @@ const LoggedAccounts = () => {
                     Alcanza todo tu potencial para ahorrar con ayuda de nuestros tips que estaremos publicando semanalmente.
                 </CardDesc>
             </header>
-            <Cards>
-                <CardsImg
-                    src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648310142/proyecto-final/Group_2158_tx8hgm.svg"
-                    alt="" />
-                <CardText>8 maneras sencillas de
-                    ahorrar dinero
-                </CardText>
-                <hr />
 
-            </Cards>
+
+            {
+                tips.map((t, index) => (
+                    <Cards key={index}>
+                        <CardContainer>
+                            <CardsImg
+                                src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648310142/proyecto-final/Group_2158_tx8hgm.svg"
+                                alt="" />
+                            <CardText>{t.titulo}</CardText>
+                        </CardContainer>
+                        <hr />
+                    </Cards>
+
+                ))
+            }
+
+
+
         </Tips>
 
     )
@@ -36,8 +46,8 @@ align-content:center;
 `
 
 const Cards = styled.div`
-display:flex;
-align-items:center;`
+
+`
 const CardTitle = styled.h3`
 margin:0;
 font-family: 'Montserrat';
@@ -83,6 +93,10 @@ line-height: 16px;
 
 color: #757575;
 
+`
+const CardContainer = styled.div`
+display: flex;
+align-items: center;
 `
 
 export default LoggedAccounts

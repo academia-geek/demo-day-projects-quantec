@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from "styled-components"
 import NavBar from './NavBar'
-import "../styles/home.css"
 const Home = () => {
     return (
         <div className="box">

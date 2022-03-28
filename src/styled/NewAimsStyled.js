@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const ContainerAims = styled.div`
+width:327px;
     background-color: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
-    /* margin: 10%;  */
     padding-bottom: 10px;
     
 `
@@ -55,8 +55,9 @@ export const Meta = styled.span`
     margin-left: 52%;
 `
 export const Progress = styled(ProgressBar)`
-    background: linear-gradient(90deg, #31D3FB 0%, #3C1280 100%);
-    border-radius: 20px 20px 20px 20px;
+   
+border-radius: 20px;
+    
     width: 92%;
     height: 10px;
     margin: 1% 2% 2% 3%;
