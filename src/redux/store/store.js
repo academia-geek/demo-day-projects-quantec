@@ -3,7 +3,6 @@ import thunk from 'redux-thunk';
 import { aimsReducer } from '../reducers/aimsReducer';
 import { loginReducer } from '../reducers/loginReducer';
 import { registerReducer } from '../reducers/registerReducer';
-import { tipsReducer } from '../reducers/tipsReducer';
 
 const composeEnhancers = (typeof window !== 'undefined' && 
 window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
@@ -11,8 +10,7 @@ window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 const reducers = combineReducers({
     login: loginReducer,
     register: registerReducer,
-    aims: aimsReducer,
-    tips: tipsReducer
+    aims: aimsReducer
 })
 export const store = createStore(
     reducers,

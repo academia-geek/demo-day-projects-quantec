@@ -1,4 +1,3 @@
-import { getAuth } from 'firebase/auth'
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
@@ -9,36 +8,28 @@ import { BlackCards, CustomButtonCards, CustomLink, H2, H3 } from './Welcome'
 
 const YourCustomAim = () => {
 
-    const location = useLocation();    
+    const location = useLocation();
     const {aims} = location.state
-    console.log(aims);
+    
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
-    const auth = getAuth()
-    const user = auth.currentUser
-    console.log(user.displayName);    
 
     const [newAims, setNewAims] = useState({
         aim: '',
         date1: '',
         date2: '',
         quantity: '',
-        time: '',
-        user: ''
+        time: ''
     })
     useEffect(() => {
       newAimsAsingna()
     }, [])
     
-    const newAimsAsingna = () => {
-        setNewAims({
-            aim: aims,
-            user: user.displayName
-        })
 
+    // const {aim, date1, date2, quantity, time} = newAims;
+    const newAimsAsingna = () => {
+        setNewAims({aim: aims})
     }
-    
     console.log(newAims);
     const handleInputChange = ({target}) => {
         setNewAims({
