@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Bienvenido a Quantec!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Guia de estilos:
+### Librerias utilizadas:
+>Fontawesone: fonts: monsterrat family
+>@mui: navbar tabs
+>bootstrap/React-bootstrap: Usado para el navbar de la landing page
+>styled-components: Para estilizar componentes y etiquetas html de los componentes
+>CSS: Para estilizar algunos componentes que no pueden ser estilizados con styled components
+>Sweet Alert 2: Para alertas dinámicas
+## Otras librerias
+>Firebase como backend
+>formik & Yup: Para la captura de datos
+>Redux/React-redux: Gestionar los datos desde un store central
+>React-router-dom: Para enrutamiento dinámico
+>
 
-## Available Scripts
 
-In the project directory, you can run:
+## Directorio src/
 
-### `npm start`
+>Este proyecto consta de diferentes directorios donde podrá encontrar distintos bloques de código relacionados al nombre del mismo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### `/Componentes`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+>Aquí encontrarás toda la información de cada uno de los componentes como la barra de navegación, las diferentes pantallas, asi como toda la información >relacionada a los elementos renderizados en pantalla
 
-### `npm test`
+### `/Firebase`
+>Aquí encontrarás la información relacionada a la configuración y ajustes de firebase implementados
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `/fileupload`
 
-### `npm run build`
+>Contiene la información relacionada a la carga de imagenes por parte de los usuarios al momento de registrarse (las imágenes se suben a cloudinary)
+### `/hooks`
+#### Carpeta contenedora de hooks:
+>`useForm:hook para capturar y reutilizar la información de un formulario`
+### `/Redux`
+#### `/actions`
+> accioones de redux
+#### `/reducers`
+> Reducers 
+#### `/store`
+> store de redux y middleware(thunk)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### `types`
+>types para redux
+### `/Routes`
+> Aquí se almacenan todas las rutas tanto las publicas como las privadas y sus condiciones para ser funcionales
+### `/styled`
+> Aquí se almacenan los estilos realizados con styled-components
+### `/styles`
+> Contiene los estilos de CSS para los archivos a los que no se les podía aplicar styled-components
+ 
