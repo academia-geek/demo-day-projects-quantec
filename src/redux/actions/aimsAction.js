@@ -1,5 +1,5 @@
 import { async } from "@firebase/util"
-import { addDoc, collection, deleteDoc, doc, getDocs, query, where } from "firebase/firestore"
+import { addDoc, collection, deleteDoc, doc, getDocs, onSnapshot, query, where } from "firebase/firestore"
 import Swal from "sweetalert2"
 import { db } from "../../firebase/firebaseConfig"
 import { typesAims } from "../types/types"
@@ -22,25 +22,32 @@ export const addAimsAsyn = (newAims) => {
         })
     }
 }
-export const listAimsAsyn = () => {
+export const listAimsAsyn = (user) => {
     return async(dispatch) => {
-        const aimsCollection = await getDocs(collection(db, 'AimsQuantec'))
-        const aims = []        
-        aimsCollection.forEach((doc) => {
-            aims.push({                
-                ...doc.data()
-            })
+        console.log(user);
+        const q = query(collection(db, "AimsQuantec"), where("user", "==", user));
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+    const objetives = [];
+    querySnapshot.forEach((doc) => {
+        console.log(doc.data());
+        objetives.push({
+            idDocument: doc.id,
+            ...doc.data()
         })
-        console.log(aims);
-        dispatch(listAimsSyn(aims))
-    }
+            
+    });
+    console.log("Current Objetives in USER: ", objetives);
+    dispatch(listAimsSyn(objetives))
+})
+}  
+    
 }
 export const deleteAimsAsyn = (cod) => {
     return async(dispatch) => {
         const getAims = collection(db, 'AimsQuantec');
         console.log(getAims);
         const q = query(getAims, where('aim', '==', cod))
-        console.log(q);
+        
         const datos = await getDocs(q);
         datos.forEach((docu) => {
             deleteDoc(doc(db, 'AimsQuantec', docu.id));
@@ -50,7 +57,16 @@ export const deleteAimsAsyn = (cod) => {
                 timer: 2000,
             })
         })
-        dispatch(deleteAimsSyn())
+        dispatch(deleteAimsSyn(cod))
+    }
+}
+export const filterAimsAsyn = (user) => {
+    return async(dispatch) => {
+        const getAims = collection(db, 'AimsQuantec')
+        const q = query(getAims, where('user', '==', user))
+        const datos = await (getDocs(q))
+        console.log(datos);
+        // dispatch(filterAimsSyn())
     }
 }
 //-------------------Sincorono------------------
@@ -76,5 +92,11 @@ export const deleteAimsSyn = (aim) => {
     return {
         type: typesAims.delete,
         payload: aim
+    }
+}
+export const filterAimsSyn = (user) => {
+    return {
+        type: typesAims.filter,
+        payload: user
     }
 }

@@ -1,21 +1,25 @@
+import { getAuth } from 'firebase/auth';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { deleteAimsAsyn, listAimsAsyn } from '../redux/actions/aimsAction';
+import { deleteAimsAsyn, filterAimsAsyn, listAimsAsyn } from '../redux/actions/aimsAction';
 import { CustomButton } from '../styled/LoggedHome';
 import { Ahorro, Aims, ContainerAims, DivInfo, Final, H3, Inicial, Meta, Progress, VerMas } from '../styled/NewAimsStyled';
 
 const NewAims = () => {
 
     const { aims } = useSelector(store => store.aims)
-    
+    const auth = getAuth()
+    const user = auth.currentUser;
+
     const dispatch = useDispatch();
     const now = 20;
 
     useEffect(() => {
-        dispatch(listAimsAsyn())
+        // dispatch(filterAimsAsyn(user))
+        dispatch(listAimsAsyn(user.displayName))
     }, [])
-    console.log(aims);
+    console.log(user.displayName);
     // const operations = () => {
 
     // }

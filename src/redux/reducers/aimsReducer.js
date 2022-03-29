@@ -21,6 +21,10 @@ export const aimsReducer = (state = initialStates, action) => {
             return {
                 aims: state.aims.filter(a => a.aim !== action.payload)
             }
+        case typesAims.filter:
+            return {
+                aims: state.aims.filter(a => a.user === action.payload)
+            }
         
     
         default:
