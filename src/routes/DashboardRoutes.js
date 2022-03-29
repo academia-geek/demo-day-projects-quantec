@@ -5,7 +5,6 @@ import LoggedAims from '../components/LoggedAims'
 import LoggedHome from '../components/LoggedHome'
 import LoggedProfile from '../components/LoggedProfile'
 import PlusAimType from '../components/PlusAimType'
-import VerMas from '../components/VerMas'
 import YourCustomAim from '../components/YourCustomAim'
 
 const DashboardRoutes = () => {
@@ -20,7 +19,6 @@ const DashboardRoutes = () => {
           <Route exact path='/loggedaims' element={<LoggedAims />} />
           <Route exact path="/yourcustomaim" element={<YourCustomAim />} />
           <Route exact path="/plusaimtype" element={<PlusAimType />} />
-          <Route exact path='/vermas' element={<VerMas/>} />
 
           <Route path='*' element={<Navigate to='/loggedhome' />} />
         </Routes>
