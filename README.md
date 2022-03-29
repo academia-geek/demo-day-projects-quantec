@@ -2,12 +2,12 @@
 
 ## Guia de estilos:
 ### Librerias utilizadas:
-> 1. Fontawesone: fonts: monsterrat family
-> 2. @mui: navbar tabs
-> 3. bootstrap/React-bootstrap: Usado para el navbar de la landing page
-> 4. styled-components: Para estilizar componentes y etiquetas html de los componentes
-> 5. CSS: Para estilizar algunos componentes que no pueden ser estilizados con styled components
-> 6. Sweet Alert 2: Para alertas dinámicas
+1. Fontawesone: fonts: monsterrat family
+2. @mui: navbar tabs
+3. bootstrap/React-bootstrap: Usado para el navbar de la landing page
+4. styled-components: Para estilizar componentes y etiquetas html de los componentes
+5. CSS: Para estilizar algunos componentes que no pueden ser estilizados con styled components
+6. Sweet Alert 2: Para alertas dinámicas
 ## Otras librerias
 > 1. Firebase como backend
 > 2. formik & Yup: Para la captura de datos
