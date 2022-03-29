@@ -28,16 +28,19 @@ export const listAimsAsyn = () => {
         const aims = []
         aimsCollection.forEach((doc) => {
             aims.push({
+                idDocument: doc.data().id,
                 ...doc.data()
             })
         })
         dispatch(listAimsSyn(aims))
     }
 }
-export const deleteAimsAsyn = (aim) => {
+export const deleteAimsAsyn = (cod) => {
     return async(dispatch) => {
         const getAims = collection(db, 'AimsQuantec');
-        const q = query(getAims, where('aim', '==', aim))
+        console.log(getAims);
+        const q = query(getAims, where('aim', '==', cod))
+        console.log(q);
         const datos = await getDocs(q);
         datos.forEach((docu) => {
             deleteDoc(doc(db, 'AimsQuantec', docu.id));
@@ -47,7 +50,7 @@ export const deleteAimsAsyn = (aim) => {
                 timer: 2000,
             })
         })
-        dispatch(deleteAimsSyn(aim))
+        dispatch(deleteAimsSyn())
     }
 }
 //-------------------Sincorono------------------

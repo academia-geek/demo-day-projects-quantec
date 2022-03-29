@@ -8,14 +8,17 @@ import { Ahorro, Aims, ContainerAims, DivInfo, Final, H3, Inicial, Meta, Progres
 const NewAims = () => {
 
     const { aims } = useSelector(store => store.aims)
-    console.log(aims);
+    
     const dispatch = useDispatch();
     const now = 20;
 
     useEffect(() => {
         dispatch(listAimsAsyn())
-    }, [dispatch])
+    }, [])
+    console.log(aims);
+    // const operations = () => {
 
+    // }
     return (
         <div>
 

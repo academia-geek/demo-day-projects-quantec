@@ -17,7 +17,7 @@ const RegisterAccount = () => {
             nombre: '',
             email: '',
             password: '',
-            photo: ''
+            photoURL: ''
         },
         onSubmit: (data) => {
             console.log(data.email);
@@ -68,7 +68,7 @@ const RegisterAccount = () => {
                 <H3>
                     Mi foto de perfil:
                     <Mail
-                        name='photo'
+                        name='photoURL'
                         type="file"
                         onChange={handleFileUp}
                     />

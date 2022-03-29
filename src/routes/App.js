@@ -15,7 +15,6 @@ import PublicRoute from "./PublicRoute";
 import PrivateRoute from "./PrivateRoute";
 import DashboardRoutes from "./DashboardRoutes";
 import LabelBottomNavigation from "../components/LabelBottomNavigation";
-import SendtoFirebase from "../components/SendToFirebase";
 
 
 function App() {

@@ -7,7 +7,8 @@ export const registerReducer = (state = {}, action) => {
             return{
             email: action.payload.email,
             password: action.payload.password,
-            name: action.payload.name
+            name: action.payload.displayname,
+            photoURL: action.payload.photoURL
         }
 
         default:

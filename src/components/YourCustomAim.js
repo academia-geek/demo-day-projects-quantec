@@ -1,3 +1,4 @@
+import { getAuth } from 'firebase/auth'
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
@@ -14,22 +15,30 @@ const YourCustomAim = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    const auth = getAuth()
+    const user = auth.currentUser
+    console.log(user.displayName);    
+
     const [newAims, setNewAims] = useState({
         aim: '',
         date1: '',
         date2: '',
         quantity: '',
-        time: ''
+        time: '',
+        user: ''
     })
     useEffect(() => {
       newAimsAsingna()
     }, [])
     
-
-    // const {aim, date1, date2, quantity, time} = newAims;
     const newAimsAsingna = () => {
-        setNewAims({aim: aims})
+        setNewAims({
+            aim: aims,
+            user: user.displayName
+        })
+
     }
+    
     console.log(newAims);
     const handleInputChange = ({target}) => {
         setNewAims({

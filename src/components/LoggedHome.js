@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Container, ContainerP } from '../styled/LoggedHome'
 import styled from "styled-components"
 import { Link } from 'react-router-dom'
+import { getAuth } from 'firebase/auth'
+import { useDispatch, useSelector } from 'react-redux'
+import { store } from '../redux/store/store'
+import { listTipsAsyn } from '../redux/actions/tipsAction'
 const LoggedHome = () => {
 
+    const auth = getAuth()
+    const user = auth.currentUser;
+
+    const dispatch = useDispatch();
+
+    const {tips} = useSelector(store => store.tips)
+    
+    useEffect(() => {
+      dispatch(listTipsAsyn())
+    }, [])
+    console.log(tips);
+    
+    
     return (
         <Container className={"loggedhome"}>
 
@@ -12,9 +29,9 @@ const LoggedHome = () => {
                 <TitleContainer>
                     <HomeTitle>
                         <H4Home>Hola,</H4Home>
-                        <H2Name>Nombre</H2Name>
+                        <H2Name>{user.displayName}</H2Name>
                     </HomeTitle>
-                    <HomeImg src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648400006/proyecto-final/Ellipse_86_1_zsei9o.svg" alt="foto del perfil" />
+                    <HomeImg src={user.photoURL} alt="foto del perfil" />
 
                 </TitleContainer>
                 <Phome>Aquí tienes un resumen de tus objetivos y algunos tips para mejorar tu ahorro</Phome>
@@ -52,14 +69,14 @@ const LoggedHome = () => {
                 <Cards>
                     <CardShape >
                         <CardShapeBg>
-                            <h6>Titulo tip 1</h6>
+                            <h6>{tips.titulo}</h6>
                             <CardImg src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648412203/proyecto-final/Group_2152_i1kkt6.svg" alt="" />
                             <TipArrow src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648412738/proyecto-final/Group_2153_ulncvx.svg" alt="" />
                         </CardShapeBg>
                     </CardShape>
 
                     <CardShape>
-                        <h6>Titulo tip 2</h6>
+                        <h6>{tips.titulo}</h6>
                         <CardImg src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648413450/proyecto-final/Group_2152w_okrm9d.svg" alt="" />
                         <TipArrow src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648412738/proyecto-final/Group_2153_ulncvx.svg" alt="" />
                     </CardShape>
@@ -112,6 +129,7 @@ margin-top:32px;
 const HomeImg = styled.img`
 margin-left:50%;
 margin-top:10%;
+border-radius: 50%;
 
 `
 const H4Home = styled.h4`
