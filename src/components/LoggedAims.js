@@ -4,29 +4,15 @@ import { Container, ContainerP, CustomButton, DivInfoAims, H5 } from '../styled/
 import InfoAimsNone from './InfoAimsNone'
 import NewAims from './NewAims'
 import styled from "styled-components"
-import { useSelector } from 'react-redux'
-
 
 const LoggedAims = () => {
 
-    const {aims} = useSelector(store => store.aims)
-    
-    const [show, setShow] = useState( false);
-    console.log(aims);
+    const [show, setShow] = useState(true);
+    console.log(show);
     useEffect(() => {
-        
-        if(aims.length > 0 ){
-            console.log('aqui toy');
-            setShow(true)
-        }else{
-            setShow(false)
-            console.log('o acá');
-        }
 
     }, [])
-    
 
-    
 
     return (
         <Container>

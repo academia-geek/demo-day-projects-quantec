@@ -4,13 +4,8 @@ import { logoutAsyn } from '../redux/actions/loginAction'
 import { Contenedor, ImageProfile, Nombre } from '../styled/LoggedProfileStyled'
 import styled from 'styled-components'
 import "../styles/logged.css"
-import { getAuth } from 'firebase/auth'
 const LoggedProfile = () => {
-    const dispatch = useDispatch(); 
-    
-    const auth = getAuth()
-    const user = auth.currentUser
-    console.log(user);
+    const dispatch = useDispatch();    
 
     const handleLogout = () => {
         dispatch(logoutAsyn())
@@ -29,9 +24,9 @@ const LoggedProfile = () => {
             <center>
 
                 <Profile>
-                    <ImageProfile src={user.photoURL} />
+                    <ImageProfile src='https://res.cloudinary.com/ddxauuwcf/image/upload/v1644609218/images/avatar1_zp8pvi.png' />
 
-                    <Nombre>{user.displayName}</Nombre>
+                    <Nombre>nombre</Nombre>
                     <Puntos>
                         <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648225398/proyecto-final/Trofeo_xrl04s.svg" alt="" />
                         <h6>20 puntos exp</h6>
