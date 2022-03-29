@@ -24,7 +24,7 @@ const LoggedAccounts = () => {
                                 <CardsImg
                                     src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648310142/proyecto-final/Group_2158_tx8hgm.svg"
                                     alt="" />
-                                <Link to={"/loggedacc/" + t.id}> <CardText>{t.titulo}</CardText></Link>
+                                <Link to={"/loggedacc/" + t.id} style={{ textDecoration: "none" }}> <CardText>{t.titulo}</CardText></Link>
                             </CardContainer>
                             <hr />
                         </Cards>
@@ -99,6 +99,7 @@ color: #757575;
 const CardContainer = styled.div`
 display: flex;
 align-items: center;
+justify-content:left;
 `
 const Div = styled.div`
 padding-bottom:20%`

@@ -28,7 +28,7 @@ const LoggedAims = () => {
                         }
                     </DivInfoAims>
 
-                    <Link to={"/plusaimtype"}><CustomButton className='text-light mt-5'><b>Agregar un objetivo</b></CustomButton>
+                    <Link to={"/plusaimtype"}><AddAimButton className='text-light mt-5'>Agregar un objetivo</AddAimButton>
                     </Link>
                 </center>
             </ContainerP>
@@ -50,6 +50,11 @@ letter-spacing: -0.3px;
 
 color: #8D8A8A;
 
+`
+const AddAimButton = styled.button`
+border:none;
+background-color:rgba(255,255,255,0);
+color: #3C1280 !important;
 `
 
 export default LoggedAims
