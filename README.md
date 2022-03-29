@@ -8,7 +8,7 @@
 4. styled-components: Para estilizar componentes y etiquetas html de los componentes
 5. CSS: Para estilizar algunos componentes que no pueden ser estilizados con styled components
 6. Sweet Alert 2: Para alertas dinámicas
-## Otras librerias
+## Otras librerias:
 > 1. Firebase como backend
 > 2. formik & Yup: Para la captura de datos
 > 3. Redux/React-redux: Gestionar los datos desde un store central
@@ -17,7 +17,7 @@
 
 ## Directorio src/
 
->Este proyecto consta de diferentes directorios donde podrá encontrar distintos bloques de código relacionados al nombre del mismo
+*Este proyecto consta de diferentes directorios donde podrá encontrar distintos bloques de código relacionados al nombre del mismo*
 
 ### `/Componentes`
 
