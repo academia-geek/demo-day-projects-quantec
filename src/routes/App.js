@@ -73,8 +73,7 @@ function App() {
               <PrivateRoute isAuth={isLoggedIn}>
                 <DashboardRoutes />
               </PrivateRoute> 
-            }/>          
-          
+            }/>
         </Routes>
       </Router>
 

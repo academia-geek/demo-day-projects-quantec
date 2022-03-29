@@ -1,9 +1,22 @@
-import React from 'react'
+
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+
+
 import { Link } from 'react-router-dom';
+
 import styled from "styled-components"
-import { tips } from '../data/tips';
+import { listTipsAsyn } from '../redux/actions/tipsAction';
+// import { tips } from '../data/tips';
+import { store } from '../redux/store/store';
 const LoggedAccounts = () => {
-    console.log(tips);
+    const {tips} = useSelector(store => store.tips)
+    const dispatch = useDispatch();
+  
+    useEffect(() => {
+      dispatch(listTipsAsyn())
+    }, [])
+    
     return (
 
         <Tips>

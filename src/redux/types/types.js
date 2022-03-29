@@ -1,7 +1,8 @@
 export const types = {
     login: 'login',
     logout: 'logout',
-    register: 'register'
+    register: 'register',
+    searchUser: 'search'
 }
 export const typesAims = {
     add: 'addAims', 
@@ -14,4 +15,7 @@ export const typesUser = {
     list: 'listUser',
     edit: 'editUser',
     delete: 'deleteUser'
+}
+export const typesTips = {
+    list: 'listTips'
 }
