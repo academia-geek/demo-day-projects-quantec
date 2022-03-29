@@ -25,13 +25,13 @@ export const addAimsAsyn = (newAims) => {
 export const listAimsAsyn = () => {
     return async(dispatch) => {
         const aimsCollection = await getDocs(collection(db, 'AimsQuantec'))
-        const aims = []
+        const aims = []        
         aimsCollection.forEach((doc) => {
-            aims.push({
-                idDocument: doc.data().id,
+            aims.push({                
                 ...doc.data()
             })
         })
+        console.log(aims);
         dispatch(listAimsSyn(aims))
     }
 }

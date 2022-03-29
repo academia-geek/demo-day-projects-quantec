@@ -16,9 +16,11 @@ const LoggedAims = () => {
     useEffect(() => {
         
         if(aims.length > 0 ){
+            console.log('aqui toy');
             setShow(true)
         }else{
             setShow(false)
+            console.log('o acá');
         }
 
     }, [])

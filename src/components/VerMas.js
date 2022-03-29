@@ -6,8 +6,8 @@ import { store } from '../redux/store/store'
 
 const VerMas = () => {
 
-  const {aims} = useSelector(store => store.aims)
-  console.log(aims);
+  // const {aims} = useSelector(store => store.aims)
+  // console.log(aims);
     const dispatch = useDispatch();
     const handleDelete = () => {
       dispatch(deleteAimsAsyn())

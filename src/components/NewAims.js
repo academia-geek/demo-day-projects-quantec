@@ -30,7 +30,7 @@ const NewAims = () => {
                                 <DivInfo>
                                     <H3>{a.aim}</H3>
 
-                                    <VerMas to=''>Ver más</VerMas>
+                                    <VerMas to='/vermas' state={{id: index}}>Ver más</VerMas>
                                 </DivInfo>
                                 <div className='mt-3'>
                                     <Ahorro>Mi ahorro</Ahorro>
