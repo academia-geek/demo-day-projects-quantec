@@ -1,5 +1,10 @@
+
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+
+
+import { Link } from 'react-router-dom';
+
 import styled from "styled-components"
 import { listTipsAsyn } from '../redux/actions/tipsAction';
 // import { tips } from '../data/tips';
@@ -24,21 +29,22 @@ const LoggedAccounts = () => {
                 </CardDesc>
             </header>
 
+            <Div>
+                {
+                    tips.map((t, index) => (
+                        <Cards key={index}>
+                            <CardContainer>
+                                <CardsImg
+                                    src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648310142/proyecto-final/Group_2158_tx8hgm.svg"
+                                    alt="" />
+                                <Link to={"/loggedacc/" + t.id}> <CardText>{t.titulo}</CardText></Link>
+                            </CardContainer>
+                            <hr />
+                        </Cards>
 
-            {
-                tips.map((t, index) => (
-                    <Cards key={index}>
-                        <CardContainer>
-                            <CardsImg
-                                src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648310142/proyecto-final/Group_2158_tx8hgm.svg"
-                                alt="" />
-                            <CardText>{t.titulo}</CardText>
-                        </CardContainer>
-                        <hr />
-                    </Cards>
-
-                ))
-            }
+                    ))
+                }
+            </Div>
 
 
 
@@ -107,5 +113,8 @@ const CardContainer = styled.div`
 display: flex;
 align-items: center;
 `
+const Div = styled.div`
+padding-bottom:20%`
+
 
 export default LoggedAccounts
