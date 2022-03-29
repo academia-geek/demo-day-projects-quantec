@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Container, ContainerP } from '../styled/LoggedHome'
 import styled from "styled-components"
 import { Link } from 'react-router-dom'
+
 import { getAuth } from 'firebase/auth'
 import { useDispatch, useSelector } from 'react-redux'
 import { store } from '../redux/store/store'
@@ -69,14 +70,17 @@ const LoggedHome = () => {
                 <Cards>
                     <CardShape >
                         <CardShapeBg>
-                            <h6>{tips.titulo}</h6>
+
+                            <Tip1>{tips.titulo}</Tip1>
+
                             <CardImg src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648412203/proyecto-final/Group_2152_i1kkt6.svg" alt="" />
                             <TipArrow src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648412738/proyecto-final/Group_2153_ulncvx.svg" alt="" />
                         </CardShapeBg>
                     </CardShape>
 
                     <CardShape>
-                        <h6>{tips.titulo}</h6>
+
+                        <Tip2>{tips.titulo}</Tip2>               
                         <CardImg src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648413450/proyecto-final/Group_2152w_okrm9d.svg" alt="" />
                         <TipArrow src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648412738/proyecto-final/Group_2153_ulncvx.svg" alt="" />
                     </CardShape>
@@ -234,12 +238,42 @@ border-radius: 10px;
 `
 const CardImg = styled.img`
 float:right;
-z-index:0;`
+position: relative;
+bottom: 6%;
+`
 const TipArrow = styled.img`
 float:right;
-float: right;
 position: relative;
 left: 52%;
-top: 40%;
+top: 27%;
 `
+const Tip1 = styled.h6`
+position:relative;
+top:35%;
+padding-left:10%;
+padding-bottom:11%;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 10px;
+line-height: 16px;
+
+/* or 160% */
+
+color: #FFFFFF;
+
+`
+const Tip2 = styled.h6`
+position: relative;
+top:30%;
+padding-left:10%;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 10px;
+line-height: 16px;
+
+/* or 160% */
+
+color: #3C1280;`
 export default LoggedHome
