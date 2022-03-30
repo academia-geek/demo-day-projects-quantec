@@ -29,7 +29,7 @@ const NewAims = () => {
                                     <VerMas to='/vermas' state={{id: a.idDocument}}>Ver más</VerMas>
                                 </DivInfo>
                                 <div className='mt-3'>
-                                    <Ahorro>Mi ahorro</Ahorro>
+                                    {/* <Ahorro>Mi ahorro</Ahorro> */}
                                     <Meta>Mi meta</Meta>
                                     <Progress variant='info' now={now} label={`${now}%`} />
                                     <Inicial>0</Inicial>
