@@ -10,6 +10,7 @@ width:327px;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     padding-bottom: 10px;
+    margin-bottom: 3%;
     
 `
 export const DivInfo = styled.div`
@@ -54,6 +55,10 @@ export const Meta = styled.span`
     font-weight: 600;
     margin-left: 52%;
 `
+export const MiAhorro = styled.span`
+ color: #757575;
+    font-size: 12px;
+`
 export const Progress = styled(ProgressBar)`
    
 border-radius: 20px;
@@ -66,11 +71,19 @@ export const Inicial = styled.span`
     font-size: 12px;
     font-weight: 400;
     color: #757575;
-    margin-left: 6%;
+    
+    
 `
 export const Final = styled.span`
     font-size: 12px;
     font-weight: 400;
     color: #757575;
-    margin-left: 43%;
+    
+    
+    
+`
+export const Values = styled.div`
+display:flex;
+justify-content:space-between;
+margin:0px 5% 0% 5%
 `

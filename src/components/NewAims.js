@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { deleteAimsAsyn, filterAimsAsyn, listAimsAsyn } from '../redux/actions/aimsAction';
 import { CustomButton } from '../styled/LoggedHome';
-import { Ahorro, Aims, ContainerAims, DivInfo, Final, H3, Inicial, Meta, Progress, VerMas } from '../styled/NewAimsStyled';
+import { Ahorro, Aims, ContainerAims, DivInfo, Final, H3, Inicial, Meta, MiAhorro, Progress, Values, VerMas } from '../styled/NewAimsStyled';
 import "../styles/newAim.css"
 const NewAims = () => {
 
@@ -19,27 +19,32 @@ const NewAims = () => {
     return (
         <div>
             <center>
-                <ContainerAims>
-                    {
-                        aims.map((a, index) => (
-                            <div key={index}>
-                                <DivInfo>
-                                    <H3>{a.aim}</H3>
 
-                                    <VerMas to='/vermas' state={{ id: a.idDocument }}>Ver más</VerMas>
-                                </DivInfo>
-                                <div className='mt-3'>
+                {
+                    aims.map((a, index) => (
+                        <ContainerAims key={index}>
+                            <DivInfo>
+                                <H3>{a.aim}</H3>
 
+                                <VerMas to='/vermas' state={{ id: a.idDocument }}>Ver más</VerMas>
+                            </DivInfo>
+                            <div className='mt-3'>
+                                <Values>
+                                    <MiAhorro>Mi ahorro</MiAhorro>
                                     <Meta>Mi meta</Meta>
-                                    <Progress now={now} />
-                                    <Inicial>0</Inicial>
-                                    <Final>{a.quantity}</Final>
-                                </div>
-                            </div>
-                        ))
-                    }
+                                </Values>
+                                <Progress now={now} />
+                                <Values>
+                                    <Inicial>$0</Inicial>
+                                    <Final>${a.quantity}</Final>
+                                </Values>
 
-                </ContainerAims>
+                            </div>
+                        </ContainerAims>
+                    ))
+                }
+
+
             </center>
 
         </div>
