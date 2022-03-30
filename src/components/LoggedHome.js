@@ -68,18 +68,21 @@ const LoggedHome = () => {
 
                 </AimsTitle>
                 <Cards>
-                    <CardShape >
+                    <Link to={"/loggedacc"} style={{ textDecoration: "none" }}>
+                        <CardShape >
 
 
-                        <Tip1>texto</Tip1>
+                            <Tip1>texto</Tip1>
 
 
-                    </CardShape>
+                        </CardShape>
+                    </Link>
+                    <Link to={"/loggedacc"} style={{ textDecoration: "none" }}>
+                        <CardShape2>
 
-                    <CardShape2>
-
-                        <Tip2>texto2</Tip2>
-                    </CardShape2>
+                            <Tip2>texto2</Tip2>
+                        </CardShape2>
+                    </Link>
                 </Cards>
 
 
@@ -209,12 +212,16 @@ padding: 0px;`
 const CardShape = styled.div`
 width: 150px;
 height: 105px;
-background-image:url("https://res.cloudinary.com/dn1jeryp3/image/upload/v1648659959/proyecto-final/Card_tip_jxwtpi.svg")`
+background-image:url("https://res.cloudinary.com/dn1jeryp3/image/upload/v1648659959/proyecto-final/Card_tip_jxwtpi.svg");
+background-size:150px`;
 
 const CardShape2 = styled.div`
 width: 150px;
 height: 105px;
-background-image:url("https://res.cloudinary.com/dn1jeryp3/image/upload/v1648659959/proyecto-final/Card_tip_1_ma5pp9.svg")`
+background-image:url("https://res.cloudinary.com/dn1jeryp3/image/upload/v1648659959/proyecto-final/Card_tip_1_ma5pp9.svg");
+background-size:150px;
+
+`
 
 const CardShapeBg = styled.div`
 background-color: #3C1280;
