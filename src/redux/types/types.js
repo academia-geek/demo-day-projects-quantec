@@ -8,7 +8,7 @@ export const typesAims = {
     list: 'listAims',
     edit: 'editAims',
     delete: 'deleteAims',
-    filter: 'filterAims'
+    clean: 'cleanAims'
 }
 export const typesUser = {
     add: 'addUser',

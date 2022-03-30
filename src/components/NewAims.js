@@ -9,23 +9,15 @@ import { Ahorro, Aims, ContainerAims, DivInfo, Final, H3, Inicial, Meta, Progres
 const NewAims = () => {
 
     const { aims } = useSelector(store => store.aims)
-    const auth = getAuth()
-    const user = auth.currentUser;
-
-    const dispatch = useDispatch();
+    
     const now = 20;
 
-    useEffect(() => {
-        // dispatch(filterAimsAsyn(user))
-        dispatch(listAimsAsyn(user.displayName))
-    }, [])
-    console.log(user.displayName);
+    
     // const operations = () => {
 
     // }
     return (
         <div>
-
             <center>
                 <ContainerAims>
                     {
@@ -34,7 +26,7 @@ const NewAims = () => {
                                 <DivInfo>
                                     <H3>{a.aim}</H3>
 
-                                    <VerMas to='/vermas' state={{id: index}}>Ver más</VerMas>
+                                    <VerMas to='/vermas' state={{id: a.idDocument}}>Ver más</VerMas>
                                 </DivInfo>
                                 <div className='mt-3'>
                                     <Ahorro>Mi ahorro</Ahorro>

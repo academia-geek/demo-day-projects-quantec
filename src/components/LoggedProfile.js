@@ -5,15 +5,16 @@ import { Contenedor, ImageProfile, Nombre } from '../styled/LoggedProfileStyled'
 import styled from 'styled-components'
 import "../styles/logged.css"
 import { getAuth } from 'firebase/auth'
+import { cleanAimsSyn } from '../redux/actions/aimsAction'
 const LoggedProfile = () => {
     const dispatch = useDispatch(); 
     
     const auth = getAuth()
-    const user = auth.currentUser
-    console.log(user);
+    const user = auth.currentUser    
 
     const handleLogout = () => {
         dispatch(logoutAsyn())
+        // dispatch(cleanAimsSyn())
 
     }
     return (

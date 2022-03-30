@@ -19,7 +19,7 @@ const LoggedHome = () => {
     useEffect(() => {
       dispatch(listTipsAsyn())
     }, [])
-    console.log(tips);
+    // console.log(tips);
     
     
     return (

@@ -4,28 +4,23 @@ import { Container, ContainerP, CustomButton, DivInfoAims, H5 } from '../styled/
 import InfoAimsNone from './InfoAimsNone'
 import NewAims from './NewAims'
 import styled from "styled-components"
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { getAuth } from 'firebase/auth'
+import { listAimsAsyn } from '../redux/actions/aimsAction'
 
 
 const LoggedAims = () => {
 
-    const {aims} = useSelector(store => store.aims)
-    
-    const [show, setShow] = useState( false);
-    console.log(aims);
+    const dispatch = useDispatch();
+    const { aims } = useSelector(store => store.aims)
+
+    const auth = getAuth()
+    const user = auth.currentUser;
+
     useEffect(() => {
-        
-        if(aims.length > 0 ){
-            console.log('aqui toy');
-            setShow(true)
-        }else{
-            setShow(false)
-            console.log('o acá');
-        }
-
+        dispatch(listAimsAsyn(user.displayName))
     }, [])
-    
-
+      
     
 
     return (
@@ -38,7 +33,7 @@ const LoggedAims = () => {
                 <center>
                     <DivInfoAims>
                         {
-                            show ? <NewAims /> : <InfoAimsNone />
+                            aims.length > 0 ? <NewAims /> : <InfoAimsNone />
                         }
                     </DivInfoAims>
 

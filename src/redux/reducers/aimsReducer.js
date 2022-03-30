@@ -19,7 +19,7 @@ export const aimsReducer = (state = initialStates, action) => {
             }
         case typesAims.delete:
             return {
-                aims: state.aims.filter(a => a.aim !== action.payload)
+                aims: state.aims.filter(a => a.idDocument !== action.payload)
             }
         case typesAims.filter:
             return {

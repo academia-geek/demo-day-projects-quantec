@@ -24,7 +24,7 @@ export const addAimsAsyn = (newAims) => {
 }
 export const listAimsAsyn = (user) => {
     return async(dispatch) => {
-        console.log(user);
+        console.log(user);         
         const q = query(collection(db, "AimsQuantec"), where("user", "==", user));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
     const objetives = [];
@@ -39,36 +39,22 @@ export const listAimsAsyn = (user) => {
     console.log("Current Objetives in USER: ", objetives);
     dispatch(listAimsSyn(objetives))
 })
-}  
-    
+}      
 }
 export const deleteAimsAsyn = (cod) => {
     return async(dispatch) => {
-        const getAims = collection(db, 'AimsQuantec');
-        console.log(getAims);
-        const q = query(getAims, where('aim', '==', cod))
         
-        const datos = await getDocs(q);
-        datos.forEach((docu) => {
-            deleteDoc(doc(db, 'AimsQuantec', docu.id));
+            deleteDoc(doc(db, 'AimsQuantec', cod));
             Swal.fire({
                 html: '<br/><br/><h4 >¡Se ha añadido un nuevo objetivo a tu portafolio!<h3><br/><img class="checked" src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647621171/proyecto-final/Group_349_v0ofdt.svg" alt=""/>',
                 showConfirmButton: true,
                 timer: 2000,
             })
-        })
+        
         dispatch(deleteAimsSyn(cod))
     }
 }
-export const filterAimsAsyn = (user) => {
-    return async(dispatch) => {
-        const getAims = collection(db, 'AimsQuantec')
-        const q = query(getAims, where('user', '==', user))
-        const datos = await (getDocs(q))
-        console.log(datos);
-        // dispatch(filterAimsSyn())
-    }
-}
+
 //-------------------Sincorono------------------
 export const addAimsSyn = (aims) => {
     return {
@@ -94,9 +80,9 @@ export const deleteAimsSyn = (aim) => {
         payload: aim
     }
 }
-export const filterAimsSyn = (user) => {
+
+export const cleanAimsSyn = () => {
     return {
-        type: typesAims.filter,
-        payload: user
+        type: typesAims.clean
     }
 }

@@ -12,7 +12,7 @@ export default function LabelBottomNavigation() {
   };
 
   const location = useLocation();
-  console.log(location.pathname);
+  // console.log(location.pathname);
   if (location.pathname.match("/loggedhome") || location.pathname.match("/loggedprofile") || location.pathname.match("/loggedaims") || location.pathname.match("/loggedacc")) {
 
     setTimeout(() => {

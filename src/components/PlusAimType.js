@@ -3,14 +3,18 @@ import { AimContainer, AimType, CustomLink } from './Aim'
 import { BlackCards, H2, H3 } from './Welcome'
 import styled from "styled-components"
 import { H4 } from './AddNewAcc'
+import { getAuth } from 'firebase/auth'
 const PlusAimType = () => {
+    const auth = getAuth()
+    const user = auth.currentUser;
+    
     return (
         <BlackCards>
             <CustomLink to={"/loggedaims"}>
                 <ImgPlusAimType src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647530651/proyecto-final/ep_arrow-left_zxewky.svg" alt="" className="back" />
             </CustomLink>
             <AimContainer>
-                <H2>¡Hola, </H2> <H2>@Nombre!</H2>
+                <H2>¡Hola, </H2> <H2>{user.displayName}</H2>
                 <H3>¿Cuál de los siguientes objetivos quieres alcanzar?</H3>
                 <H4>Para comenzar selecciona una opción:</H4>
             </AimContainer>
