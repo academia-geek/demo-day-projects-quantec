@@ -4,15 +4,24 @@ import { Container, ContainerP, CustomButton, DivInfoAims, H5 } from '../styled/
 import InfoAimsNone from './InfoAimsNone'
 import NewAims from './NewAims'
 import styled from "styled-components"
+import { useDispatch, useSelector } from 'react-redux'
+import { getAuth } from 'firebase/auth'
+import { listAimsAsyn } from '../redux/actions/aimsAction'
+
 
 const LoggedAims = () => {
 
-    const [show, setShow] = useState(true);
-    console.log(show);
+    const dispatch = useDispatch();
+    const { aims } = useSelector(store => store.aims)
+
+    const auth = getAuth()
+    const user = auth.currentUser;
+
     useEffect(() => {
-
+        dispatch(listAimsAsyn(user.displayName))
     }, [])
-
+      
+    
 
     return (
         <Container>
@@ -24,11 +33,11 @@ const LoggedAims = () => {
                 <center>
                     <DivInfoAims>
                         {
-                            show ? <NewAims /> : <InfoAimsNone />
+                            aims.length > 0 ? <NewAims /> : <InfoAimsNone />
                         }
                     </DivInfoAims>
 
-                    <Link to={"/plusaimtype"}><AddAimButton className='text-light mt-5'>Agregar un objetivo</AddAimButton>
+                    <Link to={"/plusaimtype"}><CustomButton className='text-light mt-5'><b>Agregar un objetivo</b></CustomButton>
                     </Link>
                 </center>
             </ContainerP>
@@ -50,11 +59,6 @@ letter-spacing: -0.3px;
 
 color: #8D8A8A;
 
-`
-const AddAimButton = styled.button`
-border:none;
-background-color:rgba(255,255,255,0);
-color: #3C1280 !important;
 `
 
 export default LoggedAims

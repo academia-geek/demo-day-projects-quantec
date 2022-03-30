@@ -1,17 +1,21 @@
 export const types = {
     login: 'login',
     logout: 'logout',
-    register: 'register'
+    register: 'register',   
 }
 export const typesAims = {
     add: 'addAims', 
     list: 'listAims',
     edit: 'editAims',
-    delete: 'deleteAims'
+    delete: 'deleteAims',
+    clean: 'cleanAims'
 }
 export const typesUser = {
     add: 'addUser',
     list: 'listUser',
     edit: 'editUser',
     delete: 'deleteUser'
+}
+export const typesTips = {
+    list: 'listTips'
 }

@@ -59,6 +59,8 @@ export const DivAims = styled.div`
 
 `
 export const DivInfoAims = styled.div`
+
    margin-bottom:10px;
+
 `
 export const DivAccount = styled.div``
