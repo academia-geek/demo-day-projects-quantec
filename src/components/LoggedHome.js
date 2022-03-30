@@ -14,14 +14,14 @@ const LoggedHome = () => {
 
     const dispatch = useDispatch();
 
-    const {tips} = useSelector(store => store.tips)
-    
+    const { tips } = useSelector(store => store.tips)
+
     useEffect(() => {
-      dispatch(listTipsAsyn())
+        dispatch(listTipsAsyn())
     }, [])
     // console.log(tips);
-    
-    
+    console.log(user);
+
     return (
         <Container className={"loggedhome"}>
 
@@ -68,28 +68,24 @@ const LoggedHome = () => {
 
                 </AimsTitle>
                 <Cards>
-                    <CardShape >
-                        <CardShapeBg>
+                    <CardShapeP >
 
-                            <Tip1>{tips.titulo}</Tip1>
 
-                            <CardImg src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648412203/proyecto-final/Group_2152_i1kkt6.svg" alt="" />
-                            <TipArrow src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648412738/proyecto-final/Group_2153_ulncvx.svg" alt="" />
-                        </CardShapeBg>
-                    </CardShape>
+                        <Tip1>{tips[0].titulo}</Tip1>
+
+
+                    </CardShapeP>
 
                     <CardShape>
 
-                        <Tip2>{tips.titulo}</Tip2>               
-                        <CardImg src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648413450/proyecto-final/Group_2152w_okrm9d.svg" alt="" />
-                        <TipArrow src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648412738/proyecto-final/Group_2153_ulncvx.svg" alt="" />
+                        <Tip2>{tips[1].titulo}</Tip2>
                     </CardShape>
                 </Cards>
 
 
             </ContainerP>
 
-        </Container>
+        </Container >
     )
 }
 const TitleContainer = styled.div`
@@ -134,6 +130,8 @@ const HomeImg = styled.img`
 margin-left:50%;
 margin-top:10%;
 border-radius: 50%;
+width:60px;
+height:60px;
 
 `
 const H4Home = styled.h4`
@@ -226,27 +224,16 @@ const CardShape = styled.div`
 
 width: 150px;
 height: 105px;
-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12);
-border-radius: 10px;`
+background-image: url(https://res.cloudinary.com/dn1jeryp3/image/upload/v1648659959/proyecto-final/Card_tip_1_ma5pp9.svg);
+background-size:150px;
+`
 
-const CardShapeBg = styled.div`
-background-color: #3C1280;
-height:100%;
-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12);
-border-radius: 10px;
+const CardShapeP = styled.div`
+width: 150px;
+height: 105px;
+background-image: url(https://res.cloudinary.com/dn1jeryp3/image/upload/v1648659959/proyecto-final/Card_tip_jxwtpi.svg);
+background-size:150px;`
 
-`
-const CardImg = styled.img`
-float:right;
-position: relative;
-bottom: 6%;
-`
-const TipArrow = styled.img`
-float:right;
-position: relative;
-left: 52%;
-top: 27%;
-`
 const Tip1 = styled.h6`
 position:relative;
 top:35%;

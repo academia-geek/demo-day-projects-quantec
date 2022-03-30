@@ -20,8 +20,8 @@ const LoggedAims = () => {
     useEffect(() => {
         dispatch(listAimsAsyn(user.displayName))
     }, [])
-      
-    
+
+
 
     return (
         <Container>
@@ -37,7 +37,7 @@ const LoggedAims = () => {
                         }
                     </DivInfoAims>
 
-                    <Link to={"/plusaimtype"}><CustomButton className='text-light mt-5'><b>Agregar un objetivo</b></CustomButton>
+                    <Link to={"/plusaimtype"}><CustomButton style={{ marginTop: "0" }} className='text-light mt-5'><b>Agregar un objetivo</b></CustomButton>
                     </Link>
                 </center>
             </ContainerP>

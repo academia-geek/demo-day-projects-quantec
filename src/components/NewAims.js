@@ -5,17 +5,17 @@ import { Link } from 'react-router-dom';
 import { deleteAimsAsyn, filterAimsAsyn, listAimsAsyn } from '../redux/actions/aimsAction';
 import { CustomButton } from '../styled/LoggedHome';
 import { Ahorro, Aims, ContainerAims, DivInfo, Final, H3, Inicial, Meta, Progress, VerMas } from '../styled/NewAimsStyled';
-
+import "../styles/newAim.css"
 const NewAims = () => {
 
     const { aims } = useSelector(store => store.aims)
-    
+
     const now = 20;
 
-    
-    // const operations = () => {
 
-    // }
+
+
+
     return (
         <div>
             <center>
@@ -26,12 +26,12 @@ const NewAims = () => {
                                 <DivInfo>
                                     <H3>{a.aim}</H3>
 
-                                    <VerMas to='/vermas' state={{id: a.idDocument}}>Ver más</VerMas>
+                                    <VerMas to='/vermas' state={{ id: a.idDocument }}>Ver más</VerMas>
                                 </DivInfo>
                                 <div className='mt-3'>
-                                    {/* <Ahorro>Mi ahorro</Ahorro> */}
+
                                     <Meta>Mi meta</Meta>
-                                    <Progress variant='info' now={now} label={`${now}%`} />
+                                    <Progress now={now} />
                                     <Inicial>0</Inicial>
                                     <Final>{a.quantity}</Final>
                                 </div>
