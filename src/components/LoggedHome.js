@@ -68,18 +68,22 @@ const LoggedHome = () => {
 
                 </AimsTitle>
                 <Cards>
-                    <CardShapeP >
+                    <Link to={"/loggedacc"} style={{ textDecoration: "none" }}>
+                        <CardShapeP >
 
 
-                        <Tip1>{tips[0].titulo}</Tip1>
+                            <Tip1>{tips[0].titulo}</Tip1>
 
 
-                    </CardShapeP>
 
-                    <CardShape>
+                        </CardShapeP>
+                    </Link>
+                    <Link to={"/loggedacc"} style={{ textDecoration: "none" }}>
+                        <CardShape>
 
-                        <Tip2>{tips[1].titulo}</Tip2>
-                    </CardShape>
+                            <Tip2>{tips[1].titulo}</Tip2>
+                        </CardShape>
+                    </Link>
                 </Cards>
 
 
