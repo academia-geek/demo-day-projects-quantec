@@ -14,13 +14,15 @@ const LoggedAims = () => {
     const dispatch = useDispatch();
     const { aims } = useSelector(store => store.aims)
 
+
     const auth = getAuth()
     const user = auth.currentUser;
 
     useEffect(() => {
         dispatch(listAimsAsyn(user.displayName))
     }, [])
-
+      
+    
 
 
     return (

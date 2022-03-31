@@ -11,7 +11,11 @@ const NewAims = () => {
 
     const { aims } = useSelector(store => store.aims)
 
+    
     const now = 20;
+
+    
+  
 
 
 
@@ -21,15 +25,18 @@ const NewAims = () => {
         <div>
             <center>
 
+
                 {
                     aims.map((a, index) => (
                         <ContainerAims key={index}>
                             <DivInfoS>
+
                                 <DivInfo>
                                     <H3>
                                         {a.aim}
                                     </H3>
                                     <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648680087/proyecto-final/clarity_edit-line_x2nsaf.svg" alt="" />
+
 
                                 </DivInfo>
 
@@ -63,6 +70,7 @@ const NewAims = () => {
                         </ContainerAims>
                     ))
                 }
+
 
 
             </center>

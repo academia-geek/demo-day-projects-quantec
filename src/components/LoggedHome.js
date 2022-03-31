@@ -21,7 +21,6 @@ const LoggedHome = () => {
     }, [])
     // console.log(tips);
 
-
     return (
         <Container className={"loggedhome"}>
 
