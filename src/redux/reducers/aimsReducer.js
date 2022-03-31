@@ -11,7 +11,7 @@ export const aimsReducer = (state = initialStates, action) => {
             }
         case typesAims.edit:
             return {
-                ...state
+                aims: [action.payload]
             }
         case typesAims.list:
             return {

@@ -43,11 +43,13 @@ export const Aims = styled.h6`
     color: #757575;
     font-weight: 400;
 `
-export const VerMas = styled(Link)`
+export const VerMas = styled.button`
     text-decoration: none;
     font-weight: 400;
 font-size: 12px;
 line-height: 15px;
+border: none;
+background-color: #FFFFFF;
 
 
 /* identical to box height */
@@ -98,13 +100,14 @@ export const Inicial = styled.span`
 export const Final = styled.span`
     font-size: 12px;
     font-weight: 400;
-    color: #757575;
-    
-    
-    
+    color: #757575;   
 `
 export const Values = styled.div`
 display:flex;
 justify-content:space-between;
-margin:0px 5% 0% 5%
+margin:0px 5% 0% 5%;
+`
+export const Edit = styled.button`
+    border: none;
+    background-color: #FFFFFF;
 `
