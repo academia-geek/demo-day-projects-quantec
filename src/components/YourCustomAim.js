@@ -25,7 +25,8 @@ const YourCustomAim = () => {
         date2: '',
         quantity: '',
         time: '',
-        user: ''
+        user: '',
+        accu: ''
     })
     useEffect(() => {
       newAimsAsingna()
@@ -34,7 +35,8 @@ const YourCustomAim = () => {
     const newAimsAsingna = () => {
         setNewAims({
             aim: aims,
-            user: user.displayName
+            user: user.displayName,
+            accu: '0'
         })
 
     }

@@ -39,7 +39,7 @@ const LoggedAccounts = () => {
                                     alt="" />
                                 <Link
                                     style={{ textDecoration: "none" }}
-                                    to={"/loggedacc/" + t.id}>
+                                    to='/openTip' state={{id: t.id}}>
                                     <CardText>
                                         {t.titulo}
                                     </CardText>
