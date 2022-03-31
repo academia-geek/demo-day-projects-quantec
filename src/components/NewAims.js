@@ -19,10 +19,10 @@ const NewAims = () => {
     return (
         <div>
             <center>
-                <ContainerAims>
+                {/* <ContainerAims> */}
                     {
                         aims.map((a, index) => (
-                            <div key={index}>
+                            <ContainerAims key={index}>
                                 <DivInfo>
                                     <H3>{a.aim}</H3>
 
@@ -35,11 +35,11 @@ const NewAims = () => {
                                     <Inicial>0</Inicial>
                                     <Final>{a.quantity}</Final>
                                 </div>
-                            </div>
+                            </ContainerAims>
                         ))
                     }
 
-                </ContainerAims>
+                {/* </ContainerAims> */}
             </center>
 
         </div>
