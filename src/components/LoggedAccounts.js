@@ -27,6 +27,7 @@ const LoggedAccounts = () => {
                 <CardDesc>
                     Alcanza todo tu potencial para ahorrar con ayuda de nuestros tips que estaremos publicando semanalmente.
                 </CardDesc>
+
             </header>
 
             <Div>

@@ -22,6 +22,8 @@ align-items:center;
 export const DivInfo = styled.div`
 display:flex; 
 align-items: flex-end;
+
+
 `
 export const H3 = styled.h3`
     color: #757575;
@@ -46,6 +48,7 @@ export const VerMas = styled(Link)`
     font-weight: 400;
 font-size: 12px;
 line-height: 15px;
+
 
 /* identical to box height */
 letter-spacing: -0.3px;
