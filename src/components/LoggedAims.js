@@ -14,6 +14,7 @@ const LoggedAims = () => {
     const dispatch = useDispatch();
     const { aims } = useSelector(store => store.aims)
 
+
     const auth = getAuth()
     const user = auth.currentUser;
 
@@ -22,6 +23,7 @@ const LoggedAims = () => {
     }, [])
       
     
+
 
     return (
         <Container>
@@ -37,7 +39,11 @@ const LoggedAims = () => {
                         }
                     </DivInfoAims>
 
-                    <Link to={"/plusaimtype"}><CustomButton className='text-light mt-5'><b>Agregar un objetivo</b></CustomButton>
+                    <Link to={"/plusaimtype"}>
+                        <CustomButton style={{ marginTop: "0" }}
+                            className='text-light mt-5'>
+                            <b>Agregar un objetivo</b>
+                        </CustomButton>
                     </Link>
                 </center>
             </ContainerP>

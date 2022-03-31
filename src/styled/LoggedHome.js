@@ -7,7 +7,7 @@ export const Container = styled.div`
 export const ContainerP = styled.div`
     
     background-color: white;
-    height:672px;
+    height:630px;
        `
 export const H5 = styled.h5`
     
@@ -45,7 +45,7 @@ background-color:#3C1280;
 border:none;
 border-radius:20px;
 align-items: center;
-margin-top:24px;
+margin-top:15px !important;
 `
 export const Crear = styled(Link)`
     text-decoration: none;

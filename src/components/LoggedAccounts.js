@@ -10,13 +10,13 @@ import { listTipsAsyn } from '../redux/actions/tipsAction';
 // import { tips } from '../data/tips';
 import { store } from '../redux/store/store';
 const LoggedAccounts = () => {
-    const {tips} = useSelector(store => store.tips)
+    const { tips } = useSelector(store => store.tips)
     const dispatch = useDispatch();
-  
+
     useEffect(() => {
-      dispatch(listTipsAsyn())
+        dispatch(listTipsAsyn())
     }, [])
-    
+
     return (
 
         <Tips>
@@ -37,7 +37,13 @@ const LoggedAccounts = () => {
                                 <CardsImg
                                     src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648310142/proyecto-final/Group_2158_tx8hgm.svg"
                                     alt="" />
-                                <Link to={"/loggedacc/" + t.id}> <CardText>{t.titulo}</CardText></Link>
+                                <Link
+                                    style={{ textDecoration: "none" }}
+                                    to={"/loggedacc/" + t.id}>
+                                    <CardText>
+                                        {t.titulo}
+                                    </CardText>
+                                </Link>
                             </CardContainer>
                             <hr />
                         </Cards>

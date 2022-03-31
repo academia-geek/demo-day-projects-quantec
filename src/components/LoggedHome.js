@@ -14,14 +14,13 @@ const LoggedHome = () => {
 
     const dispatch = useDispatch();
 
-    const {tips} = useSelector(store => store.tips)
-    
+    const { tips } = useSelector(store => store.tips)
+
     useEffect(() => {
-      dispatch(listTipsAsyn())
+        dispatch(listTipsAsyn())
     }, [])
     // console.log(tips);
-    
-    
+
     return (
         <Container className={"loggedhome"}>
 
@@ -32,7 +31,7 @@ const LoggedHome = () => {
                         <H4Home>Hola,</H4Home>
                         <H2Name>{user.displayName}</H2Name>
                     </HomeTitle>
-                    <HomeImg src={user.photoURL} alt="foto del perfil" />
+                    <HomeImg src={user.photoURL} alt="foto del perfil" width="64" height="64" />
 
                 </TitleContainer>
                 <Phome>Aquí tienes un resumen de tus objetivos y algunos tips para mejorar tu ahorro</Phome>
@@ -68,22 +67,21 @@ const LoggedHome = () => {
 
                 </AimsTitle>
                 <Cards>
-                    <CardShape >
-                        <CardShapeBg>
+                    <Link to={"/loggedacc"} style={{ textDecoration: "none" }}>
+                        <CardShape >
 
-                            <Tip1>{tips.titulo}</Tip1>
 
-                            <CardImg src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648412203/proyecto-final/Group_2152_i1kkt6.svg" alt="" />
-                            <TipArrow src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648412738/proyecto-final/Group_2153_ulncvx.svg" alt="" />
-                        </CardShapeBg>
-                    </CardShape>
+                            <Tip1>texto</Tip1>
 
-                    <CardShape>
 
-                        <Tip2>{tips.titulo}</Tip2>               
-                        <CardImg src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648413450/proyecto-final/Group_2152w_okrm9d.svg" alt="" />
-                        <TipArrow src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648412738/proyecto-final/Group_2153_ulncvx.svg" alt="" />
-                    </CardShape>
+                        </CardShape>
+                    </Link>
+                    <Link to={"/loggedacc"} style={{ textDecoration: "none" }}>
+                        <CardShape2>
+
+                            <Tip2>texto2</Tip2>
+                        </CardShape2>
+                    </Link>
                 </Cards>
 
 
@@ -112,12 +110,9 @@ font-style: normal;
 font-weight: 700;
 font-size: 12px;
 line-height: 24px;
-
 /* identical to box height, or 200% */
 letter-spacing: -0.3px;
-
 color: #FFFFFF;
-
 `
 const HomeContainer = styled.div`
 display:flex;
@@ -134,7 +129,6 @@ const HomeImg = styled.img`
 margin-left:50%;
 margin-top:10%;
 border-radius: 50%;
-
 `
 const H4Home = styled.h4`
 margin:0;
@@ -144,10 +138,8 @@ font-weight: 400;
 font-size: 14px;
 line-height: 24px;
 margin-bottom:8px;
-
 /* identical to box height, or 171% */
 letter-spacing: -0.3px;
-
 color: #5E5E5E;
 `
 const H2Name = styled.h2`font-family: 'Montserrat';
@@ -177,10 +169,8 @@ font-weight: 600;
 font-size: 16px;
 line-height: 20px;
 width:115px;
-
 /* identical to box height */
 letter-spacing: -0.3px;
-
 color: #1A1A1A;
 `
 const VerMasH6 = styled.h6`
@@ -192,11 +182,8 @@ font-size: 12px;
 line-height: 15px;
 width:208px;
 text-align:right;
-
 /* identical to box height */
-
 letter-spacing: -0.3px;
-
 color: #C4C4C4;`
 const AimsTitle = styled.div`
 margin:0px 23px;
@@ -211,7 +198,6 @@ box-shadow:0px 0px 4px rgba(0, 0, 0, 0.25);
 border-radius: 8px;
 margin:0px 25px;
 align-items:center;
-
 `
 
 const Cards = styled.div`
@@ -223,18 +209,24 @@ align-items: flex-start;
 padding: 0px;`
 
 const CardShape = styled.div`
-
 width: 150px;
 height: 105px;
-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12);
-border-radius: 10px;`
+background-image:url("https://res.cloudinary.com/dn1jeryp3/image/upload/v1648659959/proyecto-final/Card_tip_jxwtpi.svg");
+background-size:150px`;
+
+const CardShape2 = styled.div`
+width: 150px;
+height: 105px;
+background-image:url("https://res.cloudinary.com/dn1jeryp3/image/upload/v1648659959/proyecto-final/Card_tip_1_ma5pp9.svg");
+background-size:150px;
+
+`
 
 const CardShapeBg = styled.div`
 background-color: #3C1280;
 height:100%;
 box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12);
 border-radius: 10px;
-
 `
 const CardImg = styled.img`
 float:right;
@@ -257,11 +249,8 @@ font-style: normal;
 font-weight: 600;
 font-size: 10px;
 line-height: 16px;
-
 /* or 160% */
-
 color: #FFFFFF;
-
 `
 const Tip2 = styled.h6`
 position: relative;
@@ -272,8 +261,6 @@ font-style: normal;
 font-weight: 600;
 font-size: 10px;
 line-height: 16px;
-
 /* or 160% */
-
 color: #3C1280;`
 export default LoggedHome
