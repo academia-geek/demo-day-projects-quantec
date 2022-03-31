@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom'
+import { DivInfoTip, DivTip } from '../styled/OpenedTipsStyled';
 
 const OpenedTips = () => {
     const location = useLocation();
@@ -26,14 +27,14 @@ const OpenedTips = () => {
 
     return (
         <div>
-            <div>
+            <DivTip>
                 <Link to='/loggedacc'>atras</Link>
                 <h2 className='mt-4'>{tipSel.titulo}</h2>
                 <h6 className='mt-3'>{tipSel.descripcion}</h6>
-            </div>
-            <div className='mt-5'>
+            </DivTip>
+            <DivInfoTip className='mt-5'>
                 <p>{tipSel.tip_completo}</p>
-            </div>
+            </DivInfoTip>
         </div>
     )
 }
