@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Container, ContainerP } from '../styled/LoggedHome'
 import styled from "styled-components"
 import { Link } from 'react-router-dom'
-import {tips} from '../data/tips'
+import { tips } from '../data/tips'
 import { getAuth } from 'firebase/auth'
 import { useDispatch, useSelector } from 'react-redux'
 import { store } from '../redux/store/store'
@@ -16,17 +16,20 @@ const LoggedHome = () => {
 
     const [tip1, setTip1] = useState('')
     const [tip2, setTip2] = useState('')
-    
+    const [tip3, setTip3] = useState('')
+
     useEffect(() => {
         dispatch(listTipsAsyn())
         filterTip()
     }, [])
-  
+
     const filterTip = () => {
         const tip1 = tips.find(t => t.id == 1)
         setTip1(tip1.titulo)
         const tip2 = tips.find(t => t.id == 2)
         setTip2(tip2.titulo)
+        const tip3 = tips.find(t => t.id == 3)
+        setTip3(tip3.titulo)
     }
 
     return (
@@ -93,7 +96,7 @@ const LoggedHome = () => {
                     <Link to={"/loggedacc"} style={{ textDecoration: "none" }}>
                         <CardShape2>
 
-                            <Tip2>texto2</Tip2>
+                            <Tip2>{tip3}</Tip2>
                         </CardShape2>
                     </Link>
                 </Cards>
