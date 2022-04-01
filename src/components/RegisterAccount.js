@@ -14,7 +14,7 @@ const RegisterAccount = () => {
 
     const formik = useFormik({
         initialValues: {
-            nombre: '',
+            displayName: '',
             email: '',
             password: '',
             photoURL: ''
@@ -50,7 +50,7 @@ const RegisterAccount = () => {
                 <H3>
                     Prefiero que me llamen:
                     <Name
-                        name='nombre'
+                        name='displayName'
                         type="text"
                         placeholder="Tu nombre"
                         onChange={formik.handleChange}

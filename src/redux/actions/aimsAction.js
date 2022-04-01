@@ -54,19 +54,22 @@ export const deleteAimsAsyn = (cod) => {
         dispatch(deleteAimsSyn(cod))
     }
 }
-export const editAimsAsyn = (id, aims) => {
+export const editAimsAsyn = (id, aims, user) => {
     return async(dispatch) => {
         console.log(id, aims);
         const docRef = doc(db, 'AimsQuantec', id)
         await updateDoc(docRef, aims)
         .then(() => {
-            listAimsAsyn()
+            listAimsAsyn(user)
             Swal.fire({
                 html: '<br/><br/><h4 >¡Se ha actualizado objetivo exitosamente!<h3><br/><img class="checked" src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647621171/proyecto-final/Group_349_v0ofdt.svg" alt=""/>',
                 showConfirmButton: false,
                 timer: 2000,
             })
-        })
+            
+        }).catch(error => {
+            console.log(error);
+        })     
        
 
     }
