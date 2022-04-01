@@ -1,31 +1,36 @@
 
 import React, { useState } from 'react'
 import { Button, Form, Modal } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useForm } from '../hooks/useForm';
 import { editAimsAsyn } from '../redux/actions/aimsAction';
 
-const EditModal = ({modal}) => {
+const EditModal = ({modal, modalShow, setModal}) => {
     const dispatch = useDispatch();
     console.log(modal);
-    const {aims} = useSelector(store => store.aims)
-
-    const[show, setShow] = useState(true);
-    const handleClose = () => setShow(false);
-
+    
+    const handleClose = () => setModal(false);
+    
     const[values, handleInputChange, reset] = useForm({
-        accu: modal.accu
+        accu: modal.accu,
+        date1: modal.date1,
+        date2: modal.date2,
+        quantity: modal.quantity,
+        idDocument: modal.idDocument,
+        aim: modal.aim
     })
-    const {accu, idDocument} = values;
+    const {accu, idDocument, date1, date2, quantity} = values;
     console.log(values);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(editAimsAsyn(idDocument, values))
+        values.accu = (parseInt(values.accu) + (modal.accu === undefined ? 0 : parseInt(modal.accu))).toString();
+        dispatch(editAimsAsyn(idDocument, values, modal.user))
+        handleClose()
     }
   return (
     <div>
-        <Modal show={show} onHide={handleClose}>
+        <Modal show={modalShow} onHide={handleClose}>
                     
             <Modal.Body>
                 <Form onSubmit={handleSubmit}>
@@ -35,13 +40,50 @@ const EditModal = ({modal}) => {
                             placeholder='' 
                             name='accu'
                             onChange={handleInputChange} />
-                                       
+                        <hr/>
+                        <div>
+                        <h3>Mi objetivo</h3>
+                        <Form.Control
+                            value={modal.aim}
+                            type="text" 
+                            placeholder='Mi objetivo'
+                            name='aim'
+                            onChange={handleInputChange}
+                        />
+                        <h3>Fecha de Inicio</h3>
+                        <Form.Control
+                            value={modal.date1}
+                            type="date" 
+                            placeholder='Fecha inicial'
+                            name='date1'
+                            onChange={handleInputChange}
+                        />
+                        <h3>Hasta:</h3>
+                        <Form.Control 
+                            type="date" 
+                            value={modal.date2}
+                            placeholder='Fecha final'
+                            name='date2'
+                            onChange={handleInputChange}
+                        />
+                        <div>
+                            <h3>Quiero ahorrar:</h3>
+
+                            <Form.Control 
+                                type="value" 
+                                value={modal.quantity}
+                                placeholder='' 
+                                name='quantity'
+                                onChange={handleInputChange}
+                            />
+                        </div>
+                        </div>                 
                     </Form.Group>
                     
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button type="submit" variant="primary" onClick={handleClose}>
+                    <Button type="submit" variant="primary" >
                         Save Changes
                     </Button>
                 </Form>

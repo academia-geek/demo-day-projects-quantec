@@ -15,8 +15,9 @@ const NewAims = () => {
 
 
     const { aims } = useSelector(store => store.aims)
-    console.log(aims.accu);
-    const now = aims.accu;
+    console.log(aims);
+
+    
 
     const editAims = (idDocument) => {
         
@@ -57,7 +58,7 @@ const NewAims = () => {
                                     <MiAhorro>Mi ahorro</MiAhorro>
                                     <Meta>Mi meta</Meta>
                                 </Values>
-                                <Progress now={now} />
+                                <Progress now={a.accu} />
                                 <Values>
                                     <Inicial>${a.accu}</Inicial>
                                     <Final>${a.quantity}</Final>
@@ -72,7 +73,7 @@ const NewAims = () => {
 
             </center>
             {
-                modal === true ? <EditModal modal={editModal}/> : ''
+                modal === true ? <EditModal modal={editModal} modalShow={modal} setModal={setModal}/> : ''
             }
 
         </div>

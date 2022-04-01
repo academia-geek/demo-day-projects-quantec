@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, ContainerP } from '../styled/LoggedHome'
 import styled from "styled-components"
 import { Link } from 'react-router-dom'
-
+import {tips} from '../data/tips'
 import { getAuth } from 'firebase/auth'
 import { useDispatch, useSelector } from 'react-redux'
 import { store } from '../redux/store/store'
@@ -14,12 +14,20 @@ const LoggedHome = () => {
 
     const dispatch = useDispatch();
 
-    const { tips } = useSelector(store => store.tips)
-
+    const [tip1, setTip1] = useState('')
+    const [tip2, setTip2] = useState('')
+    
     useEffect(() => {
         dispatch(listTipsAsyn())
+        filterTip()
     }, [])
-    // console.log(tips);
+  
+    const filterTip = () => {
+        const tip1 = tips.find(t => t.id == 1)
+        setTip1(tip1.titulo)
+        const tip2 = tips.find(t => t.id == 2)
+        setTip2(tip2.titulo)
+    }
 
     return (
         <Container className={"loggedhome"}>
@@ -71,7 +79,7 @@ const LoggedHome = () => {
                         <CardShape >
 
 
-                            <Tip1>texto</Tip1>
+                            <Tip1>{tip1}</Tip1>
 
 
                         </CardShape>
@@ -79,7 +87,7 @@ const LoggedHome = () => {
                     <Link to={"/loggedacc"} style={{ textDecoration: "none" }}>
                         <CardShape2>
 
-                            <Tip2>texto2</Tip2>
+                            <Tip2>{tip2}</Tip2>
                         </CardShape2>
                     </Link>
                     <Link to={"/loggedacc"} style={{ textDecoration: "none" }}>
