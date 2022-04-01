@@ -5,10 +5,10 @@ import { DivInfoTip, DivTip } from '../styled/OpenedTipsStyled';
 
 const OpenedTips = () => {
     const location = useLocation();
-    const {id} = location.state
-    
-    const{tips} = useSelector(store => store.tips)
-    
+    const { id } = location.state
+
+    const { tips } = useSelector(store => store.tips)
+
     const [tipSel, setTipSel] = useState({
         descripcion: '',
         tip_completo: '',
@@ -16,14 +16,14 @@ const OpenedTips = () => {
         id: ''
     })
     useEffect(() => {
-      filterTip()
+        filterTip()
     }, [])
     const filterTip = () => {
         const findTip = tips.find(t => t.id == id)
         setTipSel(findTip)
     }
-    
-    
+
+
 
     return (
         <div>

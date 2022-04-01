@@ -90,6 +90,12 @@ const LoggedHome = () => {
                             <Tip2>{tip2}</Tip2>
                         </CardShape2>
                     </Link>
+                    <Link to={"/loggedacc"} style={{ textDecoration: "none" }}>
+                        <CardShape2>
+
+                            <Tip2>texto2</Tip2>
+                        </CardShape2>
+                    </Link>
                 </Cards>
 
 
@@ -214,7 +220,9 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: flex-start;
-padding: 0px;`
+padding: 0px;
+overflow:scroll;`
+
 
 const CardShape = styled.div`
 width: 150px;
