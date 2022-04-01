@@ -1,30 +1,40 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const DivTip = styled.div`
-    position: absolute;
-width: 375.71px;
-height: 263px;
-left: 0px;
-top: 0px;
-background-color: #3C1280;
-color: #FFFFFF;
-padding: 20px;
-`
-export const DivInfoTip = styled.div`
-    position: absolute;
-width: 325px;
-height: 528px;
-left: 25px;
-top: 268px;
+height:263px;
 
-font-family: 'Montserrat';
+background-image:url("https://res.cloudinary.com/dn1jeryp3/image/upload/v1648739635/proyecto-final/Card_tip_1_h42wgf.svg");
+background-size:100%;
+color:white;
+h2{
+    position:relative;
+    top:34px;
+}
+h6{
+    position:relative;
+    top:30px;
+}
+
+`
+export const TipContainer = styled.div`
+div>*{
+    margin: 25px;
+}`
+export const CustomLink = styled(Link)`
+position: relative;
+top:25px;`
+export const DivInfoTip = styled.div`
+height:300px;
+position: absolute;
+top:30%;
+align-items: center;
+border-radius: 20px 20px;
+background-color:white;
 font-style: normal;
 font-weight: 400;
 font-size: 12px;
 line-height: 24px;
-/* or 200% */
-
-letter-spacing: -0.3px;
-
+letter-spacing: 0.3px;
 color: #8D8A8A;
 `

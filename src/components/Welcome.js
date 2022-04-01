@@ -26,9 +26,12 @@ const Welcome = () => {
 }
 export const BlackCards = styled.div`
 background-color:#1C1C1E;
+padding-top: 10%;
+padding-bottom: 14.5%;
 `
 export const H2 = styled.h2`
-
+margin:0;
+margin-left:24px;
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 700;
@@ -37,7 +40,7 @@ line-height: 29px;
 
 letter-spacing: -0.3px;
 color:white;
-margin-top:10%`
+`
 
 
 export const H3 = styled.h3`

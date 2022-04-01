@@ -14,7 +14,7 @@ export const tips = [
     {
         "id": '3',
         "titulo": 'Confía en las listas, son tus aliadas',
-        "descripcion": 'Organiza tus finanzas a través de un listado de tus gastos te ayudará a controlar mejor el flujo de tu dinero',
+        "descripcion": 'Organiza tus finanzas a través de un listado de tus gastos te ayudará a controlar mejor el flujo de tu dinero.',
         "tip_completo": 'Organizar tus finanzas a través de un listado de tus gastos te ayudará a controlar mejor el flujo de tu dinero. Te recomendamos hacer una lista en la que priorices tus gastos del más al menos importante, para que, de esta manera, puedas distribuir mejor tus ingresos.'
     },
     {

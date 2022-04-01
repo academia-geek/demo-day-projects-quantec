@@ -6,11 +6,12 @@ import styled from 'styled-components'
 import "../styles/logged.css"
 import { getAuth } from 'firebase/auth'
 import { cleanAimsSyn } from '../redux/actions/aimsAction'
+import { Link } from 'react-router-dom'
 const LoggedProfile = () => {
-    const dispatch = useDispatch(); 
-    
+    const dispatch = useDispatch();
+
     const auth = getAuth()
-    const user = auth.currentUser    
+    const user = auth.currentUser
 
     const handleLogout = () => {
         dispatch(logoutAsyn())
@@ -35,7 +36,8 @@ const LoggedProfile = () => {
                     <Nombre>{user.displayName}</Nombre>
                     <Puntos>
                         <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648225398/proyecto-final/Trofeo_xrl04s.svg" alt="" />
-                        <h6>20 puntos exp</h6>
+                        <h6>20 puntos </h6>
+                        <Link to="/redeem">Redimir</Link>
                     </Puntos>
 
                 </Profile>

@@ -40,7 +40,7 @@ const LoggedAccounts = () => {
                                     alt="" />
                                 <Link
                                     style={{ textDecoration: "none" }}
-                                    to='/openTip' state={{id: t.id}}>
+                                    to='/openTip' state={{ id: t.id }}>
                                     <CardText>
                                         {t.titulo}
                                     </CardText>
@@ -65,17 +65,21 @@ margin-right:24px;
 margin-bottom:16px;
 padding-top:32px;
 align-content:center;
+
 `
 
 const Cards = styled.div`
+hr{
+    color:rgba(141, 138, 138, 0.5);
+}
 
 `
 const CardTitle = styled.h3`
-margin:0;
+margin:10px 0px;
 font-family: 'Montserrat';
 font-style: normal;
-font-weight: 700;
-font-size: 18px;
+font-weight: 800;
+font-size: 22px;
 line-height: 22px;
 
 /* identical to box height */
@@ -101,13 +105,13 @@ const CardsImg = styled.img`
 width:96px;
 height:67px;
 border-radius:10px;
-margin-right:13px;
+margin:10px 20px 0 0;
 `
 const CardText = styled.h3`
 margin:0;
 font-family: 'Montserrat';
 font-style: normal;
-font-weight: 600;
+font-weight: semibold;
 font-size: 14px;
 line-height: 16px;
 
