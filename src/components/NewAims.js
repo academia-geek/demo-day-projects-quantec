@@ -12,13 +12,14 @@ const NewAims = () => {
 
     const [modal, setModal] = useState(false);
     const [editModal, setEditModal] = useState([]);
-
-
+    // const [now, setNow] = useState(0)
+    
     const { aims } = useSelector(store => store.aims)
     console.log(aims);
 
     
-
+    
+    // barra()
     const editAims = (idDocument) => {
         
         const filterAims = aims.find(a => a.idDocument === idDocument)
@@ -58,7 +59,7 @@ const NewAims = () => {
                                     <MiAhorro>Mi ahorro</MiAhorro>
                                     <Meta>Mi meta</Meta>
                                 </Values>
-                                <Progress now={a.accu} />
+                                <Progress now={a.accu *100 / a.quantity} />
                                 <Values>
                                     <Inicial>${a.accu}</Inicial>
                                     <Final>${a.quantity}</Final>

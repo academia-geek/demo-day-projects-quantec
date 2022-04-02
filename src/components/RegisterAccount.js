@@ -20,7 +20,7 @@ const RegisterAccount = () => {
             photoURL: ''
         },
         onSubmit: (data) => {
-            console.log(data.email);
+            console.log(data);
 
         dispatch(registroEmailPasswordNombre(data));
         dispatch(addUserAsyn(data));

@@ -17,6 +17,7 @@ import DashboardRoutes from "./DashboardRoutes";
 import LabelBottomNavigation from "../components/LabelBottomNavigation";
 
 
+
 function App() {
 
   const [checking, setChecking] = useState(true);
@@ -73,7 +74,8 @@ function App() {
               <PrivateRoute isAuth={isLoggedIn}>
                 <DashboardRoutes />
               </PrivateRoute> 
-            }/>
+           }/>
+          
         </Routes>
       </Router>
 

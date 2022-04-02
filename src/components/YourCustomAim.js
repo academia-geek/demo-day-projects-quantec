@@ -11,13 +11,12 @@ const YourCustomAim = () => {
 
     const location = useLocation();    
     const {aims} = location.state
-    console.log(aims);
+    
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const auth = getAuth()
-    const user = auth.currentUser
-    console.log(user.displayName);    
+    const user = auth.currentUser  
 
     const [newAims, setNewAims] = useState({
         aim: '',
@@ -41,7 +40,6 @@ const YourCustomAim = () => {
 
     }
     
-    console.log(newAims);
     const handleInputChange = ({target}) => {
         setNewAims({
             
@@ -51,7 +49,6 @@ const YourCustomAim = () => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(newAims);
         dispatch(addAimsAsyn(newAims));
         navigate('/loggedaims')
     }

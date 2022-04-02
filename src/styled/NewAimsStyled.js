@@ -82,13 +82,12 @@ color: #757575;
 
 
 `
-export const Progress = styled(ProgressBar)`
-   
-border-radius: 20px;
-    
+export const Progress = styled(ProgressBar)`   
+    border-radius: 20px;    
     width: 92%;
     height: 10px;
     margin: 1% 2% 2% 3%;
+    
 `
 export const Inicial = styled.span`
     font-size: 12px;

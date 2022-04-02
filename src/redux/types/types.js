@@ -19,3 +19,6 @@ export const typesUser = {
 export const typesTips = {
     list: 'listTips'
 }
+export const typesRedeem = {
+    list: 'listRedeem'
+}
