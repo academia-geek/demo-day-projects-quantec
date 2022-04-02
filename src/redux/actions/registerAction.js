@@ -8,7 +8,7 @@ export const registroEmailPasswordNombre = (data) => {
         createUserWithEmailAndPassword(auth,data.email,data.password)
         .then(async ({user}) => {
 
-           await updateProfile(auth.currentUser, {displayName: data.name}, {photoURL: data.photoURL})
+           await updateProfile(auth.currentUser, {displayName: data.displayName}, {photoURL: data.photoURL})
 
            dispatch(registerSincrono(user.email,user.uid,user.displayName, user.photoURL))
            Swal.fire({
