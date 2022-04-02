@@ -34,11 +34,13 @@ const LoggedProfile = () => {
                     <ImageProfile src={user.photoURL} />
 
                     <Nombre>{user.displayName}</Nombre>
-                    <Puntos>
-                        <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648225398/proyecto-final/Trofeo_xrl04s.svg" alt="" />
-                        <h6>20 puntos </h6>
-                        <Link to="/redeem">Redimir</Link>
-                    </Puntos>
+                    <InfoContainer>
+                        <Puntos>
+                            <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648225398/proyecto-final/Trofeo_xrl04s.svg" alt="" />
+                            <h6>20 puntos </h6>
+                        </Puntos>
+                        <Link to="/redeem" style={{ color: "#3C1280", textDecoration: "none" }}>Redimir</Link>
+                    </InfoContainer>
 
                 </Profile>
             </center>
@@ -150,6 +152,7 @@ margin-bottom:21px;`
 const Achievements = styled.div`
 margin-left:16px;
 justify-content: center;
+align-items: center;
 display: grid;
   grid-template-columns: repeat(3,80px);  /* 3 columns */
   grid-template-rows: repeat(2,80px); /* 3 rows  */
@@ -189,8 +192,12 @@ justify-content:center;
 align-items:center;
 h6{
     color:#8D8A8A;
-    margin:0;
+   
 }`
 
-
+const InfoContainer = styled.div`
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin:0 88px;`
 export default LoggedProfile

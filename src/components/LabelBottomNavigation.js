@@ -13,10 +13,10 @@ export default function LabelBottomNavigation() {
 
   const location = useLocation();
   // console.log(location.pathname);
-  if (location.pathname.match("/loggedhome") || location.pathname.match("/loggedprofile") || location.pathname.match("/loggedaims") || location.pathname.match("/loggedacc")) {
+  if (location.pathname.match("/loggedhome") || location.pathname.match("/loggedprofile") || location.pathname.match("/loggedaims") || location.pathname.match("/loggedacc") || location.pathname.match("/redeem")) {
 
     setTimeout(() => {
-      document.querySelector(".navbar").style.cssText = "height: 70px; position: fixed  ; bottom: 0; background-color:white; z-index:10;"
+      document.querySelector(".navbar").style.cssText = "height: 70px; position: fixed  ; bottom: 0; background-color:white; z-index:10;box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.12);"
     }, 100);
 
   } else {

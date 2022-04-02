@@ -5,36 +5,36 @@ import styled from "styled-components"
 import { listRedeemAsyn } from '../redux/actions/redeemAction'
 import { store } from '../redux/store/store'
 import { CustomLink } from '../styled/OpenedTipsStyled'
-import { Card, H6, Imagen, Title } from '../styled/RedeemStyled'
+import { Card, CardContainer, H6, Imagen, Title } from '../styled/RedeemStyled'
 const Redeem = () => {
     const dispatch = useDispatch()
-    const {redeem} = useSelector(store => store.redeem)
+    const { redeem } = useSelector(store => store.redeem)
     console.log(redeem);
     useEffect(() => {
-      dispatch(listRedeemAsyn())
+        dispatch(listRedeemAsyn())
     }, [])
-    
+
     return (
         <div>
-            <Link to='loggedprofile'>Atrás</Link>
+
             <RedeemH2>
                 Redime tus puntos
             </RedeemH2>
             <RedeemH4>
                 ¡ Redime tus puntos de ahorro por descuentos o productos reales !
             </RedeemH4>
-            <div>
+            <CardContainer>
                 {
                     redeem.map((r, index) => (
                         <Card key={index}
-                        className='card'>
-                            <Imagen src={r.img}/>
+                            className='card'>
+                            <Imagen src={r.img} />
                             <H6>{r.puntos}</H6>
                             <Title>{r.titulo}</Title>
                         </Card>
                     ))
                 }
-            </div>
+            </CardContainer>
         </div>
     )
 }
@@ -48,7 +48,9 @@ line-height: 22px;
 /* identical to box height */
 letter-spacing: -0.3px;
 
-color: #757575;`
+color: #757575;
+padding: 32px 25px 25px 0 ;
+`
 const RedeemH4 = styled.h4`
 font-family: 'Montserrat';
 font-style: normal;
@@ -60,6 +62,8 @@ line-height: 24px;
 letter-spacing: -0.3px;
 
 color: #8D8A8A;
+padding: 32px 25px 0 25px ;
+
 
 `
 export default Redeem
