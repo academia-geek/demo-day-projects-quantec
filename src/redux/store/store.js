@@ -2,6 +2,7 @@ import {createStore, combineReducers, applyMiddleware, compose} from 'redux'
 import thunk from 'redux-thunk';
 import { aimsReducer } from '../reducers/aimsReducer';
 import { loginReducer } from '../reducers/loginReducer';
+import { redeemReducer } from '../reducers/redeemReducer';
 import { registerReducer } from '../reducers/registerReducer';
 import { tipsReducer } from '../reducers/tipsReducer';
 
@@ -12,7 +13,8 @@ const reducers = combineReducers({
     login: loginReducer,
     register: registerReducer,
     aims: aimsReducer,
-    tips: tipsReducer
+    tips: tipsReducer,
+    redeem: redeemReducer
 })
 export const store = createStore(
     reducers,
