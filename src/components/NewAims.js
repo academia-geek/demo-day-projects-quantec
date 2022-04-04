@@ -6,24 +6,22 @@ import { Ahorro, Aims, ContainerAims, DivInfo, DivInfoS, Edit, Final, H3, Inicia
 import "../styles/newAim.css"
 import DeleteForever from '@mui/icons-material/DeleteForever';
 import EditModal from './EditModal';
+import { ToastContainer, toast } from 'react-toastify';
 const NewAims = () => {
 
     const dispatch = useDispatch();
 
     const [modal, setModal] = useState(false);
-    const [editModal, setEditModal] = useState([]);
-    // const [now, setNow] = useState(0)
+    const [editModal, setEditModal] = useState([]);    
     
     const { aims } = useSelector(store => store.aims)
-    console.log(aims);
-
+      
     
     
-    // barra()
     const editAims = (idDocument) => {
         
         const filterAims = aims.find(a => a.idDocument === idDocument)
-        console.log(filterAims);
+        
         setModal(true)
         setEditModal(filterAims)
     }
@@ -71,7 +69,7 @@ const NewAims = () => {
                 }
 
 
-
+<ToastContainer />
             </center>
             {
                 modal === true ? <EditModal modal={editModal} modalShow={modal} setModal={setModal}/> : ''

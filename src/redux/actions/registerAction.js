@@ -1,7 +1,9 @@
-import {types} from '../types/types';
+import {typesRegister} from '../types/types';
 import {  getAuth, createUserWithEmailAndPassword, updateProfile  } from "@firebase/auth";
 import Swal from 'sweetalert2';
+import { async } from '@firebase/util';
 
+//---------------------------Asincrono----------------------
 export const registroEmailPasswordNombre = (data) => {    
     return(dispatch) => {
         const auth = getAuth();
@@ -24,10 +26,11 @@ export const registroEmailPasswordNombre = (data) => {
     }
 }
 
+ // ----------------------- Sincrono ---------------------
 export const registerSincrono = (email,password,name, photoURL) => {
 
     return{
-       type: types.register,
+       type: typesRegister.register,
        payload: {
            email,
            password,
@@ -36,3 +39,14 @@ export const registerSincrono = (email,password,name, photoURL) => {
        }
     }
 }
+export const deleteUserSyn = () => {
+    return {
+        type: typesRegister.delete
+    }
+}
+// export const updateUserSyn = () => {
+//     return {
+//         type: typesRegister.update,
+//         payload: user
+//     }
+// }

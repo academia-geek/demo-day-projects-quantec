@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { logoutAsyn } from '../redux/actions/loginAction'
 import { Contenedor, ImageProfile, Nombre } from '../styled/LoggedProfileStyled'
 import styled from 'styled-components'
@@ -12,6 +12,10 @@ const LoggedProfile = () => {
 
     const auth = getAuth()
     const user = auth.currentUser
+
+    const {users} = useSelector(store => store.user)
+
+    const userActive = users.find(u => u.email === user.email)
 
     const handleLogout = () => {
         dispatch(logoutAsyn())
@@ -36,7 +40,7 @@ const LoggedProfile = () => {
                     <Nombre>{user.displayName}</Nombre>
                     <Puntos>
                         <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648225398/proyecto-final/Trofeo_xrl04s.svg" alt="" />
-                        <h6>20 puntos </h6>
+                        <h6>{userActive.puntos} puntos Exp</h6>
                         <Link to="/redeem">Redimir</Link>
                     </Puntos>
 

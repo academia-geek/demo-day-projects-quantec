@@ -7,12 +7,16 @@ import { getAuth } from 'firebase/auth'
 import { useDispatch, useSelector } from 'react-redux'
 import { store } from '../redux/store/store'
 import { listTipsAsyn } from '../redux/actions/tipsAction'
+import {addUserAsyn} from '../redux/actions/userAction'
+
 const LoggedHome = () => {
 
     const auth = getAuth()
     const user = auth.currentUser;
 
     const dispatch = useDispatch();
+    const {users} = useSelector(store => store.user)
+    console.log(users.email);
 
     const [tip1, setTip1] = useState('')
     const [tip2, setTip2] = useState('')
@@ -21,6 +25,7 @@ const LoggedHome = () => {
     useEffect(() => {
         dispatch(listTipsAsyn())
         filterTip()
+        createUser()
     }, [])
 
     const filterTip = () => {
@@ -30,6 +35,19 @@ const LoggedHome = () => {
         setTip2(tip2.titulo)
         const tip3 = tips.find(t => t.id == 3)
         setTip3(tip3.titulo)
+    }
+    const createUser = () => {
+        const userL = {
+            nombre: user.displayName,
+            email: user.email,
+            photoURL: user.photoURL,
+            puntos: 0
+        }
+        console.log(users);
+        console.log(user);
+        
+            dispatch(addUserAsyn(userL))        
+        
     }
 
     return (

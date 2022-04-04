@@ -23,20 +23,17 @@ export const addAimsAsyn = (newAims) => {
     }
 }
 export const listAimsAsyn = (user) => {
-    return async(dispatch) => {
-        console.log(user);         
+    return async(dispatch) => {         
         const q = query(collection(db, "AimsQuantec"), where("user", "==", user));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
     const objetives = [];
     querySnapshot.forEach((doc) => {
-        console.log(doc.data());
         objetives.push({
             idDocument: doc.id,
             ...doc.data()
         })
             
-    });
-    console.log("Current Objetives in USER: ", objetives);
+    });   
     dispatch(listAimsSyn(objetives))
 })
 }      
@@ -56,7 +53,6 @@ export const deleteAimsAsyn = (cod) => {
 }
 export const editAimsAsyn = (id, aims, user) => {
     return async(dispatch) => {
-        console.log(id, aims);
         const docRef = doc(db, 'AimsQuantec', id)
         await updateDoc(docRef, aims)
         .then(() => {
