@@ -69,7 +69,7 @@ const YourCustomAim = () => {
         const userDatos = {
             nombre: userActive.nombre,
             email: userActive.email,
-            puntos: userActive.puntos + 10,
+            puntos: userActive.puntos + 5,
             photoURL: userActive.photoURL
         }
         dispatch(editUserAsyn(user.email, userDatos))

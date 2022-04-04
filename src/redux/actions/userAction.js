@@ -48,9 +48,9 @@ export const editUserAsyn = (email, puntos) => {
         await updateDoc(docRef, puntos)
         .then(() => {
             listUserAsyn()
-            toast.success('Has ganamdo 10 puntos de xp!', {
+            toast.success('Has ganamdo 5 puntos de xp!', {
                 position: "top-right",
-                autoClose: 500,
+                autoClose: 700,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
