@@ -3,6 +3,11 @@ export const types = {
     logout: 'logout',
     register: 'register',   
 }
+export const typesRegister = {
+    register: 'registerUser',
+    update: 'updateUser',
+    delete: 'deleteUser'
+}
 export const typesAims = {
     add: 'addAims', 
     list: 'listAims',

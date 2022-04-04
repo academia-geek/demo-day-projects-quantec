@@ -1,22 +1,26 @@
-import { getAuth } from 'firebase/auth'
+import { ActionCodeURL, getAuth, updateCurrentUser, updateProfile } from 'firebase/auth'
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import styled from "styled-components"
 import { addAimsAsyn } from '../redux/actions/aimsAction'
+import { updateUserAsyn } from '../redux/actions/registerAction'
+import { editUserAsyn, listUserAsyn } from '../redux/actions/userAction'
 import { RegisterForm } from './RegisterAccount'
 import { BlackCards, CustomButtonCards, CustomLink, H2, H3 } from './Welcome'
 
 const YourCustomAim = () => {
-
+    const auth = getAuth()
+    const user = auth.currentUser
+    
+    const {users} = useSelector(store => store.user)
+    
+    
     const location = useLocation();    
     const {aims} = location.state
     
     const dispatch = useDispatch();
-    const navigate = useNavigate();
-
-    const auth = getAuth()
-    const user = auth.currentUser  
+    const navigate = useNavigate();      
 
     const [newAims, setNewAims] = useState({
         aim: '',
@@ -29,6 +33,7 @@ const YourCustomAim = () => {
     })
     useEffect(() => {
       newAimsAsingna()
+      dispatch(listUserAsyn())
     }, [])
     
     const newAimsAsingna = () => {
@@ -37,22 +42,39 @@ const YourCustomAim = () => {
             user: user.displayName,
             accu: '0'
         })
-
-    }
+    }    
     
     const handleInputChange = ({target}) => {
-        setNewAims({
-            
+        setNewAims({            
             ...newAims,
             [target.name]: target.value
         })
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(addAimsAsyn(newAims));
+        pointsUser()
+        dispatch(addAimsAsyn(newAims));        
         navigate('/loggedaims')
     }
-
+    const pointsUser = () => {
+        console.log('aqui toy');
+        const userActive = users.find(u => u.email === user.email)
+        console.log(userActive);               
+                     
+        userData(userActive)    
+        
+    }
+    const userData = (userActive) => {
+        
+        const userDatos = {
+            nombre: userActive.nombre,
+            email: userActive.email,
+            puntos: userActive.puntos + 10,
+            photoURL: userActive.photoURL
+        }
+        dispatch(editUserAsyn(user.email, userDatos))
+    }
+    
     return (
         <BlackCards className="password" >
             <CustomLink to={"/plusaimtype"}><img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647530651/proyecto-final/ep_arrow-left_zxewky.svg" alt="" className="back" /></CustomLink>

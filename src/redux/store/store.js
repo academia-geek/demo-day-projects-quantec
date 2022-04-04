@@ -5,6 +5,7 @@ import { loginReducer } from '../reducers/loginReducer';
 import { redeemReducer } from '../reducers/redeemReducer';
 import { registerReducer } from '../reducers/registerReducer';
 import { tipsReducer } from '../reducers/tipsReducer';
+import { userReducer } from '../reducers/userReducer';
 
 const composeEnhancers = (typeof window !== 'undefined' && 
 window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
@@ -14,7 +15,8 @@ const reducers = combineReducers({
     register: registerReducer,
     aims: aimsReducer,
     tips: tipsReducer,
-    redeem: redeemReducer
+    redeem: redeemReducer, 
+    user: userReducer
 })
 export const store = createStore(
     reducers,

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Nav, Navbar, Offcanvas } from 'react-bootstrap'
 import styled from 'styled-components';
+
 const NavBar = () => {
 
     return (

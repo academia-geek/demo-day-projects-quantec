@@ -11,18 +11,14 @@ import { listAimsAsyn } from '../redux/actions/aimsAction'
 
 const LoggedAims = () => {
 
+    // const [points, setPoints] = useState(0)
     const dispatch = useDispatch();
     const { aims } = useSelector(store => store.aims)
 
     
     const auth = getAuth()
     const user = auth.currentUser;
-    const nuevoUser = {
-        ...user,
-        puntos: 0
-    }
-    console.log(nuevoUser);
-
+    
     useEffect(() => {
         dispatch(listAimsAsyn(user.displayName))
     }, [])

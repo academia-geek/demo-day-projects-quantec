@@ -5,17 +5,22 @@ import "../styles/blackCards.css"
 import { Link } from 'react-router-dom'
 import { loginFacebook, loginGoogle } from '../redux/actions/loginAction'
 import { useDispatch } from 'react-redux'
+import { getAuth } from 'firebase/auth'
+import { addUserAsyn } from '../redux/actions/userAction'
 
 const Register = () => {
     const dispatch = useDispatch();
 
-
+    
     const handleFacebook = () => {
         dispatch(loginFacebook())
+        
     }
     const handleGoogle = () => {
         dispatch(loginGoogle())
+        
     }
+   
     return (
         <BlackCards className='register'>
             <H2 className='H2'>¡Es hora de comenzar tu viaje!</H2>
