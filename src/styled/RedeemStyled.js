@@ -1,8 +1,20 @@
 import styled from 'styled-components'
+export const CardContainer = styled.div`
+ display: grid; 
+  grid-template-columns: 25% 25% 25%; 
+  grid-template-rows: 33% 33% 33%; 
+  gap: 6% 5%; 
+  grid-template-areas: 
+    ". . ."
+    ". . ."
+    ". . ."; 
+    justify-content: center; 
+  justify-items: center; 
+  align-items: center; 
+`
 
 export const Card = styled.div`
     display: flex;
-flex-direction: column;
 justify-content: center;
 align-items: center;
 padding: 8px 4px;
