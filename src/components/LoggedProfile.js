@@ -12,10 +12,10 @@ const LoggedProfile = () => {
 
     const auth = getAuth()
     const user = auth.currentUser
-    const {users} = useSelector(store => store.user)
-    
+    const { users } = useSelector(store => store.user)
+
     const handleLogout = () => {
-        dispatch(logoutAsyn())        
+        dispatch(logoutAsyn())
     }
     return (
         <Contenedor>
@@ -33,9 +33,18 @@ const LoggedProfile = () => {
                     <Nombre>{user.displayName}</Nombre>
 
                     <Puntos>
-                        <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648225398/proyecto-final/Trofeo_xrl04s.svg" alt="" />
-                        <h6>{users.puntos} puntos Exp </h6>
-                        <Link to="/redeem" style={{ color: "#3C1280", textDecoration: "none" }}>Redimir</Link>
+                        <PointsConainer>
+                            <TropheeNPoints>
+                                <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648225398/proyecto-final/Trofeo_xrl04s.svg" alt="" />
+
+                                <h6>{users.puntos} puntos Exp  </h6>
+                            </TropheeNPoints>
+                            <Link to="/redeem"
+                                style={{ color: "#3C1280", textDecoration: "none" }}>
+                                Redimir
+                            </Link>
+                        </PointsConainer>
+
                     </Puntos>
 
 
@@ -97,6 +106,12 @@ const LoggedProfile = () => {
 
     )
 }
+const TropheeNPoints = styled.div`
+display:flex;
+align-items:center;`
+const PointsConainer = styled.div`
+display:grid;
+margin-bottom:-10px`
 const ButtonLogout = styled.button`
 background-color:rgba(255,255,255,0);
 border:none;

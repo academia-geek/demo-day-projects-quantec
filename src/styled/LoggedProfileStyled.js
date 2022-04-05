@@ -25,8 +25,8 @@ margin-bottom:8px;
 `
 export const ImageProfile = styled.img`
 margin-top:17%;
-margin-bottom:4.27%;
-    width: 36.267%;
+margin-bottom:2.5%;
+    width: 33.267%;
     border-radius: 50%;
     ;
 `
