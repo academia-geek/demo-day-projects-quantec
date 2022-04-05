@@ -45,7 +45,7 @@ const LoggedProfile = () => {
             <center>
                 <AchievementsBox>
                     <h3>Logros</h3>
-                    <h4>Suma 20 puntos Exp cada vez que alcances un logro</h4>
+                    <h4>Suma 10 puntos Exp cada vez que alcances un logro</h4>
 
                     <ProfileHr />
                     <Achievements>
@@ -154,7 +154,10 @@ display: grid;
   grid-template-columns: repeat(3,80px);  /* 3 columns */
   grid-template-rows: repeat(2,80px); /* 3 rows  */
   grid-gap:20px 30px; /* 50 pixels of space added between rows and 30 pixels added between columns  */
-
+  opacity: 0.5;
+  &::after{
+      opacity: 1;
+  }
 `
 const Achievement = styled.div`
 width: 60px;
