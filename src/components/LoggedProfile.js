@@ -67,37 +67,37 @@ const LoggedProfile = () => {
                     <Achievements>
 
                         <Achievement>
-                            <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648220410/proyecto-final/Group_3585_ixlm8u.svg" alt="" />
+                            <Achievement1 src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648220410/proyecto-final/Group_3585_ixlm8u.svg" alt="" />
                             <H6>Crea tu primer
                                 objetivo</H6>
 
                         </Achievement>
                         <Achievement>
-                            <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648220410/proyecto-final/Group_3585_ixlm8u.svg" alt="" />
+                            <Achievement2 src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648220410/proyecto-final/Group_3585_ixlm8u.svg" alt="" />
                             <H6>Finaliza tu primer
                                 objetivo</H6>
 
                         </Achievement>
                         <Achievement>
-                            <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648220410/proyecto-final/Group_3585_ixlm8u.svg" alt="" />
+                            <Achievement2 src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648220410/proyecto-final/Group_3585_ixlm8u.svg" alt="" />
                             <H6>Finaliza 10
                                 objetivos</H6>
 
                         </Achievement>
                         <Achievement>
-                            <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648220410/proyecto-final/Group_3585_ixlm8u.svg" alt="" />
+                            <Achievement2 src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648220410/proyecto-final/Group_3585_ixlm8u.svg" alt="" />
                             <H6>Finaliza 50
                                 objetivos</H6>
 
                         </Achievement>
                         <Achievement>
-                            <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648220410/proyecto-final/Group_3585_ixlm8u.svg" alt="" />
+                            <Achievement2 src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648220410/proyecto-final/Group_3585_ixlm8u.svg" alt="" />
                             <H6>Finaliza 100
                                 objetivos</H6>
 
                         </Achievement>
                         <Achievement>
-                            <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648220410/proyecto-final/Group_3585_ixlm8u.svg" alt="" />
+                            <Achievement2 src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648220410/proyecto-final/Group_3585_ixlm8u.svg" alt="" />
                             <H6>Finaliza 200
                                 objetivos</H6>
 
@@ -176,10 +176,7 @@ display: grid;
   grid-template-columns: repeat(3,80px);  /* 3 columns */
   grid-template-rows: repeat(2,80px); /* 3 rows  */
   grid-gap:20px 30px; /* 50 pixels of space added between rows and 30 pixels added between columns  */
-  opacity: 0.5;
-  &::after{
-      opacity: 1;
-  }
+  
 `
 const Achievement = styled.div`
 width: 60px;
@@ -222,4 +219,9 @@ display:flex;
 align-items:center;
 justify-content:space-between;
 margin:0 88px;`
+const Achievement1 = styled.img`
+opacity: 1 !important;
+`
+const Achievement2 = styled.img`
+opacity: 0.5;`
 export default LoggedProfile
