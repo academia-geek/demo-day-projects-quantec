@@ -21,6 +21,17 @@ export const addUserAsyn = (newUser) => {
         }    
     }
 }
+export const loadUserDate = () => {
+    return async(dispatch)=> {
+        const auth = getAuth()
+        const user = auth.currentUser;
+        const docRef = doc(db, 'users', user.uid);
+        const docSnap = await getDoc(docRef)
+        if(docSnap.exists()) {
+            dispatch(loadUserSyn({...docSnap.data(), uid: user.uid}))
+        }
+    }
+}
 export const listUserAsyn = () => {
     return async(dispatch) => {
         const getUsers = await getDocs(collection(db, 'users'))
@@ -36,31 +47,18 @@ export const listUserAsyn = () => {
 }
 export const editUserAsyn = (email, puntos) => {
     return async(dispatch) => {
-        console.log(email, puntos);
-        const getCollection = collection (db, 'users')
-        const q = query(getCollection, where('email', '==', email))
-        const datosQ = await getDocs(q)
-        let id
-        datosQ.forEach(async(docu) => {
-            id = docu.id
-        })
-        const docRef = doc(db, 'users', id)
-        await updateDoc(docRef, puntos)
-        .then(() => {
-            listUserAsyn()
-            toast.success('Has ganamdo 10 puntos de xp!', {
-                position: "top-right",
-                autoClose: 500,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                });
-            
-        }).catch(error => {
-            console.log(error);
-        })     
+               
+        const docRef = doc(db, 'users', puntos.uid)
+        const docSnap = await getDoc(docRef)
+       if(docSnap.exists()) {
+           const docRefUpdate = doc(db, 'users', docSnap.id)
+           await updateDoc(docRefUpdate, puntos)
+           .then(() => {
+               dispatch(loadUserSyn(puntos))
+           }).catch(error => {
+               console.log(error);
+           })
+       }
        
 
     }
@@ -76,6 +74,18 @@ export const addUserSyn = (user) => {
 export const listUserSyn = (user) => {
     return {
         type: typesUser.list,
+        payload: user
+    }
+}
+export const editUserSyn = (user) => {
+    return {
+        type: typesUser.edit,
+        payload: user
+    }
+}
+export const loadUserSyn = (user) => {
+    return {
+        type: typesUser.load,
         payload: user
     }
 }

@@ -3,9 +3,11 @@ import { getAuth } from 'firebase/auth';
 import React, { useState } from 'react'
 import { Button, Form, Modal } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux'
+import { alertPointsSuccess } from '../helpers/alerts';
 import { useForm } from '../hooks/useForm';
 import { editAimsAsyn } from '../redux/actions/aimsAction';
 import { editUserAsyn } from '../redux/actions/userAction';
+import { ButtonClose, ButtonM } from '../styled/EditModalStyled';
 
 const EditModal = ({modal, modalShow, setModal}) => {
     const auth = getAuth()
@@ -14,8 +16,7 @@ const EditModal = ({modal, modalShow, setModal}) => {
     const {users} = useSelector(store => store.user)
     
     const dispatch = useDispatch();
-    console.log(modal);
-    
+       
     const handleClose = () => setModal(false);
     
     const[values, handleInputChange, reset] = useForm({
@@ -33,26 +34,19 @@ const EditModal = ({modal, modalShow, setModal}) => {
         e.preventDefault();
         values.accu = (parseInt(values.accu) + (modal.accu === undefined ? 0 : parseInt(modal.accu))).toString();
         dispatch(editAimsAsyn(idDocument, values, modal.user))
-        pointsUser()
+        userData()
         handleClose()
     }
-    const pointsUser = () => {
-        console.log('aqui toy');
-        const userActive = users.find(u => u.email === user.email)
-        console.log(userActive);               
-                     
-        userData(userActive)    
-        
-    }
-    const userData = (userActive) => {
+    
+    const userData = () => {
         
         const userDatos = {
-            nombre: userActive.nombre,
-            email: userActive.email,
-            puntos: userActive.puntos + 10,
-            photoURL: userActive.photoURL
+            ...users,
+            puntos: users.puntos + 5,
+            
         }
         dispatch(editUserAsyn(user.email, userDatos))
+        alertPointsSuccess()
     }
   return (
     <div>
@@ -61,14 +55,14 @@ const EditModal = ({modal, modalShow, setModal}) => {
             <Modal.Body>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Cuánto quieres abonar:  </Form.Label>
+                        <Form.Label><b>Cuánto quieres abonar: </b> </Form.Label>
                         <Form.Control type="value" 
                             placeholder='' 
                             name='accu'
                             onChange={handleInputChange} />
                         <hr/>
                         <div>
-                        <h3>Mi objetivo</h3>
+                        <h6>Mi objetivo</h6>
                         <Form.Control
                             value={modal.aim}
                             type="text" 
@@ -76,7 +70,7 @@ const EditModal = ({modal, modalShow, setModal}) => {
                             name='aim'
                             onChange={handleInputChange}
                         />
-                        <h3>Fecha de Inicio</h3>
+                        <h6>Fecha de Inicio</h6>
                         <Form.Control
                             value={modal.date1}
                             type="date" 
@@ -84,7 +78,7 @@ const EditModal = ({modal, modalShow, setModal}) => {
                             name='date1'
                             onChange={handleInputChange}
                         />
-                        <h3>Hasta:</h3>
+                        <h6>Hasta:</h6>
                         <Form.Control 
                             type="date" 
                             value={modal.date2}
@@ -93,7 +87,7 @@ const EditModal = ({modal, modalShow, setModal}) => {
                             onChange={handleInputChange}
                         />
                         <div>
-                            <h3>Quiero ahorrar:</h3>
+                            <h6>Quiero ahorrar:</h6>
 
                             <Form.Control 
                                 type="value" 
@@ -106,12 +100,12 @@ const EditModal = ({modal, modalShow, setModal}) => {
                         </div>                 
                     </Form.Group>
                     
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-                    </Button>
-                    <Button type="submit" variant="primary" >
-                        Save Changes
-                    </Button>
+                    <ButtonClose variant="secondary" onClick={handleClose}>
+                        Cerrar
+                    </ButtonClose>
+                    <ButtonM type="submit" variant="primary"  className='mx-2'>
+                        Guardar Cambios
+                    </ButtonM>
                 </Form>
 
             </Modal.Body>

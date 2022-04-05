@@ -10,8 +10,7 @@ import { listAimsAsyn } from '../redux/actions/aimsAction'
 
 
 const LoggedAims = () => {
-
-    // const [points, setPoints] = useState(0)
+    
     const dispatch = useDispatch();
     const { aims } = useSelector(store => store.aims)
 

@@ -19,7 +19,9 @@ export const typesUser = {
     add: 'addUser',
     list: 'listUser',
     edit: 'editUser',
-    delete: 'deleteUser'
+    delete: 'deleteUser',
+    load: 'loadUser',
+    clear: 'clearUser'
 }
 export const typesTips = {
     list: 'listTips'

@@ -10,8 +10,7 @@ export const addAimsAsyn = (newAims) => {
     return (dispatch) => {
         addDoc(collection(db, 'AimsQuantec'), newAims)
         .then(resp => {
-            dispatch(addAimsSyn(newAims))
-            dispatch(listAimsAsyn())
+            
             Swal.fire({
                 html: '<br/><br/><h4 >¡Se ha añadido un nuevo objetivo a tu portafolio!<h3><br/><img class="checked" src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647621171/proyecto-final/Group_349_v0ofdt.svg" alt=""/>',
                 showConfirmButton: false,
@@ -25,16 +24,16 @@ export const addAimsAsyn = (newAims) => {
 export const listAimsAsyn = (user) => {
     return async(dispatch) => {         
         const q = query(collection(db, "AimsQuantec"), where("user", "==", user));
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
-    const objetives = [];
-    querySnapshot.forEach((doc) => {
-        objetives.push({
-            idDocument: doc.id,
-            ...doc.data()
-        })
-            
-    });   
-    dispatch(listAimsSyn(objetives))
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {
+        const objetives = [];
+        querySnapshot.forEach((doc) => {
+            objetives.push({
+                idDocument: doc.id,
+                ...doc.data()
+            })
+                
+        });   
+        dispatch(listAimsSyn(objetives))
 })
 }      
 }
