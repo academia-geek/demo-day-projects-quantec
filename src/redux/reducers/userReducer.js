@@ -2,7 +2,7 @@ import { typesUser } from "../types/types";
 
 
 const initialState = {
-    users: []
+    users: {}
 }
 export const userReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -19,6 +19,14 @@ export const userReducer = (state = initialState, action) => {
                     ...state
                 }
             case typesUser.delete:
+                return {
+                    ...state
+                }
+            case typesUser.load:
+                return{
+                    users: {...action.payload}
+                }
+            case typesUser.clear:
                 return {
                     ...state
                 }

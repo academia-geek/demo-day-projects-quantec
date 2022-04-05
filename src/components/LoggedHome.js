@@ -16,14 +16,14 @@ const LoggedHome = () => {
 
     const dispatch = useDispatch();
     const {users} = useSelector(store => store.user)
-    console.log(users.email);
+    
 
     const [tip1, setTip1] = useState('')
     const [tip2, setTip2] = useState('')
     const [tip3, setTip3] = useState('')
 
     useEffect(() => {
-        dispatch(listTipsAsyn())
+        
         filterTip()
         createUser()
     }, [])
@@ -43,10 +43,8 @@ const LoggedHome = () => {
             photoURL: user.photoURL,
             puntos: 0
         }
-        console.log(users);
-        console.log(user);
-        
-            dispatch(addUserAsyn(userL))        
+                
+        dispatch(addUserAsyn(userL))      
         
     }
 

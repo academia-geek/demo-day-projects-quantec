@@ -7,7 +7,8 @@ export const aimsReducer = (state = initialStates, action) => {
     switch (action.type) {
         case typesAims.add:
             return {
-                aims: [action.payload]
+                aims: [action.payload,
+                        ...state.aims]
             }
         case typesAims.edit:
             return {
@@ -23,7 +24,7 @@ export const aimsReducer = (state = initialStates, action) => {
             }
         case typesAims.filter:
             return {
-                aims: state.aims.filter(a => a.user === action.payload)
+                ...state
             }
         
     

@@ -7,23 +7,44 @@ import "../styles/newAim.css"
 import DeleteForever from '@mui/icons-material/DeleteForever';
 import EditModal from './EditModal';
 import { ToastContainer, toast } from 'react-toastify';
+import { alertPointsError } from '../helpers/alerts';
+import { getAuth } from 'firebase/auth';
+import { editUserAsyn, loadUserDate } from '../redux/actions/userAction';
 const NewAims = () => {
+
+    const auth = getAuth()
+    const user = auth.currentUser
+    
+    const {users} = useSelector(store => store.user)
 
     const dispatch = useDispatch();
 
     const [modal, setModal] = useState(false);
     const [editModal, setEditModal] = useState([]);    
     
-    const { aims } = useSelector(store => store.aims)
-      
-    
-    
+    const { aims } = useSelector(store => store.aims)      
+        
     const editAims = (idDocument) => {
         
         const filterAims = aims.find(a => a.idDocument === idDocument)
         
         setModal(true)
         setEditModal(filterAims)
+    }
+    const deleteAims = (idDocument) => {
+        dispatch(deleteAimsAsyn(idDocument))
+        userData()
+    }
+   
+    const userData = () => {
+        
+        const userDatos = {
+            ...users,
+            puntos: users.puntos - 5,            
+        }
+        dispatch(editUserAsyn(user.email, userDatos))
+        dispatch(loadUserDate(user.uid))
+        alertPointsError()
     }
     return (
         <div>
@@ -43,7 +64,7 @@ const NewAims = () => {
                                     </Edit >
                                 </DivInfo>
                                 <VerMas type='button'
-                                    onClick={() => dispatch(deleteAimsAsyn(a.idDocument))}
+                                    onClick={() => deleteAims(a.idDocument)}
                                 >
                                     <DivInfo>
                                         <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648680089/proyecto-final/clarity_trash-line_ihgzqm.svg" alt="" />

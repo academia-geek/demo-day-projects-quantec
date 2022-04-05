@@ -3,6 +3,7 @@ import { getAuth } from 'firebase/auth';
 import React, { useState } from 'react'
 import { Button, Form, Modal } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux'
+import { alertPointsSuccess } from '../helpers/alerts';
 import { useForm } from '../hooks/useForm';
 import { editAimsAsyn } from '../redux/actions/aimsAction';
 import { editUserAsyn } from '../redux/actions/userAction';
@@ -14,8 +15,7 @@ const EditModal = ({modal, modalShow, setModal}) => {
     const {users} = useSelector(store => store.user)
     
     const dispatch = useDispatch();
-    console.log(modal);
-    
+       
     const handleClose = () => setModal(false);
     
     const[values, handleInputChange, reset] = useForm({
@@ -33,26 +33,19 @@ const EditModal = ({modal, modalShow, setModal}) => {
         e.preventDefault();
         values.accu = (parseInt(values.accu) + (modal.accu === undefined ? 0 : parseInt(modal.accu))).toString();
         dispatch(editAimsAsyn(idDocument, values, modal.user))
-        pointsUser()
+        userData()
         handleClose()
     }
-    const pointsUser = () => {
-        console.log('aqui toy');
-        const userActive = users.find(u => u.email === user.email)
-        console.log(userActive);               
-                     
-        userData(userActive)    
-        
-    }
-    const userData = (userActive) => {
+    
+    const userData = () => {
         
         const userDatos = {
-            nombre: userActive.nombre,
-            email: userActive.email,
-            puntos: userActive.puntos + 5,
-            photoURL: userActive.photoURL
+            ...users,
+            puntos: users.puntos + 5,
+            
         }
         dispatch(editUserAsyn(user.email, userDatos))
+        alertPointsSuccess()
     }
   return (
     <div>

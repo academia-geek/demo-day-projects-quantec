@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import styled from "styled-components"
+import { alertPointsSuccess } from '../helpers/alerts'
 import { addAimsAsyn } from '../redux/actions/aimsAction'
 import { updateUserAsyn } from '../redux/actions/registerAction'
 import { editUserAsyn, listUserAsyn } from '../redux/actions/userAction'
@@ -14,7 +15,7 @@ const YourCustomAim = () => {
     const user = auth.currentUser
     
     const {users} = useSelector(store => store.user)
-    
+    console.log(users.nombre);
     
     const location = useLocation();    
     const {aims} = location.state
@@ -32,8 +33,7 @@ const YourCustomAim = () => {
         accu: ''
     })
     useEffect(() => {
-      newAimsAsingna()
-      dispatch(listUserAsyn())
+      newAimsAsingna()      
     }, [])
     
     const newAimsAsingna = () => {
@@ -52,27 +52,21 @@ const YourCustomAim = () => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        pointsUser()
+        userData()        
         dispatch(addAimsAsyn(newAims));        
         navigate('/loggedaims')
     }
-    const pointsUser = () => {
-        console.log('aqui toy');
-        const userActive = users.find(u => u.email === user.email)
-        console.log(userActive);               
-                     
-        userData(userActive)    
-        
-    }
-    const userData = (userActive) => {
-        
+    
+    const userData = () => {
+        console.log(users);
         const userDatos = {
-            nombre: userActive.nombre,
-            email: userActive.email,
-            puntos: userActive.puntos + 5,
-            photoURL: userActive.photoURL
+            ...users,
+            puntos: users.puntos + 5,
+            
         }
+        console.log(userDatos);
         dispatch(editUserAsyn(user.email, userDatos))
+        alertPointsSuccess()
     }
     
     return (

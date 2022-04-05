@@ -5,31 +5,23 @@ import { Contenedor, ImageProfile, Nombre } from '../styled/LoggedProfileStyled'
 import styled from 'styled-components'
 import "../styles/logged.css"
 import { getAuth } from 'firebase/auth'
-import { cleanAimsSyn } from '../redux/actions/aimsAction'
 import { Link } from 'react-router-dom'
+
 const LoggedProfile = () => {
     const dispatch = useDispatch();
 
     const auth = getAuth()
     const user = auth.currentUser
-
     const {users} = useSelector(store => store.user)
-
     console.log(users);
-    const userActive = users.find(u => u.email === user.email)
-    console.log(userActive);
     const handleLogout = () => {
-        dispatch(logoutAsyn())
-        // dispatch(cleanAimsSyn())
-
+        dispatch(logoutAsyn())        
     }
     return (
         <Contenedor>
             <ButtonLogout
                 type='button'
                 onClick={handleLogout}>
-
-
                 <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648218787/proyecto-final/carbon_logout_vy6qvj.svg" alt="" />
                 Cerrar Sesión
             </ButtonLogout>
