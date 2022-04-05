@@ -36,7 +36,7 @@ const Home = () => {
                     <H3>ALCANZA TUS OBJETIVOS</H3>
                 </Line1>
                 <center>
-                    <Img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647471368/proyecto-final/Group_2147_ukltzb.svg" alt="" />
+                    <Img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1649164088/proyecto-final/Group_2147_nkwklt.svg" alt="" />
                 </center>
                 <div>
                     <H1>Ponle un objetivo a tu día día</H1>
