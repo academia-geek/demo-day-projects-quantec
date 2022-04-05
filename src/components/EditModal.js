@@ -7,6 +7,7 @@ import { alertPointsSuccess } from '../helpers/alerts';
 import { useForm } from '../hooks/useForm';
 import { editAimsAsyn } from '../redux/actions/aimsAction';
 import { editUserAsyn } from '../redux/actions/userAction';
+import { ButtonClose, ButtonM } from '../styled/EditModalStyled';
 
 const EditModal = ({modal, modalShow, setModal}) => {
     const auth = getAuth()
@@ -54,14 +55,14 @@ const EditModal = ({modal, modalShow, setModal}) => {
             <Modal.Body>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Cuánto quieres abonar:  </Form.Label>
+                        <Form.Label><b>Cuánto quieres abonar: </b> </Form.Label>
                         <Form.Control type="value" 
                             placeholder='' 
                             name='accu'
                             onChange={handleInputChange} />
                         <hr/>
                         <div>
-                        <h3>Mi objetivo</h3>
+                        <h6>Mi objetivo</h6>
                         <Form.Control
                             value={modal.aim}
                             type="text" 
@@ -69,7 +70,7 @@ const EditModal = ({modal, modalShow, setModal}) => {
                             name='aim'
                             onChange={handleInputChange}
                         />
-                        <h3>Fecha de Inicio</h3>
+                        <h6>Fecha de Inicio</h6>
                         <Form.Control
                             value={modal.date1}
                             type="date" 
@@ -77,7 +78,7 @@ const EditModal = ({modal, modalShow, setModal}) => {
                             name='date1'
                             onChange={handleInputChange}
                         />
-                        <h3>Hasta:</h3>
+                        <h6>Hasta:</h6>
                         <Form.Control 
                             type="date" 
                             value={modal.date2}
@@ -86,7 +87,7 @@ const EditModal = ({modal, modalShow, setModal}) => {
                             onChange={handleInputChange}
                         />
                         <div>
-                            <h3>Quiero ahorrar:</h3>
+                            <h6>Quiero ahorrar:</h6>
 
                             <Form.Control 
                                 type="value" 
@@ -99,12 +100,12 @@ const EditModal = ({modal, modalShow, setModal}) => {
                         </div>                 
                     </Form.Group>
                     
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-                    </Button>
-                    <Button type="submit" variant="primary" >
-                        Save Changes
-                    </Button>
+                    <ButtonClose variant="secondary" onClick={handleClose}>
+                        Cerrar
+                    </ButtonClose>
+                    <ButtonM type="submit" variant="primary"  className='mx-2'>
+                        Guardar Cambios
+                    </ButtonM>
                 </Form>
 
             </Modal.Body>

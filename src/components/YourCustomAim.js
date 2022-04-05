@@ -15,7 +15,6 @@ const YourCustomAim = () => {
     const user = auth.currentUser
     
     const {users} = useSelector(store => store.user)
-    console.log(users.nombre);
     
     const location = useLocation();    
     const {aims} = location.state
@@ -58,7 +57,7 @@ const YourCustomAim = () => {
     }
     
     const userData = () => {
-        console.log(users);
+        
         const userDatos = {
             ...users,
             puntos: users.puntos + 5,

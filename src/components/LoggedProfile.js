@@ -13,7 +13,7 @@ const LoggedProfile = () => {
     const auth = getAuth()
     const user = auth.currentUser
     const {users} = useSelector(store => store.user)
-    console.log(users);
+    
     const handleLogout = () => {
         dispatch(logoutAsyn())        
     }
@@ -34,7 +34,7 @@ const LoggedProfile = () => {
 
                     <Puntos>
                         <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648225398/proyecto-final/Trofeo_xrl04s.svg" alt="" />
-                        <h6> puntos Exp </h6>
+                        <h6>{users.puntos} puntos Exp </h6>
                         <Link to="/redeem" style={{ color: "#3C1280", textDecoration: "none" }}>Redimir</Link>
                     </Puntos>
 
