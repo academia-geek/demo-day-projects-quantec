@@ -13,7 +13,14 @@ const LoggedProfile = () => {
     const auth = getAuth()
     const user = auth.currentUser
     const { users } = useSelector(store => store.user)
+    const {aims} = useSelector(store => store.aims)
+    console.log(aims.length);
 
+    const activeAchievements = () => {
+        if(aims.length == 1){
+            
+        }
+    }
     const handleLogout = () => {
         dispatch(logoutAsyn())
     }
