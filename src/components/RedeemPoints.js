@@ -37,7 +37,7 @@ const RedeemPoints = ({modal, modalShow, setModal}) => {
         const userDatos = {
             ...users,
             puntos: users.puntos - modal.puntos,  
-            product: {...modal.titulo}          
+            product: modal.titulo         
         }
         dispatch(editUserAsyn(user.email, userDatos))
         dispatch(loadUserDate(user.uid))

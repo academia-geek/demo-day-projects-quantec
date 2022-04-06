@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import "../styles/logged.css"
 import { getAuth } from 'firebase/auth'
 import { Link } from 'react-router-dom'
+import { deleteUserAsyn } from '../redux/actions/userAction'
 
 const LoggedProfile = () => {
     const dispatch = useDispatch();
@@ -23,6 +24,9 @@ const LoggedProfile = () => {
     }
     const handleLogout = () => {
         dispatch(logoutAsyn())
+    }
+    const handleDeleteProfile = () => {
+        dispatch(deleteUserAsyn(user.email))
     }
     return (
         <Contenedor>
@@ -106,13 +110,20 @@ const LoggedProfile = () => {
 
                 </AchievementsBox>
             </center>
-
+            <Delete onClick={handleDeleteProfile}>Eliminar cuenta</Delete>
         </Contenedor>
 
 
 
     )
 }
+const Delete = styled.button`
+    border: none;
+    background-color: #FFFFFF;
+    color: #3C1280;
+    font-size: 15px;
+    margin: 5% 5% 2% 33%
+`
 const TropheeNPoints = styled.div`
 display:flex;
 align-items:center;`
