@@ -61,7 +61,7 @@ const RedeemPoints = ({modal, modalShow, setModal}) => {
                                     <Title>{modal.titulo}</Title>
                                 </Card>
                                 <DivInfoPoints>
-                                    <H3>Deseas redimir este producto?</H3>
+                                    <H3>Deseas redimir este <br/> producto?</H3>
                                     <H6Points>Tus puntos <b>{users.puntos}</b></H6Points>
                                     <H6Points>Puntos productos <b>{modal.puntos}</b></H6Points>
                                     
