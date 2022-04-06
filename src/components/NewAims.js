@@ -47,7 +47,7 @@ const NewAims = () => {
         }
         dispatch(editUserAsyn(user.email, userDatos))
         dispatch(loadUserDate(user.uid))
-        alertPointsError()
+        alertPointsError('😔 Haz perdido 5 puntos de Exp!')
         
     }
     

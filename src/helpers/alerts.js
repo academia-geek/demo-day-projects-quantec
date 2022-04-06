@@ -11,8 +11,8 @@ export const alertPointsSuccess = (mensaje) => {
         progress: undefined,
         });
 }
-export const alertPointsError = () => {
-    toast.error('😔 Haz perdido 5 puntos de Exp!', {
+export const alertPointsError = (mensaje) => {
+    toast.error(mensaje, {
         position: "top-center",
         autoClose: 1500,
         hideProgressBar: false,

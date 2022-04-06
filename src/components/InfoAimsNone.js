@@ -3,14 +3,14 @@ import styled from "styled-components"
 const InfoAimsNone = () => {
   return (
     <div>
-      <H4>Aun no tienes ningun objetivo</H4>
+      <H4>Aún no tienes ningun objetivo</H4>
       <center>
         <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648420406/proyecto-final/undraw_exploring_re_grb8_1_kichbi.svg" width="238" height="209"
           alt="" />
       </center>
-      <H6>En Quantect creermos que por medio de objetivos puedes alcanzar todas tus metas de corto, mediano y largo plazo.
+      <H6>En Quantect creemos que por medio de objetivos puedes alcanzar todas tus metas de corto, mediano y largo plazo.
 
-        ¿Por qué no empiezas por contarnos que objetivo te gustaría alcanzar?</H6>
+        ¿Porqué no empiezas por contarnos que objetivo te gustaría alcanzar?</H6>
     </div>
   )
 }
