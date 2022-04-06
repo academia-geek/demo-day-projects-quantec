@@ -58,18 +58,23 @@ const YourCustomAim = () => {
         navigate('/loggedaims')
     }
     
-    const userData = () => {
+    const userData = () => {       
         
-        const userDatos = {
-            ...users,
-            puntos: users.puntos + 5,
-            
-        }
         console.log(aims);
         if(aims.length == 0){
+            const userDatos = {
+                ...users,
+                puntos: users.puntos + 10,
+                
+            }
             dispatch(editUserAsyn(user.email, userDatos))
             alertPointsSuccess('😃Haz ganado 10 puntos de Exp y haz desbloqueado tu primer logro!')
         }else{
+            const userDatos = {
+                ...users,
+                puntos: users.puntos + 5,
+                
+            }
             dispatch(editUserAsyn(user.email, userDatos))
             alertPointsSuccess('😃 Haz ganado 5 puntos de Exp!')
         }
