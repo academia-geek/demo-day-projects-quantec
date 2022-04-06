@@ -1,6 +1,6 @@
 
 import { getAuth } from 'firebase/auth'
-import React from 'react'
+import React, { useState } from 'react'
 import { Form, Modal } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { alertPointsError, alertPointsSuccess } from '../helpers/alerts'
@@ -8,6 +8,7 @@ import { editUserAsyn, loadUserDate } from '../redux/actions/userAction'
 import { ButtonClose, ButtonM } from '../styled/EditModalStyled'
 import { DivInfoPoints, DivRedeemPoints, H3, H6Points } from '../styled/RedeemPointsStyled'
 import { Card, H6, Imagen, Title } from '../styled/RedeemStyled'
+import Codigo from './Codigo'
 
 const RedeemPoints = ({modal, modalShow, setModal}) => {
 
@@ -19,6 +20,7 @@ const RedeemPoints = ({modal, modalShow, setModal}) => {
     const user = auth.currentUser
 
     const {users} = useSelector(store => store.user)
+    const [codigo, setCodigo] = useState(false);
     console.log(users);
 
     const handleSubmit = (e) => {
@@ -42,10 +44,9 @@ const RedeemPoints = ({modal, modalShow, setModal}) => {
         dispatch(editUserAsyn(user.email, userDatos))
         dispatch(loadUserDate(user.uid))
         alertPointsSuccess('🎉 Haz redimido tus puntos, sigue así!')
-        
-        
-        
+        setCodigo(true)         
     }
+   
   return (
     <div>
         
@@ -74,6 +75,10 @@ const RedeemPoints = ({modal, modalShow, setModal}) => {
                             <ButtonM type="submit" className='mx-4' style={{width:120}}>
                                 Redimir
                             </ButtonM>
+                            {/* <Codigo/> */}
+                            {
+                                codigo === true ? <Codigo/> : ''
+                            }
                         </Form>
         
                     </Modal.Body>
