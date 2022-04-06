@@ -1,18 +1,30 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
 import styled from "styled-components"
 import { listRedeemAsyn } from '../redux/actions/redeemAction'
-import { store } from '../redux/store/store'
-import { CustomLink } from '../styled/OpenedTipsStyled'
 import { Card, CardContainer, H6, Imagen, Title } from '../styled/RedeemStyled'
+import RedeemPoints from './RedeemPoints'
+
 const Redeem = () => {
+
+    const [modal, setModal] = useState(false);
+    const [editModal, setEditModal] = useState([]);
+
     const dispatch = useDispatch()
     const { redeem } = useSelector(store => store.redeem)
-    console.log(redeem);
+    
     useEffect(() => {
         dispatch(listRedeemAsyn())
     }, [])
+
+    const handleRedeem = (id) => {
+        
+        const filterRedeem = redeem.find(r => r.id === id)
+        
+        setModal(true)
+        setEditModal(filterRedeem)
+    }
 
     return (
         <div>
@@ -27,15 +39,22 @@ const Redeem = () => {
                 {
                     redeem.map((r, index) => (
                         <Card key={index}
-                            className='card'>
+                            className='card'
+                            onClick={() => handleRedeem(r.id)}>                            
                             <Imagen src={r.img} />
                             <H6>{r.puntos}</H6>
                             <Title>{r.titulo}</Title>
+                            
                         </Card>
                     ))
                 }
             </CardContainer>
+            {
+                modal === true ? <RedeemPoints modal={editModal} modalShow={modal} setModal={setModal}/> : ''
+            }
+            <ToastContainer />
         </div>
+
     )
 }
 

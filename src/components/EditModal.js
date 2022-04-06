@@ -46,7 +46,7 @@ const EditModal = ({modal, modalShow, setModal}) => {
             
         }
         dispatch(editUserAsyn(user.email, userDatos))
-        alertPointsSuccess()
+        alertPointsSuccess('😃 Haz ganado 5 puntos de Exp!')
     }
   return (
     <div>

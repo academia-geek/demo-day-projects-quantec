@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import styled from "styled-components"
+import Swal from 'sweetalert2'
 import { alertPointsSuccess } from '../helpers/alerts'
 import { addAimsAsyn } from '../redux/actions/aimsAction'
 import { updateUserAsyn } from '../redux/actions/registerAction'
@@ -15,9 +16,10 @@ const YourCustomAim = () => {
     const user = auth.currentUser
     
     const {users} = useSelector(store => store.user)
+    const {aims} = useSelector(store => store.aims)
     
     const location = useLocation();    
-    const {aims} = location.state
+    const {aimss} = location.state
     
     const dispatch = useDispatch();
     const navigate = useNavigate();      
@@ -37,7 +39,7 @@ const YourCustomAim = () => {
     
     const newAimsAsingna = () => {
         setNewAims({
-            aim: aims,
+            aim: aimss,
             user: user.displayName,
             accu: '0'
         })
@@ -63,10 +65,18 @@ const YourCustomAim = () => {
             puntos: users.puntos + 5,
             
         }
-        console.log(userDatos);
-        dispatch(editUserAsyn(user.email, userDatos))
-        alertPointsSuccess()
+        console.log(aims);
+        if(aims.length == 0){
+            dispatch(editUserAsyn(user.email, userDatos))
+            alertPointsSuccess('😃Haz ganado 10 puntos de Exp y haz desbloqueado tu primer logro!')
+        }else{
+            dispatch(editUserAsyn(user.email, userDatos))
+            alertPointsSuccess('😃 Haz ganado 5 puntos de Exp!')
+        }
+        
+        
     }
+    
     
     return (
         <BlackCards className="password" >

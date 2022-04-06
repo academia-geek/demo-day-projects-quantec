@@ -20,7 +20,7 @@ export const userReducer = (state = initialState, action) => {
                 }
             case typesUser.delete:
                 return {
-                    ...state
+                    users: state.users.filter(u => u.email !== action.payload)
                 }
             case typesUser.load:
                 return{

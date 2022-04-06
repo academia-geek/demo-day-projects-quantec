@@ -77,7 +77,7 @@ const LoggedHome = () => {
                 <AimsHome>
                     <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648420406/proyecto-final/undraw_exploring_re_grb8_1_kichbi.svg" alt="imagen" width="124px" height="109px" />
                     <HomeContainer>
-                        <Phome>Empiezas por contarnos que objetivo te gustaría alcanzar sea de corto, mediano o largo plazo.</Phome>
+                        <Phome>Empieza por contarnos que objetivo te gustaría alcanzar sea de corto, mediano o largo plazo.</Phome>
                         <Link to={"/plusaimtype"}>
                             <MiniBtn>
                                 Agregar un objetivo

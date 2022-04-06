@@ -6,11 +6,14 @@ export const ButtonM = styled(Button)`
     border-color: #3C1280;
     font-weight: bold;
     border-radius:20px;
-    
+    &:hover{
+        background-color: #3C1280;
+    }
 `
 export const ButtonClose = styled(Button)`
     font-weight: bold;
     width: 30%;
     margin-left: 10%;
     border-radius:20px;
+    
 `

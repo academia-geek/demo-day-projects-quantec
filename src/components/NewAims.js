@@ -10,6 +10,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { alertPointsError } from '../helpers/alerts';
 import { getAuth } from 'firebase/auth';
 import { editUserAsyn, loadUserDate } from '../redux/actions/userAction';
+import Swal from 'sweetalert2';
 const NewAims = () => {
 
     const auth = getAuth()
@@ -31,9 +32,11 @@ const NewAims = () => {
         setModal(true)
         setEditModal(filterAims)
     }
+    
     const deleteAims = (idDocument) => {
         dispatch(deleteAimsAsyn(idDocument))
         userData()
+
     }
    
     const userData = () => {
@@ -44,8 +47,10 @@ const NewAims = () => {
         }
         dispatch(editUserAsyn(user.email, userDatos))
         dispatch(loadUserDate(user.uid))
-        alertPointsError()
+        alertPointsError('😔 Haz perdido 5 puntos de Exp!')
+        
     }
+    
     return (
         <div>
             <center>

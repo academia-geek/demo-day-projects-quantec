@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import "../styles/logged.css"
 import { getAuth } from 'firebase/auth'
 import { Link } from 'react-router-dom'
+import { deleteUserAsyn } from '../redux/actions/userAction'
 
 const LoggedProfile = () => {
     const dispatch = useDispatch();
@@ -13,9 +14,19 @@ const LoggedProfile = () => {
     const auth = getAuth()
     const user = auth.currentUser
     const { users } = useSelector(store => store.user)
+    const {aims} = useSelector(store => store.aims)
+    console.log(aims.length);
 
+    const activeAchievements = () => {
+        if(aims.length == 1){
+            
+        }
+    }
     const handleLogout = () => {
         dispatch(logoutAsyn())
+    }
+    const handleDeleteProfile = () => {
+        dispatch(deleteUserAsyn(user.email))
     }
     return (
         <Contenedor>
@@ -54,43 +65,43 @@ const LoggedProfile = () => {
             <center>
                 <AchievementsBox>
                     <h3>Logros</h3>
-                    <h4>Suma 20 puntos Exp cada vez que alcances un logro</h4>
+                    <h4>Suma 10 puntos Exp cada vez que alcances un logro</h4>
 
                     <ProfileHr />
                     <Achievements>
 
                         <Achievement>
-                            <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648220410/proyecto-final/Group_3585_ixlm8u.svg" alt="" />
+                            <Achievement1 src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648220410/proyecto-final/Group_3585_ixlm8u.svg" alt="" />
                             <H6>Crea tu primer
                                 objetivo</H6>
 
                         </Achievement>
                         <Achievement>
-                            <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648220410/proyecto-final/Group_3585_ixlm8u.svg" alt="" />
+                            <Achievement2 src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648220410/proyecto-final/Group_3585_ixlm8u.svg" alt="" />
                             <H6>Finaliza tu primer
                                 objetivo</H6>
 
                         </Achievement>
                         <Achievement>
-                            <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648220410/proyecto-final/Group_3585_ixlm8u.svg" alt="" />
+                            <Achievement2 src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648220410/proyecto-final/Group_3585_ixlm8u.svg" alt="" />
                             <H6>Finaliza 10
                                 objetivos</H6>
 
                         </Achievement>
                         <Achievement>
-                            <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648220410/proyecto-final/Group_3585_ixlm8u.svg" alt="" />
+                            <Achievement2 src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648220410/proyecto-final/Group_3585_ixlm8u.svg" alt="" />
                             <H6>Finaliza 50
                                 objetivos</H6>
 
                         </Achievement>
                         <Achievement>
-                            <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648220410/proyecto-final/Group_3585_ixlm8u.svg" alt="" />
+                            <Achievement2 src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648220410/proyecto-final/Group_3585_ixlm8u.svg" alt="" />
                             <H6>Finaliza 100
                                 objetivos</H6>
 
                         </Achievement>
                         <Achievement>
-                            <img src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648220410/proyecto-final/Group_3585_ixlm8u.svg" alt="" />
+                            <Achievement2 src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1648220410/proyecto-final/Group_3585_ixlm8u.svg" alt="" />
                             <H6>Finaliza 200
                                 objetivos</H6>
 
@@ -99,13 +110,20 @@ const LoggedProfile = () => {
 
                 </AchievementsBox>
             </center>
-
+            <Delete onClick={handleDeleteProfile}>Eliminar cuenta</Delete>
         </Contenedor>
 
 
 
     )
 }
+const Delete = styled.button`
+    border: none;
+    background-color: #FFFFFF;
+    color: #3C1280;
+    font-size: 15px;
+    margin: 5% 5% 2% 33%
+`
 const TropheeNPoints = styled.div`
 display:flex;
 align-items:center;`
@@ -169,7 +187,7 @@ display: grid;
   grid-template-columns: repeat(3,80px);  /* 3 columns */
   grid-template-rows: repeat(2,80px); /* 3 rows  */
   grid-gap:20px 30px; /* 50 pixels of space added between rows and 30 pixels added between columns  */
-
+  
 `
 const Achievement = styled.div`
 width: 60px;
@@ -212,4 +230,9 @@ display:flex;
 align-items:center;
 justify-content:space-between;
 margin:0 88px;`
+const Achievement1 = styled.img`
+opacity: 1 !important;
+`
+const Achievement2 = styled.img`
+opacity: 0.5;`
 export default LoggedProfile

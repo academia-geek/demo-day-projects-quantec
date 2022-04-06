@@ -1,7 +1,7 @@
 import { toast } from "react-toastify";
 
-export const alertPointsSuccess = () => {
-    toast.success('😃 Haz ganado 5 puntos de Exp!', {
+export const alertPointsSuccess = (mensaje) => {
+    toast.success(mensaje, {
         position: "top-center",
         autoClose: 1500,
         hideProgressBar: false,
@@ -11,8 +11,8 @@ export const alertPointsSuccess = () => {
         progress: undefined,
         });
 }
-export const alertPointsError = () => {
-    toast.error('😔 Haz perdido 5 puntos de Exp!', {
+export const alertPointsError = (mensaje) => {
+    toast.error(mensaje, {
         position: "top-center",
         autoClose: 1500,
         hideProgressBar: false,

@@ -1,6 +1,6 @@
 import { async } from "@firebase/util"
 import { getAuth } from "firebase/auth"
-import { addDoc, collection, doc, getDoc, getDocs, query, setDoc, updateDoc, where } from "firebase/firestore"
+import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, query, setDoc, updateDoc, where } from "firebase/firestore"
 import { toast } from "react-toastify"
 import { db } from "../../firebase/firebaseConfig"
 import { typesUser } from "../types/types"
@@ -63,6 +63,13 @@ export const editUserAsyn = (email, puntos) => {
 
     }
 }
+export const deleteUserAsyn = (email) => {
+    console.log(email);
+    return async(dispatch) => {
+        deleteDoc(doc(db, 'users', email));
+        dispatch(deleteUserSyn(email))
+    }
+}
 
 //----------Sincronico---------------
 export const addUserSyn = (user) => {
@@ -87,5 +94,11 @@ export const loadUserSyn = (user) => {
     return {
         type: typesUser.load,
         payload: user
+    }
+}
+export const deleteUserSyn = (email) => {
+    return {
+        type: typesUser.delete,
+        payload: email
     }
 }
