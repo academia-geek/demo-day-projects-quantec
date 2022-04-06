@@ -26,7 +26,7 @@ const RedeemPoints = ({modal, modalShow, setModal}) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(users.puntos, modal.puntos);
-        if(users.puntos === parseInt(modal.puntos)){
+        if(users.puntos >= parseInt(modal.puntos)){
         userData()
         }else{
             alertPointsError('Oops, te faltan puntos!! Sigue esforzandote!! 💪')

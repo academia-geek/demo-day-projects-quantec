@@ -5,7 +5,7 @@ import { Contenedor, ImageProfile, Nombre } from '../styled/LoggedProfileStyled'
 import styled from 'styled-components'
 import "../styles/logged.css"
 import { getAuth } from 'firebase/auth'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { deleteUserAsyn } from '../redux/actions/userAction'
 
 const LoggedProfile = () => {
@@ -13,6 +13,7 @@ const LoggedProfile = () => {
 
     const auth = getAuth()
     const user = auth.currentUser
+    const navigate = useNavigate();
     const { users } = useSelector(store => store.user)
     const {aims} = useSelector(store => store.aims)
     console.log(aims.length);
@@ -27,6 +28,8 @@ const LoggedProfile = () => {
     }
     const handleDeleteProfile = () => {
         dispatch(deleteUserAsyn(user.email))
+        dispatch(logoutAsyn())
+        navigate('/')
     }
     return (
         <Contenedor>
@@ -110,7 +113,7 @@ const LoggedProfile = () => {
 
                 </AchievementsBox>
             </center>
-            <Delete onClick={handleDeleteProfile}>Eliminar cuenta</Delete>
+            {/* <Delete onClick={handleDeleteProfile}>Eliminar cuenta</Delete> */}
         </Contenedor>
 
 

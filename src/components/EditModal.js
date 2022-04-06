@@ -103,7 +103,7 @@ const EditModal = ({modal, modalShow, setModal}) => {
                     <ButtonClose variant="secondary" onClick={handleClose}>
                         Cerrar
                     </ButtonClose>
-                    <ButtonM type="submit" variant="primary"  className='mx-2'>
+                    <ButtonM type="submit" variant="primary"  className='mx-1'>
                         Guardar Cambios
                     </ButtonM>
                 </Form>
