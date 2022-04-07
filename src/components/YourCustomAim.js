@@ -7,7 +7,7 @@ import Swal from 'sweetalert2'
 import { alertPointsSuccess } from '../helpers/alerts'
 import { addAimsAsyn } from '../redux/actions/aimsAction'
 import { updateUserAsyn } from '../redux/actions/registerAction'
-import { editUserAsyn, listUserAsyn } from '../redux/actions/userAction'
+import { editUserAsyn, listUserAsyn, loadUserDate } from '../redux/actions/userAction'
 import { RegisterForm } from './RegisterAccount'
 import { BlackCards, CustomButtonCards, CustomLink, H2, H3 } from './Welcome'
 
@@ -76,6 +76,7 @@ const YourCustomAim = () => {
                 
             }
             dispatch(editUserAsyn(user.email, userDatos))
+            loadUserDate(user.uid)
             alertPointsSuccess('😃 Haz ganado 5 puntos de Exp!')
         }
         

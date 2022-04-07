@@ -75,7 +75,7 @@ const RedeemPoints = ({modal, modalShow, setModal}) => {
                             <ButtonM type="submit" className='mx-4' style={{width:120}}>
                                 Redimir
                             </ButtonM>
-                            {/* <Codigo/> */}
+                            
                             {
                                 codigo === true ? <Codigo/> : ''
                             }

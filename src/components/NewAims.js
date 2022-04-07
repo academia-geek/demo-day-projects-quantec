@@ -17,7 +17,7 @@ const NewAims = () => {
     const user = auth.currentUser
     
     const {users} = useSelector(store => store.user)
-
+    console.log(users);
     const dispatch = useDispatch();
 
     const [modal, setModal] = useState(false);
