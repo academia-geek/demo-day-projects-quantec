@@ -1,5 +1,5 @@
 import {typesRegister} from '../types/types';
-import {  getAuth, createUserWithEmailAndPassword, updateProfile  } from "@firebase/auth";
+import { deleteUser, getAuth, createUserWithEmailAndPassword, updateProfile  } from "@firebase/auth";
 import Swal from 'sweetalert2';
 import { async } from '@firebase/util';
 
@@ -22,6 +22,21 @@ export const registroEmailPasswordNombre = (data) => {
         })
         .catch(e =>{
             console.log(e);
+        })
+    }
+}
+export const deleteUserAuth = () => {
+    return async(dispatch) => {
+        const auth = getAuth();
+        const user = auth.currentUser;
+        deleteUser(user).then(() => {
+            Swal.fire({
+                html: '<br/><br/><h4 >¡Se ha eliminado la cuenta!<h3><br/><img class="checked" src="https://res.cloudinary.com/dn1jeryp3/image/upload/v1647621171/proyecto-final/Group_349_v0ofdt.svg" alt=""/>',
+                showConfirmButton: false,
+                timer: 2000,
+            })
+        }).catch((error) => {
+            console.log(error);
         })
     }
 }

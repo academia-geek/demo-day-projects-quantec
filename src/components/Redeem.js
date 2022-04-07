@@ -81,7 +81,7 @@ line-height: 24px;
 letter-spacing: -0.3px;
 
 color: #8D8A8A;
-padding: 32px 25px 0 25px ;
+padding: 0px 25px 0 25px ;
 
 
 `

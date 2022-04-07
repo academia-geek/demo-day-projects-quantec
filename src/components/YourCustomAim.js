@@ -7,7 +7,7 @@ import Swal from 'sweetalert2'
 import { alertPointsSuccess } from '../helpers/alerts'
 import { addAimsAsyn } from '../redux/actions/aimsAction'
 import { updateUserAsyn } from '../redux/actions/registerAction'
-import { editUserAsyn, listUserAsyn } from '../redux/actions/userAction'
+import { editUserAsyn, listUserAsyn, loadUserDate } from '../redux/actions/userAction'
 import { RegisterForm } from './RegisterAccount'
 import { BlackCards, CustomButtonCards, CustomLink, H2, H3 } from './Welcome'
 
@@ -58,19 +58,25 @@ const YourCustomAim = () => {
         navigate('/loggedaims')
     }
     
-    const userData = () => {
+    const userData = () => {       
         
-        const userDatos = {
-            ...users,
-            puntos: users.puntos + 5,
-            
-        }
         console.log(aims);
         if(aims.length == 0){
+            const userDatos = {
+                ...users,
+                puntos: users.puntos + 10,
+                
+            }
             dispatch(editUserAsyn(user.email, userDatos))
             alertPointsSuccess('😃Haz ganado 10 puntos de Exp y haz desbloqueado tu primer logro!')
         }else{
+            const userDatos = {
+                ...users,
+                puntos: users.puntos + 5,
+                
+            }
             dispatch(editUserAsyn(user.email, userDatos))
+            loadUserDate(user.uid)
             alertPointsSuccess('😃 Haz ganado 5 puntos de Exp!')
         }
         

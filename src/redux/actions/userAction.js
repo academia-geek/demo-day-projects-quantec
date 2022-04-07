@@ -6,7 +6,7 @@ import { db } from "../../firebase/firebaseConfig"
 import { typesUser } from "../types/types"
 
 export const addUserAsyn = (newUser) => {
-    console.log(newUser);
+    
     return async(dispatch) => {
         const auth = getAuth()
         const user = auth.currentUser;
@@ -21,14 +21,15 @@ export const addUserAsyn = (newUser) => {
         }    
     }
 }
-export const loadUserDate = () => {
+export const loadUserDate = (id) => {    
     return async(dispatch)=> {
-        const auth = getAuth()
-        const user = auth.currentUser;
-        const docRef = doc(db, 'users', user.uid);
+        // const auth = getAuth()
+        // const user = auth.currentUser;
+        
+        const docRef = doc(db, 'users', id);
         const docSnap = await getDoc(docRef)
         if(docSnap.exists()) {
-            dispatch(loadUserSyn({...docSnap.data(), uid: user.uid}))
+            dispatch(loadUserSyn({...docSnap.data(), uid: id}))
         }
     }
 }
@@ -63,10 +64,14 @@ export const editUserAsyn = (email, puntos) => {
 
     }
 }
-export const deleteUserAsyn = (email) => {
-    console.log(email);
+export const deleteUserAsyn = (email) => {    
     return async(dispatch) => {
-        deleteDoc(doc(db, 'users', email));
+        const getUser = collection(db, 'users')
+        const q = query(getUser, where('email', '==', email))
+        const datosQ = await getDocs(q)
+        datosQ.forEach(docu => {
+            deleteDoc(doc(db, 'users', docu.id));
+        })        
         dispatch(deleteUserSyn(email))
     }
 }
