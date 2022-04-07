@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Quantec(Made for iphone 6/7/8)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Quantec, ahorra y alcanza tus sueños.
 
 ## Available Scripts
 
