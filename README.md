@@ -1,70 +1,45 @@
 # Quantec(Made for iphone 6/7/8)
 
-Quantec, ahorra y alcanza tus sueños.
+Esto es Quantec, ahorra y alcanza tus sueños.
+Proyecto desarrollado en React.
+Usa npm -i para instalar dependencias.
+Usa npm start para inicializar.
 
-## Available Scripts
+***Recuerda usarlo en mobile o poner tu navegador en modo mobile para visualizarlo de la mejor manera***.
 
-In the project directory, you can run:
+[Proyecto desplegado](https://frontend8-70f2e.web.app/).
 
-### `npm start`
+[Prototipo del diseño](https://www.figma.com/file/aTPljIOXCjeblUoldXCc8D/Quantect?node-id=0%3A1).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Guía de estilos:
+### MaterialUI 5.5.1:
+> bottom Navbar tabs style.
+### Bootstrap 5.1.3 && react-bootstrap 2.2.1:
+> Landing page navbar (hamburguer menu).
+> 
+> Progress bar (objetivos).
 
-### `npm test`
+### Styled components && CSS:
+> Diseñar y modificar los estilos de los componentes del proyecto.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Librerías:
 
-### `npm run build`
+### fortawesome/react-fontawesome: 0.1.18: 
+>Fuentes: Monstserrat.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Firebase(backend)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Formik 2.2.9:
+> gestión de formularios.
+### redux && react-redux: 7.2.6:
+> Gestor de estados centralizados.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### redux-thunk 2.4.1:
+> Middleware para conectar con la BD.
 
-### `npm run eject`
+### React Toastify 8.2.0:
+> Alertas personalizadas (popup) para editar los objetivos y tanto ganancia como pérdida de puntos
+### Sweet Alert2 11.4.5:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> Alertas personalizadas para el logro de los objetivos
